@@ -50,7 +50,7 @@ public class Button extends Component {
 	protected Menu menu;
 	private final Image iconImage = new Image();
 
-	private static int buttonId = 2000;
+	private static int buttonId = 2500;
 
 	private native void init()/*-{
 		var c = new $wnd.Ext.Button();
@@ -66,8 +66,7 @@ public class Button extends Component {
 	 */
 	public Button() {
 		// init();
-		id = new StringBuilder().append("ext-").append(this.getXType())
-				.append("-").append(++buttonId).toString();
+		id = new StringBuilder().append("ext-").append(this.getXType()).append("-").append(++buttonId).toString();
 		JsoHelper.setAttribute(config, "id", id);
 		// setText("Button");
 	}
@@ -110,10 +109,8 @@ public class Button extends Component {
 	}
 
 	/**
-	 * An Ext Button consists of a table that wraps a button element. This
-	 * method returns the underlying Button element. <br>
-	 * <b>Note:</b> This method should be called only after the Button has been
-	 * Rendered.
+	 * An Ext Button consists of a table that wraps a button element. This method returns the underlying Button element. <br>
+	 * <b>Note:</b> This method should be called only after the Button has been Rendered.
 	 * 
 	 * @return the Button Element
 	 */
@@ -225,26 +222,21 @@ public class Button extends Component {
 	}
 
 	/**
-	 * False to disable visual cues on mouseover, mouseout and mousedown
-	 * (defaults to true).
+	 * False to disable visual cues on mouseover, mouseout and mousedown (defaults to true).
 	 * 
 	 * @param handleMouseEvents
 	 *            false to diable visual cues
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setHandleMouseEvents(boolean handleMouseEvents)
-			throws IllegalStateException {
+	public void setHandleMouseEvents(boolean handleMouseEvents) throws IllegalStateException {
 		setAttribute("handleMouseEvents", handleMouseEvents, true);
 	}
 
 	/**
-	 * False to disable visual cues on mouseover, mouseout and mousedown
-	 * (defaults to true).
+	 * False to disable visual cues on mouseover, mouseout and mousedown (defaults to true).
 	 * 
-	 * @return true if visual cues on mouseover, mouseout and mousedown are
-	 *         enabled
+	 * @return true if visual cues on mouseover, mouseout and mousedown are enabled
 	 */
 	public boolean getHandleMouseEvents() {
 		return getAttributeAsBoolean("handleMouseEvents");
@@ -270,9 +262,8 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The path to an image to display in the button (the image will be set as
-	 * the background-image CSS property of the button by default, so if you
-	 * want a mixed icon/text button, set cls:"x-btn-text-icon")
+	 * The path to an image to display in the button (the image will be set as the background-image CSS property of the button by default, so if you want a mixed icon/text button,
+	 * set cls:"x-btn-text-icon")
 	 * 
 	 * @param icon
 	 *            the icon
@@ -303,8 +294,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * A css class which sets a background image to be used as the icon for this
-	 * button (defaults to undefined).
+	 * A css class which sets a background image to be used as the icon for this button (defaults to undefined).
 	 * 
 	 * @param iconCls
 	 *            the icon CSS class
@@ -363,8 +353,7 @@ public class Button extends Component {
 	 * @param minWidth
 	 *            the min width
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setMinWidth(int minWidth) throws IllegalStateException {
 		setAttribute("minWidth", minWidth, true);
@@ -409,8 +398,7 @@ public class Button extends Component {
 	 * @param tabIndex
 	 *            the tab index
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTabIndex(int tabIndex) throws IllegalStateException {
 		setAttribute("tabIndex", tabIndex, true);
@@ -424,10 +412,8 @@ public class Button extends Component {
 	}
 
 	/**
-	 * A {@link Template} with which to create the Button's main element. This
-	 * Template must contain numeric substitution parameter 0 if it is to
-	 * display the text property. Changing the template could require code
-	 * modifications if required elements (e.g. a button) aren't present.
+	 * A {@link Template} with which to create the Button's main element. This Template must contain numeric substitution parameter 0 if it is to display the text property.
+	 * Changing the template could require code modifications if required elements (e.g. a button) aren't present.
 	 * 
 	 * The defaut tempalte is
 	 * 
@@ -482,14 +468,12 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The group this toggle button is a member of (only 1 per group can be
-	 * pressed, only applies if enableToggle = true).
+	 * The group this toggle button is a member of (only 1 per group can be pressed, only applies if enableToggle = true).
 	 * 
 	 * @param toggleGroup
 	 *            the button's toggle group
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setToggleGroup(String toggleGroup) throws IllegalStateException {
 		setAttribute("toggleGroup", toggleGroup, true);
@@ -504,22 +488,19 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The button's type, corresponding to the DOM input element type attribute.
-	 * Either "submit," "reset" or "button" (default).
+	 * The button's type, corresponding to the DOM input element type attribute. Either "submit," "reset" or "button" (default).
 	 * 
 	 * @param type
 	 *            the button type
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setType(String type) throws IllegalStateException {
 		setAttribute("type", type, true);
 	}
 
 	/**
-	 * The button's type, corresponding to the DOM input element type attribute.
-	 * Either "submit," "reset" or "button" (default).
+	 * The button's type, corresponding to the DOM input element type attribute. Either "submit," "reset" or "button" (default).
 	 * 
 	 * @return the Button type
 	 */
@@ -533,8 +514,7 @@ public class Button extends Component {
 	 * @param menu
 	 *            the button menu
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setMenu(Menu menu) throws IllegalStateException {
 		this.menu = menu;
@@ -596,8 +576,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * If used in a {@link ToolBar}, the text to be used if this item is shown
-	 * in the overflow menu.
+	 * If used in a {@link ToolBar}, the text to be used if this item is shown in the overflow menu.
 	 * 
 	 * @param value
 	 *            , the value of the overflowText property
@@ -659,8 +638,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The type of tooltip to use. Either 'qtip' for QuickTips or 'title' for
-	 * title attribute.
+	 * The type of tooltip to use. Either 'qtip' for QuickTips or 'title' for title attribute.
 	 * 
 	 * Defaults to: "qtip"
 	 * 
@@ -672,8 +650,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The side of the Button box to render the arrow if the button has an
-	 * associated menu. Two values are allowed:
+	 * The side of the Button box to render the arrow if the button has an associated menu. Two values are allowed:
 	 * <ul>
 	 * <li>right</li>
 	 * <li>bottom</li>
@@ -703,8 +680,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * False to not allow a pressed Button to be depressed. Only valid when
-	 * enableToggle is true.
+	 * False to not allow a pressed Button to be depressed. Only valid when enableToggle is true.
 	 * <p>
 	 * Defaults to: true
 	 */
@@ -713,17 +689,14 @@ public class Button extends Component {
 	}
 
 	/**
-	 * Whether or not to destroy any associated menu when this button is
-	 * destroyed. The menu will be destroyed unless this is explicitly set to
-	 * false.
+	 * Whether or not to destroy any associated menu when this button is destroyed. The menu will be destroyed unless this is explicitly set to false.
 	 */
 	public void setDestroyMenu(boolean value) {
 		setAttribute("destroyMenu", value, true, true);
 	}
 
 	/**
-	 * True to force an attached menu with no items to be shown when clicking
-	 * this button. By default, the menu will not show if it is empty.
+	 * True to force an attached menu with no items to be shown when clicking this button. By default, the menu will not show if it is empty.
 	 * <p>
 	 * Defaults to: false
 	 * 
@@ -736,15 +709,10 @@ public class Button extends Component {
 	/**
 	 * If this property is a number, it is interpreted as follows:
 	 * 
-	 * 0: Neither width nor height depend on content. This is equivalent to
-	 * false. 1: Width depends on content (shrink wraps), but height does not.
-	 * 2: Height depends on content (shrink wraps), but width does not. The
-	 * default. 3: Both width and height depend on content (shrink wrap). This
-	 * is equivalent to true. In CSS terms, shrink-wrap width is analogous to an
-	 * inline-block element as opposed to a block-level element. Some container
-	 * layouts always shrink-wrap their children, effectively ignoring this
-	 * property (e.g., Ext.layout.container.HBox, Ext.layout.container.VBox,
-	 * Ext.layout.component.Dock).
+	 * 0: Neither width nor height depend on content. This is equivalent to false. 1: Width depends on content (shrink wraps), but height does not. 2: Height depends on content
+	 * (shrink wraps), but width does not. The default. 3: Both width and height depend on content (shrink wrap). This is equivalent to true. In CSS terms, shrink-wrap width is
+	 * analogous to an inline-block element as opposed to a block-level element. Some container layouts always shrink-wrap their children, effectively ignoring this property (e.g.,
+	 * Ext.layout.container.HBox, Ext.layout.container.VBox, Ext.layout.component.Dock).
 	 * 
 	 * Defaults to: 3
 	 * 
@@ -757,15 +725,10 @@ public class Button extends Component {
 	/**
 	 * If this property is a number, it is interpreted as follows:
 	 * 
-	 * 0: Neither width nor height depend on content. This is equivalent to
-	 * false. 1: Width depends on content (shrink wraps), but height does not.
-	 * 2: Height depends on content (shrink wraps), but width does not. The
-	 * default. 3: Both width and height depend on content (shrink wrap). This
-	 * is equivalent to true. In CSS terms, shrink-wrap width is analogous to an
-	 * inline-block element as opposed to a block-level element. Some container
-	 * layouts always shrink-wrap their children, effectively ignoring this
-	 * property (e.g., Ext.layout.container.HBox, Ext.layout.container.VBox,
-	 * Ext.layout.component.Dock).
+	 * 0: Neither width nor height depend on content. This is equivalent to false. 1: Width depends on content (shrink wraps), but height does not. 2: Height depends on content
+	 * (shrink wraps), but width does not. The default. 3: Both width and height depend on content (shrink wrap). This is equivalent to true. In CSS terms, shrink-wrap width is
+	 * analogous to an inline-block element as opposed to a block-level element. Some container layouts always shrink-wrap their children, effectively ignoring this property (e.g.,
+	 * Ext.layout.container.HBox, Ext.layout.container.VBox, Ext.layout.component.Dock).
 	 * 
 	 * Defaults to: 3
 	 * 
@@ -777,11 +740,8 @@ public class Button extends Component {
 
 	/**
 	 * 
-	 * A numeric unicode character code to use as the icon for this button. The
-	 * default font-family for glyphs can be set globally using
-	 * Ext.setGlyphFontFamily(). Alternatively, this config option accepts a
-	 * string with the charCode and font-family separated by the @ symbol. For
-	 * example '65@My Font Family'.
+	 * A numeric unicode character code to use as the icon for this button. The default font-family for glyphs can be set globally using Ext.setGlyphFontFamily(). Alternatively,
+	 * this config option accepts a string with the charCode and font-family separated by the @ symbol. For example '65@My Font Family'.
 	 */
 	public void setGlyph(String value) {
 		setAttribute("glyph", value, true, true);
@@ -789,11 +749,8 @@ public class Button extends Component {
 
 	/**
 	 * 
-	 * A numeric unicode character code to use as the icon for this button. The
-	 * default font-family for glyphs can be set globally using
-	 * Ext.setGlyphFontFamily(). Alternatively, this config option accepts a
-	 * string with the charCode and font-family separated by the @ symbol. For
-	 * example '65@My Font Family'.
+	 * A numeric unicode character code to use as the icon for this button. The default font-family for glyphs can be set globally using Ext.setGlyphFontFamily(). Alternatively,
+	 * this config option accepts a string with the charCode and font-family separated by the @ symbol. For example '65@My Font Family'.
 	 */
 	public void setGlyph(Double value) {
 		setAttribute("glyph", value.toString(), true, true);
@@ -812,8 +769,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The DOM event that will fire the handler of the button. This can be any
-	 * valid event name (dblclick, contextmenu).
+	 * The DOM event that will fire the handler of the button. This can be any valid event name (dblclick, contextmenu).
 	 * 
 	 * Defaults to: "click"
 	 * 
@@ -847,18 +803,15 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The URL to open when the button is clicked. Specifying this config causes
-	 * the Button to be rendered with an anchor (An <a> element) as its active
-	 * element, referencing the specified URL.
+	 * The URL to open when the button is clicked. Specifying this config causes the Button to be rendered with an anchor (An <a> element) as its active element, referencing the
+	 * specified URL.
 	 * 
 	 * This is better than specifying a click handler of <br/>
 	 * <code>
 	 * Window.Location.assign("http:://www.nttdata.com");
 	 * </code> <br/>
-	 * because the UI will provide meaningful hints to the user as to what to
-	 * expect upon clicking the button, and will also allow the user to open in
-	 * a new tab or window, bookmark or drag the URL, or directly save the URL
-	 * stream to disk.
+	 * because the UI will provide meaningful hints to the user as to what to expect upon clicking the button, and will also allow the user to open in a new tab or window, bookmark
+	 * or drag the URL, or directly save the URL stream to disk.
 	 * 
 	 * {@see setHrefTarget}
 	 * 
@@ -871,8 +824,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The target attribute to use for the underlying anchor. Only used if the
-	 * href property is specified.
+	 * The target attribute to use for the underlying anchor. Only used if the href property is specified.
 	 * 
 	 * Defaults to: "_blank"
 	 * 
@@ -902,8 +854,7 @@ public class Button extends Component {
 	}
 
 	/**
-	 * The tooltip for the button - can be a string to be used as innerHTML
-	 * (html tags are accepted) or QuickTips config object.
+	 * The tooltip for the button - can be a string to be used as innerHTML (html tags are accepted) or QuickTips config object.
 	 * 
 	 * @param value
 	 */
@@ -978,14 +929,12 @@ public class Button extends Component {
 	}-*/;
 
 	/**
-	 * Fired when the button's icon is changed by the setIcon or setIconCls
-	 * methods.
+	 * Fired when the button's icon is changed by the setIcon or setIconCls methods.
 	 * 
 	 * @param handler
 	 * @return
 	 */
-	public native HandlerRegistration addIconChangeHandler(
-			IconChangeHandler handler)/*-{
+	public native HandlerRegistration addIconChangeHandler(IconChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, oldIcon, newIcon, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1002,8 +951,7 @@ public class Button extends Component {
 	/**
 	 * Fired when the button's glyph is changed by the setGlyph method.
 	 */
-	public native HandlerRegistration addGlyphChangeHandler(
-			GlyphChangeHandler handler)/*-{
+	public native HandlerRegistration addGlyphChangeHandler(GlyphChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, oldG, newG, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1052,11 +1000,9 @@ public class Button extends Component {
 	}-*/;
 
 	/**
-	 * If this button has a menu, this event fires when the mouse leaves the
-	 * menu triggering element
+	 * If this button has a menu, this event fires when the mouse leaves the menu triggering element
 	 */
-	public native HandlerRegistration addMenuTriggerOutHandler(
-			MenuTriggerOutHandler handler)/*-{
+	public native HandlerRegistration addMenuTriggerOutHandler(MenuTriggerOutHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, m, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1071,11 +1017,9 @@ public class Button extends Component {
 	}-*/;
 
 	/**
-	 * If this button has a menu, this event fires when the mouse enters the
-	 * menu triggering element
+	 * If this button has a menu, this event fires when the mouse enters the menu triggering element
 	 */
-	public native HandlerRegistration addMenuTriggerOverHandler(
-			MenuTriggerOverHandler handler)/*-{
+	public native HandlerRegistration addMenuTriggerOverHandler(MenuTriggerOverHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, m, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1109,8 +1053,7 @@ public class Button extends Component {
 	/**
 	 * Fires when the mouse hovers over the button
 	 */
-	public native HandlerRegistration addMouseOverHandler(
-			MouseOverHandler handler)/*-{
+	public native HandlerRegistration addMouseOverHandler(MouseOverHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1126,8 +1069,7 @@ public class Button extends Component {
 	/**
 	 * Fired when the button's text is changed by the setText method.
 	 */
-	public native HandlerRegistration addTextChangeHandler(
-			TextChangeHandler handler)/*-{
+	public native HandlerRegistration addTextChangeHandler(TextChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(b, ot, nt, e) {
 			var button = @com.ait.toolkit.sencha.ext.client.ui.Button::new(Lcom/google/gwt/core/client/JavaScriptObject;)(b);
@@ -1141,8 +1083,7 @@ public class Button extends Component {
 	}-*/;
 
 	/**
-	 * Fires when the 'pressed' state of this button changes (only if
-	 * enableToggle = true)
+	 * Fires when the 'pressed' state of this button changes (only if enableToggle = true)
 	 */
 	public native HandlerRegistration addToggleHandler(ToggleHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
