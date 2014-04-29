@@ -1,4 +1,5 @@
-ahome-ext
-=========
+# Ahomé-Ext
 
-Java(GWT) API for Ext JS (http://www.sencha.com/products/extjs/)
+## About Ahomé-Ext
+
+Built on-top of Sencha's Ext JS, Ahomé-Ext is a GWT-based framework for building rich web applications using next-generation web technologies.
