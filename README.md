@@ -17,5 +17,29 @@ For a better productivity we also recommend
 
 * Eclipse: https://www.eclipse.org/downloads/
 * The Google Pluging for Eclipse: https://developers.google.com/eclipse/
+* 
+##Enterprise Support
+Get high quality support through Ahomé.
+
+* <a href="http://opensource.ahome-it.com/pricing/">Get Enterprise Support</a>
+* 
+
+##Community
+* [Join the Ahomé G+ Community](https://plus.google.com/u/0/communities/106380618381566688303) - See whats happening in the community.
+
+
+
+##Downloads
+* [Latest Jar ](http://emitrom.com/pilot/download)
+
+##Current Release
+1.0.0 - Released on 29/04/2014
+
+##Demos
+* [Ahomé-Ext KitchenSink](http://ahome-it.github.io/ahome-ext/)
+
+
+##License
+* Pilot is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ## Getting Started with Ext4j
