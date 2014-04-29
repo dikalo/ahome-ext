@@ -6,7 +6,7 @@ Built on-top of Sencha's Ext JS, Ahomé-Ext is a GWT-based framework for buildin
 
 ## Required software
 
-Ahomé-Exz requires a JDK version 6 or higher and depends on Ext JS and the GWT Framework.
+Ahomé-Ext requires a JDK version 6 or higher and depends on Ext JS and the GWT Framework.
 
 * JDK 6.0: http://java.sun.com/javase/downloads/index.jsp
 * ExtJS: http://www.sencha.com/products/extjs/
