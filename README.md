@@ -19,4 +19,4 @@ Get high quality support through Ahomé (Note that Ahomé-Ext is FREE to use wit
 
 
 
-## Getting Started with Ext4j
+## Getting Started with Ahomé-Ext
