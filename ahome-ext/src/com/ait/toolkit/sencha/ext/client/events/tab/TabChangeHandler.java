@@ -18,5 +18,5 @@ package com.ait.toolkit.sencha.ext.client.events.tab;
 import com.google.gwt.event.shared.EventHandler;
 
 public interface TabChangeHandler extends EventHandler {
-    public boolean onTabChange(TabChangeEvent event);
+	public void onTabChange(TabChangeEvent event);
 }

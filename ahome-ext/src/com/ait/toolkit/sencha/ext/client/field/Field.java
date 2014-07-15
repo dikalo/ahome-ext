@@ -29,8 +29,7 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.DOM;
 
 /**
- * Base class for form fields that provides default event handling, sizing,
- * value handling and other functionality.
+ * Base class for form fields that provides default event handling, sizing, value handling and other functionality.
  */
 public abstract class Field extends BoxComponent {
 
@@ -55,8 +54,7 @@ public abstract class Field extends BoxComponent {
 	protected abstract JavaScriptObject create(JavaScriptObject config);
 
 	/**
-	 * Apply the behaviors of this component to an existing element. This is
-	 * used instead of render().
+	 * Apply the behaviors of this component to an existing element. This is used instead of render().
 	 * 
 	 * @param id
 	 *            the ID of the node
@@ -64,8 +62,7 @@ public abstract class Field extends BoxComponent {
 	public void applyTo(String id) {
 		Element el = DOM.getElementById(id);
 		if (el == null) {
-			throw new IllegalArgumentException("Element with id : " + id
-					+ " not found.");
+			throw new IllegalArgumentException("Element with id : " + id + " not found.");
 			// RootPanel.get().add(new HTML("<div id='" + id + "'></div"));
 		}
 		applyTo(getOrCreateJsObj(), id);
@@ -76,8 +73,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * Apply the behaviors of this component to an existing element. This is
-	 * used instead of render().
+	 * Apply the behaviors of this component to an existing element. This is used instead of render().
 	 * 
 	 * @param element
 	 *            the element
@@ -100,8 +96,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns the raw data value which may or may not be a valid, defined
-	 * value.
+	 * Returns the raw data value which may or may not be a valid, defined value.
 	 * 
 	 * @return the raw field value
 	 */
@@ -122,8 +117,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns true if this field has been changed since it was originally
-	 * loaded and is not disabled.
+	 * Returns true if this field has been changed since it was originally loaded and is not disabled.
 	 * 
 	 * @return true if field changed
 	 */
@@ -133,9 +127,8 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns whether two field values are logically equal. Field
-	 * implementations may override this to provide custom comparison logic
-	 * appropriate for the particular field's data type.
+	 * Returns whether two field values are logically equal. Field implementations may override this to provide custom comparison logic appropriate for the particular field's data
+	 * type.
 	 * <p>
 	 */
 	public native boolean isEqual(Object value1, Object value2) /*-{
@@ -144,8 +137,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns whether this Field is a file upload field; if it returns true,
-	 * forms will use special techniques for submitting the form via AJAX.
+	 * Returns whether this Field is a file upload field; if it returns true, forms will use special techniques for submitting the form via AJAX.
 	 */
 	public native boolean isFileUpload() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -153,8 +145,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Checks whether the value of the field has changed since the last time it
-	 * was checked.
+	 * Checks whether the value of the field has changed since the last time it was checked.
 	 * <p>
 	 * 
 	 * @return true if field changed
@@ -165,8 +156,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Checks the isDirty state of the field and if it has changed since the
-	 * last time it was checked, fires the dirtychange event.
+	 * Checks the isDirty state of the field and if it has changed since the last time it was checked, fires the dirtychange event.
 	 */
 	public native void checkDirty() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -174,8 +164,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Checks the isDirty state of the field and if it has changed since the
-	 * last time it was checked, fires the dirtychange event.
+	 * Checks the isDirty state of the field and if it has changed since the last time it was checked, fires the dirtychange event.
 	 */
 	public native JsArrayString getErrors() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -183,17 +172,15 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns the name attribute of the field. This is used as the parameter
-	 * name when including the field value in a form submit().
+	 * Returns the name attribute of the field. This is used as the parameter name when including the field value in a form submit().
 	 */
 	public native String getName() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		return field.getErrors();
+		return field.getName();
 	}-*/;
 
 	/**
-	 * Checks the isDirty state of the field and if it has changed since the
-	 * last time it was checked, fires the dirtychange event.
+	 * Checks the isDirty state of the field and if it has changed since the last time it was checked, fires the dirtychange event.
 	 */
 	public native BaseModel getModelData() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -202,8 +189,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Checks the isDirty state of the field and if it has changed since the
-	 * last time it was checked, fires the dirtychange event.
+	 * Checks the isDirty state of the field and if it has changed since the last time it was checked, fires the dirtychange event.
 	 */
 	public native JavaScriptObject getSubmitData() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -244,8 +230,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Resets the current field value to the originally loaded value and clears
-	 * any validation messages.
+	 * Resets the current field value to the originally loaded value and clears any validation messages.
 	 */
 	public native void reset() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -253,8 +238,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Sets the underlying DOM field's value directly, bypassing validation. To
-	 * set the value with validation use {@link #setValue(String)}.
+	 * Sets the underlying DOM field's value directly, bypassing validation. To set the value with validation use {@link #setValue(String)}.
 	 * 
 	 * @param value
 	 *            field value
@@ -265,9 +249,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Resets the field's originalValue property so it matches the current
-	 * value. This is called by Ext.form.Basic.setValues if the form's
-	 * trackResetOnLoad property is set to true.
+	 * Resets the field's originalValue property so it matches the current value. This is called by Ext.form.Basic.setValues if the form's trackResetOnLoad property is set to true.
 	 */
 	public native void resetOriginalValue() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -275,8 +257,7 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Sets a data value into the field and validates it. To set the value
-	 * directly without validation see {@link #setRawValue(String)}.
+	 * Sets a data value into the field and validates it. To set the value directly without validation see {@link #setRawValue(String)}.
 	 * 
 	 * @param value
 	 *            the field value
@@ -287,14 +268,10 @@ public abstract class Field extends BoxComponent {
 	}-*/;
 
 	/**
-	 * Returns whether or not the field value is currently valid by validating
-	 * the field's current value, and fires the validitychange event if the
-	 * field's validity has changed since the last validation. Note: disabled
-	 * fields are always treated as valid.
+	 * Returns whether or not the field value is currently valid by validating the field's current value, and fires the validitychange event if the field's validity has changed
+	 * since the last validation. Note: disabled fields are always treated as valid.
 	 * <p>
-	 * Custom implementations of this method are allowed to have side-effects
-	 * such as triggering error message display. To validate without
-	 * side-effects, use isValid.
+	 * Custom implementations of this method are allowed to have side-effects such as triggering error message display. To validate without side-effects, use isValid.
 	 * 
 	 * 
 	 * @return
@@ -311,14 +288,12 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * Set to true for a default element spec (defaults to {tag: "input", type:
-	 * "text", size: "20", autocomplete: "off"})
+	 * Set to true for a default element spec (defaults to {tag: "input", type: "text", size: "20", autocomplete: "off"})
 	 * 
 	 * @param autoCreate
 	 *            true for a default element spec
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutoCreate(boolean autoCreate) throws IllegalStateException {
 		setAttribute("autoCreate", autoCreate, true);
@@ -334,30 +309,26 @@ public abstract class Field extends BoxComponent {
 	 * @param domConfig
 	 *            a DomHelper config spec to use for field creation
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutoCreate(DomConfig domConfig) throws IllegalStateException {
 		setAttribute("autoCreate", domConfig.getJsObject(), true);
 	}
 
 	/**
-	 * The CSS class used to provide field clearing (defaults to
-	 * 'x-form-clear-left')
+	 * The CSS class used to provide field clearing (defaults to 'x-form-clear-left')
 	 * 
 	 * @param clearCls
 	 *            the CSS class used to provide the clearing
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setClearCls(String clearCls) throws IllegalStateException {
 		setAttribute("clearCls", clearCls, true);
 	}
 
 	/**
-	 * The CSS class used to provide field clearing (defaults to
-	 * 'x-form-clear-left')
+	 * The CSS class used to provide field clearing (defaults to 'x-form-clear-left')
 	 * 
 	 * @return the clear Class
 	 */
@@ -371,8 +342,7 @@ public abstract class Field extends BoxComponent {
 	 * @param cls
 	 *            the CSS class
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setCls(String cls) throws IllegalStateException {
 		super.setCls(cls);
@@ -407,16 +377,14 @@ public abstract class Field extends BoxComponent {
 	 * @param fieldClass
 	 *            the fields class
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setFieldClass(String fieldClass) throws IllegalStateException {
 		setAttribute("fieldClass", fieldClass, true);
 	}
 
 	/**
-	 * The CSS class to use when the field receives focus (defaults to
-	 * "x-form-focus").
+	 * The CSS class to use when the field receives focus (defaults to "x-form-focus").
 	 * 
 	 * @param focusClass
 	 *            CSS class on focus
@@ -426,11 +394,8 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * Specifies whether this field should be validated immediately whenever a
-	 * change in its value is detected. If the validation results in a change in
-	 * the field's validity, a validitychange event will be fired. This allows
-	 * the field to show feedback about the validity of its contents immediately
-	 * as the user is typing.
+	 * Specifies whether this field should be validated immediately whenever a change in its value is detected. If the validation results in a change in the field's validity, a
+	 * validitychange event will be fired. This allows the field to show feedback about the validity of its contents immediately as the user is typing.
 	 * 
 	 * @param value
 	 */
@@ -439,8 +404,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The CSS class to use when the field receives focus (defaults to
-	 * "x-form-focus").
+	 * The CSS class to use when the field receives focus (defaults to "x-form-focus").
 	 * 
 	 * @return the focus class
 	 */
@@ -553,8 +517,7 @@ public abstract class Field extends BoxComponent {
 	 * @param hideLabel
 	 *            true to completely hide the label element (defaults to false)
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setHideLabel(boolean hideLabel) throws IllegalStateException {
 		setAttribute("hideLabel", hideLabel, true);
@@ -565,22 +528,19 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The type attribute for input fields -- e.g. radio, text, password
-	 * (defaults to "text").
+	 * The type attribute for input fields -- e.g. radio, text, password (defaults to "text").
 	 * 
 	 * @param inputType
 	 *            the input type
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setInputType(String inputType) throws IllegalStateException {
 		setAttribute("inputType", inputType, true);
 	}
 
 	/**
-	 * The type attribute for input fields -- e.g. radio, text, password
-	 * (defaults to "text").
+	 * The type attribute for input fields -- e.g. radio, text, password (defaults to "text").
 	 * 
 	 * @return the input type
 	 */
@@ -596,8 +556,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The CSS class to use when marking a field invalid (defaults to
-	 * "x-form-invalid").
+	 * The CSS class to use when marking a field invalid (defaults to "x-form-invalid").
 	 * 
 	 * @param invalidClass
 	 *            CSS class when field is invalid
@@ -607,8 +566,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The CSS class to use when marking a field invalid (defaults to
-	 * "x-form-invalid").
+	 * The CSS class to use when marking a field invalid (defaults to "x-form-invalid").
 	 * 
 	 * @return the invalid CSS class
 	 */
@@ -617,9 +575,8 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The error text to use when marking a field invalid and no message is
-	 * provided (defaults to "The value in this field is invalid"). This error
-	 * message is displayed when the used specified validator returns false.
+	 * The error text to use when marking a field invalid and no message is provided (defaults to "The value in this field is invalid"). This error message is displayed when the
+	 * used specified validator returns false.
 	 * 
 	 * @param invalidText
 	 *            invalid text on error
@@ -630,9 +587,8 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The error text to use when marking a field invalid and no message is
-	 * provided (defaults to "The value in this field is invalid"). This error
-	 * message is displayed when the used specified validator returns false.
+	 * The error text to use when marking a field invalid and no message is provided (defaults to "The value in this field is invalid"). This error message is displayed when the
+	 * used specified validator returns false.
 	 * 
 	 * @return the invalid text
 	 */
@@ -646,8 +602,7 @@ public abstract class Field extends BoxComponent {
 	 * @param labelStyle
 	 *            the CSS style for the fields label
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setLabelStyle(String labelStyle) throws IllegalStateException {
 		setAttribute("labelStyle", labelStyle, true);
@@ -663,17 +618,14 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The seprator between the fields label and the field. Can use ' ' or
-	 * '&amp;nbsp;'
+	 * The seprator between the fields label and the field. Can use ' ' or '&amp;nbsp;'
 	 * 
 	 * @param labelSeparator
 	 *            the label separator
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setLabelSeparator(String labelSeparator)
-			throws IllegalStateException {
+	public void setLabelSeparator(String labelSeparator) throws IllegalStateException {
 		setAttribute("labelSeparator", labelSeparator, true);
 	}
 
@@ -688,9 +640,7 @@ public abstract class Field extends BoxComponent {
 
 	// todo enum
 	/**
-	 * The effect used when displaying a validation message under the field
-	 * (defaults to 'normal'). Other possible values are "slide" and
-	 * "slideRight"
+	 * The effect used when displaying a validation message under the field (defaults to 'normal'). Other possible values are "slide" and "slideRight"
 	 * 
 	 * @param msgFx
 	 *            validation message style
@@ -700,8 +650,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The location where error text should display. Should be one of the
-	 * following values (defaults to 'qtip') :
+	 * The location where error text should display. Should be one of the following values (defaults to 'qtip') :
 	 * 
 	 * <pre>
 	 * Value         Description
@@ -716,11 +665,9 @@ public abstract class Field extends BoxComponent {
 	 * @param msgTarget
 	 *            the error message target
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setFieldMsgTarget(String msgTarget)
-			throws IllegalStateException {
+	public void setFieldMsgTarget(String msgTarget) throws IllegalStateException {
 		setAttribute("msgTarget", msgTarget, true);
 	}
 
@@ -730,16 +677,14 @@ public abstract class Field extends BoxComponent {
 	 * @param name
 	 *            the fields name
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setName(String name) throws IllegalStateException {
 		setAttribute("name", name, true);
 	}
 
 	/**
-	 * Setting this to false will prevent the field from being submitted even
-	 * when it is not disabled.
+	 * Setting this to false will prevent the field from being submitted even when it is not disabled.
 	 * <p>
 	 * Defaults to: true
 	 */
@@ -748,8 +693,7 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * True to mark the field as readOnly in HTML (defaults to false) -- Note:
-	 * this only sets the element's readOnly DOM attribute.
+	 * True to mark the field as readOnly in HTML (defaults to false) -- Note: this only sets the element's readOnly DOM attribute.
 	 * 
 	 * @param readOnly
 	 *            true to mark field read only
@@ -776,14 +720,12 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The tabIndex for this field. Note this only applies to fields that are
-	 * rendered, not those which are built via applyTo.
+	 * The tabIndex for this field. Note this only applies to fields that are rendered, not those which are built via applyTo.
 	 * 
 	 * @param tabIndex
 	 *            the fields tab index
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTabIndex(int tabIndex) throws IllegalStateException {
 		setAttribute("tabIndex", tabIndex, true);
@@ -818,23 +760,19 @@ public abstract class Field extends BoxComponent {
 	}
 
 	/**
-	 * The length of time in milliseconds after user input begins until
-	 * validation is initiated (defaults to 250).
+	 * The length of time in milliseconds after user input begins until validation is initiated (defaults to 250).
 	 * 
 	 * @param validationDelay
 	 *            the validation delay in milliseconds
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setValidationDelay(int validationDelay)
-			throws IllegalStateException {
+	public void setValidationDelay(int validationDelay) throws IllegalStateException {
 		setAttribute("validationDelay", validationDelay, true);
 	}
 
 	/**
-	 * The length of time in milliseconds after user input begins until
-	 * validation is initiated (defaults to 250).
+	 * The length of time in milliseconds after user input begins until validation is initiated (defaults to 250).
 	 * 
 	 * @return the validation delay
 	 */
@@ -848,23 +786,17 @@ public abstract class Field extends BoxComponent {
 	 * @param validationEvent
 	 *            false to disable automatic validation
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setValidationEvent(boolean validationEvent)
-			throws IllegalStateException {
+	public void setValidationEvent(boolean validationEvent) throws IllegalStateException {
 		setAttribute("validationEvent", validationEvent, true);
 	}
 
 	/**
-	 * Display one or more error messages associated with this field, using
-	 * msgTarget to determine how to display the messages and applying
-	 * invalidCls to the field's UI element.
+	 * Display one or more error messages associated with this field, using msgTarget to determine how to display the messages and applying invalidCls to the field's UI element.
 	 * <p>
-	 * <b>Note</b>: this method does not cause the Field's validate or isValid
-	 * methods to return false if the value does pass validation. So simply
-	 * marking a Field as invalid will not prevent submission of forms submitted
-	 * with the Ext.form.action.Submit.clientValidation option set.
+	 * <b>Note</b>: this method does not cause the Field's validate or isValid methods to return false if the value does pass validation. So simply marking a Field as invalid will
+	 * not prevent submission of forms submitted with the Ext.form.action.Submit.clientValidation option set.
 	 */
 	public void markInvalid(String... values) {
 		JsArrayString peers = JsArray.createArray().cast();

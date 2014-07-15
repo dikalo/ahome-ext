@@ -53,14 +53,10 @@ import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Image;
 
 /**
- * Panel is a container that has specific functionality and structural
- * components that make it the perfect building block for application-oriented
- * user interfaces. The Panel contains bottom and top toolbars, along with
- * separate header, footer and body sections. It also provides built-in
- * expandable and collapsible behavior, along with a variety of prebuilt tool
- * buttons that can be wired up to provide other customized behavior. Panels can
- * be easily dropped into any Container or layout, and the layout and rendering
- * pipeline is completely managed by the framework.
+ * Panel is a container that has specific functionality and structural components that make it the perfect building block for application-oriented user interfaces. The Panel
+ * contains bottom and top toolbars, along with separate header, footer and body sections. It also provides built-in expandable and collapsible behavior, along with a variety of
+ * prebuilt tool buttons that can be wired up to provide other customized behavior. Panels can be easily dropped into any Container or layout, and the layout and rendering pipeline
+ * is completely managed by the framework.
  */
 public class Panel extends Container {
 
@@ -191,9 +187,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Collapses the panel body so that it becomes hidden. Fires the
-	 * beforecollapse event which will cancel the collapse action if it returns
-	 * false.
+	 * Collapses the panel body so that it becomes hidden. Fires the beforecollapse event which will cancel the collapse action if it returns false.
 	 */
 	public void collapse() {
 		if (!isRendered()) {
@@ -209,10 +203,8 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Collapses the panel body so that the body becomes hidden. Docked
-	 * Components parallel to the border towards which the collapse takes place
-	 * will remain visible. Fires the beforecollapse event which will cancel the
-	 * collapse action if it returns false.
+	 * Collapses the panel body so that the body becomes hidden. Docked Components parallel to the border towards which the collapse takes place will remain visible. Fires the
+	 * beforecollapse event which will cancel the collapse action if it returns false.
 	 * 
 	 * @param dir
 	 */
@@ -221,10 +213,8 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * Collapses the panel body so that the body becomes hidden. Docked
-	 * Components parallel to the border towards which the collapse takes place
-	 * will remain visible. Fires the beforecollapse event which will cancel the
-	 * collapse action if it returns false.
+	 * Collapses the panel body so that the body becomes hidden. Docked Components parallel to the border towards which the collapse takes place will remain visible. Fires the
+	 * beforecollapse event which will cancel the collapse action if it returns false.
 	 * 
 	 * @param dir
 	 */
@@ -243,13 +233,10 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Collapses the panel body so that it becomes hidden. Fires the
-	 * beforecollapse event which will cancel the collapse action if it returns
-	 * false.
+	 * Collapses the panel body so that it becomes hidden. Fires the beforecollapse event which will cancel the collapse action if it returns false.
 	 * 
 	 * @param animate
-	 *            True to animate the transition, else false (defaults to the
-	 *            value of the animCollapse panel config)
+	 *            True to animate the transition, else false (defaults to the value of the animCollapse panel config)
 	 */
 	public void collapse(boolean animate) {
 		if (!isRendered()) {
@@ -265,8 +252,7 @@ public class Panel extends Container {
 	 * @param padding
 	 *            the padding value in pixels
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setPaddings(int padding) throws IllegalStateException {
 		setPaddings(padding, padding, padding, padding);
@@ -284,11 +270,9 @@ public class Panel extends Container {
 	 * @param bottom
 	 *            bottom padding
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setPaddings(int top, int left, int right, int bottom)
-			throws IllegalStateException {
+	public void setPaddings(int top, int left, int right, int bottom) throws IllegalStateException {
 		Paddings paddings = new Paddings(top, left, right, bottom);
 		String style = paddings.getStyleString();
 		String bodyStyle = getBodyStyle();
@@ -305,8 +289,7 @@ public class Panel extends Container {
 	 * @param margin
 	 *            the padding value in pixels
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setMargins(int margin) throws IllegalStateException {
 		setMargins(margin, margin, margin, margin);
@@ -324,11 +307,9 @@ public class Panel extends Container {
 	 * @param bottom
 	 *            bottom padding
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setMargins(int top, int left, int right, int bottom)
-			throws IllegalStateException {
+	public void setMargins(int top, int left, int right, int bottom) throws IllegalStateException {
 		Margins margins = new Margins(top, left, right, bottom);
 		String style = margins.getStyleString();
 		String bodyStyle = getBodyStyle();
@@ -345,8 +326,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Expands the panel body so that it becomes visible. Fires the beforeexpand
-	 * event which will cancel the expand action if it returns false.
+	 * Expands the panel body so that it becomes visible. Fires the beforeexpand event which will cancel the expand action if it returns false.
 	 */
 	public void expand() {
 		if (!isRendered()) {
@@ -362,12 +342,10 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Expands the panel body so that it becomes visible. Fires the beforeexpand
-	 * event which will cancel the expand action if it returns false.
+	 * Expands the panel body so that it becomes visible. Fires the beforeexpand event which will cancel the expand action if it returns false.
 	 * 
 	 * @param animate
-	 *            True to animate the transition, else false (defaults to the
-	 *            value of the animCollapse panel config)
+	 *            True to animate the transition, else false (defaults to the value of the animCollapse panel config)
 	 */
 	public void expand(boolean animate) {
 		if (!isRendered()) {
@@ -383,14 +361,10 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * The Panel's body Element which may be used to contain HTML content. The
-	 * content may be specified in the html config, or it may be loaded using
-	 * the autoLoad config, or through the Panel's Updater. <br>
-	 * If this is used to load visible HTML elements in either way, then the
-	 * Panel may not be used as a Layout for hosting nested Panels. <br>
-	 * If this Panel is intended to be used as the host of a Layout (See layout
-	 * then the body Element must not be loaded or changed - it is under the
-	 * control of the Panel's Layout.
+	 * The Panel's body Element which may be used to contain HTML content. The content may be specified in the html config, or it may be loaded using the autoLoad config, or
+	 * through the Panel's Updater. <br>
+	 * If this is used to load visible HTML elements in either way, then the Panel may not be used as a Layout for hosting nested Panels. <br>
+	 * If this Panel is intended to be used as the host of a Layout (See layout then the body Element must not be loaded or changed - it is under the control of the Panel's Layout.
 	 * 
 	 * @return the body element
 	 */
@@ -402,8 +376,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * The Panel's footer Element. This Element is used to house the Panel's
-	 * buttons.
+	 * The Panel's footer Element. This Element is used to house the Panel's buttons.
 	 * 
 	 * @return the footer element
 	 */
@@ -415,8 +388,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * The Panel's header Element. This Element is used to house the title and
-	 * tools
+	 * The Panel's header Element. This Element is used to house the title and tools
 	 * 
 	 * @return the header element
 	 */
@@ -452,10 +424,8 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Returns the height in pixels of the framing elements of this panel
-	 * (including any top and bottom bars and header and footer elements, but
-	 * not including the body height). To retrieve the body height see
-	 * {@link #getInnerHeight()}.
+	 * Returns the height in pixels of the framing elements of this panel (including any top and bottom bars and header and footer elements, but not including the body height). To
+	 * retrieve the body height see {@link #getInnerHeight()}.
 	 * 
 	 * @return the frame hieght
 	 */
@@ -465,9 +435,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Returns the width in pixels of the framing elements of this panel (not
-	 * including the body width). To retrieve the body width see
-	 * {@link #getInnerWidth()}.
+	 * Returns the width in pixels of the framing elements of this panel (not including the body width). To retrieve the body width see {@link #getInnerWidth()}.
 	 * 
 	 * @return the frame width
 	 */
@@ -477,9 +445,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Returns the height in pixels of the body element (not including the
-	 * height of any framing elements). For the frame height see
-	 * {@link #getFrameHeight()} .
+	 * Returns the height in pixels of the body element (not including the height of any framing elements). For the frame height see {@link #getFrameHeight()} .
 	 * 
 	 * @return the inner height
 	 */
@@ -489,9 +455,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Returns the width in pixels of the body element (not including the width
-	 * of any framing elements). For the frame width see
-	 * {@link #getFrameWidth()} .
+	 * Returns the width in pixels of the body element (not including the width of any framing elements). For the frame width see {@link #getFrameWidth()} .
 	 * 
 	 * @return the inner width
 	 */
@@ -506,8 +470,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Sets the CSS class that provides the icon image for this panel. This
-	 * method will replace any existing icon class if one has already been set.
+	 * Sets the CSS class that provides the icon image for this panel. This method will replace any existing icon class if one has already been set.
 	 * 
 	 * @param cls
 	 *            the icon class
@@ -554,8 +517,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Shortcut for performing an expand or collapse based on the current state
-	 * of the panel.
+	 * Shortcut for performing an expand or collapse based on the current state of the panel.
 	 */
 	public native void toggleCollapse() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -563,8 +525,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Shortcut for performing an expand or collapse based on the current state
-	 * of the panel.
+	 * Shortcut for performing an expand or collapse based on the current state of the panel.
 	 * 
 	 * @param animate
 	 *            true to animate
@@ -577,45 +538,38 @@ public class Panel extends Container {
 	// --- config properties
 
 	/**
-	 * True to animate the transition when the panel is collapsed, false to skip
-	 * the animation.
+	 * True to animate the transition when the panel is collapsed, false to skip the animation.
 	 * 
 	 * @param animCollapse
-	 *            Defaults to true if the {@link Fx} class is available,
-	 *            otherwise false
+	 *            Defaults to true if the {@link Fx} class is available, otherwise false
 	 */
 	public void setAnimCollapse(boolean animCollapse) {
 		setAttribute("animCollapse", animCollapse, true);
 	}
 
 	/**
-	 * True to animate the transition when the panel is collapsed, false to skip
-	 * the animation.
+	 * True to animate the transition when the panel is collapsed, false to skip the animation.
 	 * 
-	 * @return true to animate the transition when the panel is collapsed, false
-	 *         to skip the animation
+	 * @return true to animate the transition when the panel is collapsed, false to skip the animation
 	 */
 	public boolean isAnimCollapse() {
 		return JsoHelper.getAttributeAsBoolean(config, "animCollapse");
 	}
 
 	/**
-	 * True to use overflow:'auto' on the panel's body element and show scroll
-	 * bars automatically when necessary, false to clip any overflowing content.
+	 * True to use overflow:'auto' on the panel's body element and show scroll bars automatically when necessary, false to clip any overflowing content.
 	 * 
 	 * @param autoScroll
 	 *            Defaults to false
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutoScroll(boolean autoScroll) throws IllegalStateException {
 		setAttribute("autoScroll", autoScroll, true);
 	}
 
 	/**
-	 * True to use overflow:'auto' on the panel's body element and show scroll
-	 * bars automatically when necessary, false to clip any overflowing content.
+	 * True to use overflow:'auto' on the panel's body element and show scroll bars automatically when necessary, false to clip any overflowing content.
 	 * 
 	 * @return true to autoscroll
 	 */
@@ -629,8 +583,7 @@ public class Panel extends Container {
 	 * @param baseCls
 	 *            Defaults to 'x-panel'
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setBaseCls(String baseCls) throws IllegalStateException {
 		setAttribute("baseCls", baseCls, true);
@@ -639,120 +592,103 @@ public class Panel extends Container {
 	/**
 	 * The base CSS class to apply to this panel's element.
 	 * 
-	 * @return the base CSS class to apply to this panel's element. Defaults to
-	 *         'x-panel'
+	 * @return the base CSS class to apply to this panel's element. Defaults to 'x-panel'
 	 */
 	public String getBaseCls() {
 		return JsoHelper.getAttribute(config, "baseCls");
 	}
 
 	/**
-	 * True to display an interior border on the body element of the panel,
-	 * false to hide it. This only applies when border == true. If border ==
-	 * true and bodyBorder == false, the border will display as a 1px wide inset
-	 * border, giving the entire body element an inset appearance.
+	 * True to display an interior border on the body element of the panel, false to hide it. This only applies when border == true. If border == true and bodyBorder == false, the
+	 * border will display as a 1px wide inset border, giving the entire body element an inset appearance.
 	 * 
 	 * @param bodyBorder
 	 *            Defaults to true
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setBodyBorder(boolean bodyBorder) throws IllegalStateException {
 		setAttribute("bodyBorder", bodyBorder, true);
 	}
 
 	/**
-	 * @return true to display an interior border on the body element of the
-	 *         panel, false to hide it.
+	 * @return true to display an interior border on the body element of the panel, false to hide it.
 	 */
 	public boolean isBodyBorder() {
 		return JsoHelper.getAttributeAsBoolean(config, "bodyBorder");
 	}
 
 	/**
-	 * True to display the borders of the panel's body element, false to hide
-	 * them. By default, the border is a 2px wide inset border, but this can be
-	 * further altered by setting bodyBorder to false.
+	 * True to display the borders of the panel's body element, false to hide them. By default, the border is a 2px wide inset border, but this can be further altered by setting
+	 * bodyBorder to false.
 	 * 
 	 * @param border
 	 *            Defaults to true
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setBorder(boolean border) throws IllegalStateException {
 		setAttribute("border", border, true);
 	}
 
 	/**
-	 * True to display the borders of the panel's body element, false to hide
-	 * them. By default, the border is a 2px wide inset border, but this can be
-	 * further altered by setting bodyBorder to false.
+	 * True to display the borders of the panel's body element, false to hide them. By default, the border is a 2px wide inset border, but this can be further altered by setting
+	 * bodyBorder to false.
 	 * 
-	 * @return true to display the borders of the panel's body element, false to
-	 *         hide them.
+	 * @return true to display the borders of the panel's body element, false to hide them.
 	 */
 	public boolean isBorder() {
 		return JsoHelper.getAttributeAsBoolean(config, "border");
 	}
 
 	/**
-	 * Custom CSS styles to be applied to the body element in the format
-	 * expected by {@link ExtElement#applyStyles(String)}
+	 * Custom CSS styles to be applied to the body element in the format expected by {@link ExtElement#applyStyles(String)}
 	 * 
 	 * @param bodyStyle
 	 *            Defaults to null
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setBodyStyle(String bodyStyle) throws IllegalStateException {
 		setAttribute("bodyStyle", bodyStyle, true, true);
 	}
 
 	/**
-	 * A shortcut for setting a padding style on the body element. The value can
-	 * either be a number to be applied to all sides, or a normal css string
-	 * describing padding. Defaults to undefined.
+	 * A shortcut for setting a padding style on the body element. The value can either be a number to be applied to all sides, or a normal css string describing padding. Defaults
+	 * to undefined.
 	 */
 	public void setBodyPadding(String value) {
 		setAttribute("bodyPadding", value, true);
 	}
 
 	/**
-	 * A CSS class, space-delimited string of classes, or array of classes to be
-	 * applied to the panel's body element
+	 * A CSS class, space-delimited string of classes, or array of classes to be applied to the panel's body element
 	 */
 	public void setBodyCls(String value) {
 		setAttribute("bodyCls", value, true);
 	}
 
 	/**
-	 * A CSS class, space-delimited string of classes, or array of classes to be
-	 * applied to the panel's body element
+	 * A CSS class, space-delimited string of classes, or array of classes to be applied to the panel's body element
 	 */
 	public void setBodyCls(JsArrayString value) {
 		setAttribute("bodyCls", value, true);
 	}
 
 	/**
-	 * Whether the Panel is closable. This is applicable when a Panel is added
-	 * to a TabPanel.
+	 * Whether the Panel is closable. This is applicable when a Panel is added to a TabPanel.
 	 * 
 	 * @param closable
 	 *            true if closable
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setClosable(boolean closable) throws IllegalStateException {
 		setAttribute("closable", closable, true);
 	}
 
 	/**
-	 * Whether the Panel is closable. This is applicable when a Panel is added
-	 * to a TabPanel.
+	 * Whether the Panel is closable. This is applicable when a Panel is added to a TabPanel.
 	 * 
 	 * @return true if the Panel is closable
 	 */
@@ -761,18 +697,14 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * True to make sure the collapse/expand toggle button always renders first
-	 * (to the left of) any other tools in the panel's title bar, false to
-	 * render it last.
+	 * True to make sure the collapse/expand toggle button always renders first (to the left of) any other tools in the panel's title bar, false to render it last.
 	 * 
 	 * @param collapseFirst
 	 *            Defaults to true
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setCollapseFirst(boolean collapseFirst)
-			throws IllegalStateException {
+	public void setCollapseFirst(boolean collapseFirst) throws IllegalStateException {
 		setAttribute("collapseFirst", collapseFirst, true);
 	}
 
@@ -781,8 +713,7 @@ public class Panel extends Container {
 	 * <p>
 	 * Defaults to the headerPosition
 	 * <p>
-	 * Important: This config is ignored for collapsible Panels which are direct
-	 * child items of a border layout.
+	 * Important: This config is ignored for collapsible Panels which are direct child items of a border layout.
 	 * <p>
 	 * Specify as 'top', 'bottom', 'left' or 'right'.
 	 */
@@ -793,8 +724,7 @@ public class Panel extends Container {
 	/**
 	 * May be "left", "right" or "center".
 	 * 
-	 * The alignment of the title text within the available space between the
-	 * icon and the tools.
+	 * The alignment of the title text within the available space between the icon and the tools.
 	 * 
 	 * Defaults to: "left"
 	 * 
@@ -807,8 +737,7 @@ public class Panel extends Container {
 	/**
 	 * May be "left", "right" or "center".
 	 * 
-	 * The alignment of the title text within the available space between the
-	 * icon and the tools.
+	 * The alignment of the title text within the available space between the icon and the tools.
 	 * 
 	 * Defaults to: "left"
 	 * 
@@ -819,9 +748,7 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * true to allow expanding and collapsing the panel (when collapsible =
-	 * true) by clicking anywhere in the header bar, false) to allow it only by
-	 * clicking to tool button).
+	 * true to allow expanding and collapsing the panel (when collapsible = true) by clicking anywhere in the header bar, false) to allow it only by clicking to tool button).
 	 * 
 	 * Defaults to: false
 	 * 
@@ -832,23 +759,16 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * <b>Important</b>: this config is only effective for collapsible Panels
-	 * which are direct child items of a border layout.
+	 * <b>Important</b>: this config is only effective for collapsible Panels which are direct child items of a border layout.
 	 * <p>
-	 * When not a direct child item of a border layout, then the Panel's header
-	 * remains visible, and the body is collapsed to zero dimensions. If the
-	 * Panel has no header, then a new header (orientated correctly depending on
-	 * the collapseDirection) will be inserted to show a the title and a re-
-	 * expand tool.
+	 * When not a direct child item of a border layout, then the Panel's header remains visible, and the body is collapsed to zero dimensions. If the Panel has no header, then a
+	 * new header (orientated correctly depending on the collapseDirection) will be inserted to show a the title and a re- expand tool.
 	 * <p>
-	 * When a child item of a border layout, this config has three possible
-	 * values:
+	 * When a child item of a border layout, this config has three possible values:
 	 * <ul>
-	 * <li>undefined - When collapsed, a placeholder Header is injected into the
-	 * layout to represent the Panel and to provide a UI with a Tool to allow
-	 * the user to re-expand the Panel.</li>
-	 * <li>"header" - The Panel collapses to leave its header visible as when
-	 * not inside a border layout.</li>
+	 * <li>undefined - When collapsed, a placeholder Header is injected into the layout to represent the Panel and to provide a UI with a Tool to allow the user to re-expand the
+	 * Panel.</li>
+	 * <li>"header" - The Panel collapses to leave its header visible as when not inside a border layout.</li>
 	 * <li>"mini" - The Panel collapses without a visible header.</li>
 	 * </ul>
 	 * 
@@ -859,12 +779,9 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * True to make sure the collapse/expand toggle button always renders first
-	 * (to the left of) any other tools in the panel's title bar, false to
-	 * render it last.
+	 * True to make sure the collapse/expand toggle button always renders first (to the left of) any other tools in the panel's title bar, false to render it last.
 	 * 
-	 * @return true to make sure the collapse/expand toggle button always
-	 *         renders first
+	 * @return true to make sure the collapse/expand toggle button always renders first
 	 */
 	public boolean getCollapseFirst() {
 		return JsoHelper.getAttributeAsBoolean(config, "collapseFirst");
@@ -907,48 +824,40 @@ public class Panel extends Container {
 	 * @param collapsedCls
 	 *            Defaults to 'x-panel-collapsed'
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setCollapsedCls(String collapsedCls)
-			throws IllegalStateException {
+	public void setCollapsedCls(String collapsedCls) throws IllegalStateException {
 		setAttribute("collapsedCls", collapsedCls, true);
 	}
 
 	/**
 	 * A CSS class to add to the panel's element after it has been collapsed.
 	 * 
-	 * @return the CSS class to add to the panel's element after it has been
-	 *         collapsed.
+	 * @return the CSS class to add to the panel's element after it has been collapsed.
 	 */
 	public String getCollapsedCls() {
 		return JsoHelper.getAttribute(config, "collapsedCls");
 	}
 
 	/**
-	 * True to make the panel collapsible and have the expand/collapse toggle
-	 * button automatically rendered into the header tool button area, false to
-	 * keep the panel statically sized with no button.
+	 * True to make the panel collapsible and have the expand/collapse toggle button automatically rendered into the header tool button area, false to keep the panel statically
+	 * sized with no button.
 	 * 
 	 * @param collapsible
 	 *            Defaults to false
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setCollapsible(boolean collapsible)
-			throws IllegalStateException {
+	public void setCollapsible(boolean collapsible) throws IllegalStateException {
 		setAttribute("collapsible", collapsible, true);
 	}
 
 	/**
-	 * True to make the panel collapsible and have the expand/collapse toggle
-	 * button automatically rendered into the header tool button area, false to
-	 * keep the panel statically sized with no button.
+	 * True to make the panel collapsible and have the expand/collapse toggle button automatically rendered into the header tool button area, false to keep the panel statically
+	 * sized with no button.
 	 * 
-	 * @return true to make the panel collapsible and have the expand/collapse
-	 *         toggle button automatically rendered into the header tool button
-	 *         area, false to keep the panel statically sized with no button
+	 * @return true to make the panel collapsible and have the expand/collapse toggle button automatically rendered into the header tool button area, false to keep the panel
+	 *         statically sized with no button
 	 */
 	public boolean isCollapsible() {
 		return JsoHelper.getAttributeAsBoolean(config, "collapsible");
@@ -960,8 +869,7 @@ public class Panel extends Container {
 	 * @param contentEl
 	 *            Defaults to null
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setContentEl(Element contentEl) throws IllegalStateException {
 		setAttribute("contentEl", new ExtElement(contentEl).getJsObj(), true);
@@ -977,8 +885,7 @@ public class Panel extends Container {
 	 * @param frame
 	 *            Defaults to false
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setFrame(boolean frame) throws IllegalStateException {
 		setAttribute("frame", frame, true);
@@ -999,26 +906,21 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * True to create the header element explicitly, false to skip creating it.
-	 * By default, when header is not specified, if a title is set the header
-	 * will be created automatically, otherwise it will not. If a title is set
-	 * but header is explicitly set to false, the header will not be rendered.
+	 * True to create the header element explicitly, false to skip creating it. By default, when header is not specified, if a title is set the header will be created
+	 * automatically, otherwise it will not. If a title is set but header is explicitly set to false, the header will not be rendered.
 	 * 
 	 * @param header
 	 *            true to create header
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setHeader(boolean header) throws IllegalStateException {
 		setAttribute("header", header, false);
 	}
 
 	/**
-	 * True to create the header element explicitly, false to skip creating it.
-	 * By default, when header is not specified, if a title is set the header
-	 * will be created automatically, otherwise it will not. If a title is set
-	 * but header is explicitly set to false, the header will not be rendered.
+	 * True to create the header element explicitly, false to skip creating it. By default, when header is not specified, if a title is set the header will be created
+	 * automatically, otherwise it will not. If a title is set but header is explicitly set to false, the header will not be rendered.
 	 * 
 	 * @return true to create header
 	 */
@@ -1042,8 +944,7 @@ public class Panel extends Container {
 	 * 
 	 * <br>
 	 * <br>
-	 * <b>Note:</b> This property cannot be changed after the Component has been
-	 * rendered.
+	 * <b>Note:</b> This property cannot be changed after the Component has been rendered.
 	 * 
 	 * @param headerAsText
 	 *            Defaults to true
@@ -1060,34 +961,28 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * True to hide the expand/collapse toggle button when collapsible = true,
-	 * false to display it.
+	 * True to hide the expand/collapse toggle button when collapsible = true, false to display it.
 	 * 
 	 * @param hideCollapseTool
 	 *            Defaults to false
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setHideCollapseTool(boolean hideCollapseTool)
-			throws IllegalStateException {
+	public void setHideCollapseTool(boolean hideCollapseTool) throws IllegalStateException {
 		setAttribute("hideCollapseTool", hideCollapseTool, true);
 	}
 
 	/**
-	 * True to hide the expand/collapse toggle button when collapsible = true,
-	 * false to display it.
+	 * True to hide the expand/collapse toggle button when collapsible = true, false to display it.
 	 * 
-	 * @return true to hide the expand/collapse toggle button when collapsible =
-	 *         true, false to display it.
+	 * @return true to hide the expand/collapse toggle button when collapsible = true, false to display it.
 	 */
 	public boolean isHideCollapseTool() {
 		return JsoHelper.getAttributeAsBoolean(config, "hideCollapseTool");
 	}
 
 	/**
-	 * An HTML fragment, or a DomHelper specification to use as the panel's body
-	 * content.
+	 * An HTML fragment, or a DomHelper specification to use as the panel's body content.
 	 * 
 	 * @param html
 	 *            Defaults to ""
@@ -1101,11 +996,9 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * An HTML fragment, or a DomHelper specification to use as the panel's body
-	 * content.
+	 * An HTML fragment, or a DomHelper specification to use as the panel's body content.
 	 * 
-	 * @return the HTML fragment, or a DomHelper specification to use as the
-	 *         panel's body content.
+	 * @return the HTML fragment, or a DomHelper specification to use as the panel's body content.
 	 */
 	public String getHtml() {
 		if (isRendered()) {
@@ -1116,8 +1009,7 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * A CSS class that will provide a background image to be used as the panel
-	 * header icon
+	 * A CSS class that will provide a background image to be used as the panel header icon
 	 * 
 	 * @param iconCls
 	 *            Defaults to ""
@@ -1131,27 +1023,22 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * @return the CSS class that will provide a background image to be used as
-	 *         the panel header icon
+	 * @return the CSS class that will provide a background image to be used as the panel header icon
 	 */
 	public String getIconCls() {
 		return getAttribute("iconCls");
 	}
 
 	/**
-	 * True to mask the panel when it is disabled, false to not mask it. Either
-	 * way, the panel will always tell its contained elements to disable
-	 * themselves when it is disabled, but masking the panel can provide an
-	 * additional visual cue that the panel is disabled.
+	 * True to mask the panel when it is disabled, false to not mask it. Either way, the panel will always tell its contained elements to disable themselves when it is disabled,
+	 * but masking the panel can provide an additional visual cue that the panel is disabled.
 	 * 
 	 * @param maskDisabled
 	 *            Defaults to true
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setMaskDisabled(boolean maskDisabled)
-			throws IllegalStateException {
+	public void setMaskDisabled(boolean maskDisabled) throws IllegalStateException {
 		setAttribute("maskDisabled", maskDisabled, true);
 	}
 
@@ -1168,11 +1055,9 @@ public class Panel extends Container {
 	 * @param minButtonWidth
 	 *            Defaults to 75
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setMinButtonWidth(int minButtonWidth)
-			throws IllegalStateException {
+	public void setMinButtonWidth(int minButtonWidth) throws IllegalStateException {
 		setAttribute("minButtonWidth", minButtonWidth, true);
 	}
 
@@ -1181,8 +1066,7 @@ public class Panel extends Container {
 	 * 
 	 * @return the minimum width in pixels of all buttons in this panel.
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public int getMinButtonWidth() throws IllegalStateException {
 		return getAttributeAsInt("minButtonWidth");
@@ -1190,9 +1074,7 @@ public class Panel extends Container {
 
 	// todo add string option for custom shadows
 	/**
-	 * True to display a shadow behind the panel, false to display no shadow
-	 * (defaults to 'sides'). Note that this option only applies when floating =
-	 * true.
+	 * True to display a shadow behind the panel, false to display no shadow (defaults to 'sides'). Note that this option only applies when floating = true.
 	 * 
 	 * @param shadow
 	 *            true to display shadow
@@ -1202,58 +1084,49 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * True to display a shadow behind the panel, false to display no shadow
-	 * (defaults to 'sides').
+	 * True to display a shadow behind the panel, false to display no shadow (defaults to 'sides').
 	 * 
-	 * @return true to display a shadow behind the panel, false to display no
-	 *         shadow (defaults to 'sides').
+	 * @return true to display a shadow behind the panel, false to display no shadow (defaults to 'sides').
 	 */
 	public boolean isShadow() {
 		return getAttributeAsBoolean("shadow");
 	}
 
 	/**
-	 * The number of pixels to offset the shadow if displayed. Note that this
-	 * option only applies when floating = true.
+	 * The number of pixels to offset the shadow if displayed. Note that this option only applies when floating = true.
 	 * 
 	 * @param shadowOffset
 	 *            Defaults to 4
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setShadowOffset(int shadowOffset) throws IllegalStateException {
 		setAttribute("shadowOffset", shadowOffset, true);
 	}
 
 	/**
-	 * The number of pixels to offset the shadow if displayed. Note that this
-	 * option only applies when floating = true.
+	 * The number of pixels to offset the shadow if displayed. Note that this option only applies when floating = true.
 	 * 
-	 * @return the number of pixels to offset the shadow if displayed. Note that
-	 *         this option only applies when floating = true.
+	 * @return the number of pixels to offset the shadow if displayed. Note that this option only applies when floating = true.
 	 */
 	public int getShadowOffset() {
 		return getAttributeAsInt("shadowOffset");
 	}
 
 	/**
-	 * False to disable the iframe shim in browsers which need one. Note that
-	 * this option only applies when floating = true.
+	 * False to disable the iframe shim in browsers which need one. Note that this option only applies when floating = true.
 	 * 
 	 * @param shim
 	 *            Defaults to true
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setShim(boolean shim) throws IllegalStateException {
 		setAttribute("shim", shim, true);
 	}
 
 	/**
-	 * False to disable the iframe shim in browsers which need one. Note that
-	 * this option only applies when floating = true.
+	 * False to disable the iframe shim in browsers which need one. Note that this option only applies when floating = true.
 	 * 
 	 * @return false to disable the iframe shim in browsers which need one.
 	 */
@@ -1262,15 +1135,13 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * Set the tab CSS Class. This method is only applicable it the PAnel is
-	 * being added to a TabPanel. This CSS class is applied to the &lt;li&gt;
-	 * elements of the tab in the tabpanel.
+	 * Set the tab CSS Class. This method is only applicable it the PAnel is being added to a TabPanel. This CSS class is applied to the &lt;li&gt; elements of the tab in the
+	 * tabpanel.
 	 * 
 	 * @param tabCls
 	 *            the tabCls
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTabCls(String tabCls) {
 		setAttribute("tabCls", tabCls, true);
@@ -1286,12 +1157,9 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * The title text to display in the panel header. When a title is specified
-	 * the header element will automatically be created and displayed unless
-	 * header is explicitly set to false. If you don't want to specify a title
-	 * at config time, but you may want one later, you must either specify a
-	 * non-empty title (a blank space " " will do) or call setHeader(true) so
-	 * that the container element will get created.
+	 * The title text to display in the panel header. When a title is specified the header element will automatically be created and displayed unless header is explicitly set to
+	 * false. If you don't want to specify a title at config time, but you may want one later, you must either specify a non-empty title (a blank space " " will do) or call
+	 * setHeader(true) so that the container element will get created.
 	 * 
 	 * @param title
 	 *            Defaults to ""
@@ -1300,7 +1168,7 @@ public class Panel extends Container {
 		if (title == null || title.equals("")) {
 			title = " ";
 		}
-		setAttribute("title", title, true);
+		setAttribute("title", title, true, true);
 		setTitleRendered(title);
 	}
 
@@ -1331,8 +1199,7 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * A single item, or an array of child Components to be added to this
-	 * container
+	 * A single item, or an array of child Components to be added to this container
 	 */
 	public void setDockedItems(Component... items) {
 		setAttribute("dockedItems", ComponentFactory.fromArray(items), true);
@@ -1348,14 +1215,11 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * An array of {@link Tool} instances to be added to the header tool area.
-	 * The tools are stored as child components of the header container. The
-	 * toggle tool is automatically created if collapsible is set to true.
+	 * An array of {@link Tool} instances to be added to the header tool area. The tools are stored as child components of the header container. The toggle tool is automatically
+	 * created if collapsible is set to true.
 	 * <p>
-	 * Note that, apart from the toggle tool which is provided when a panel is
-	 * collapsible, these tools only provide the visual button. Any required
-	 * functionality must be provided by adding handlers that implement the
-	 * necessary behavior.
+	 * Note that, apart from the toggle tool which is provided when a panel is collapsible, these tools only provide the visual button. Any required functionality must be provided
+	 * by adding handlers that implement the necessary behavior.
 	 */
 	public void setTools(Tool... items) {
 		for (Tool t : items) {
@@ -1390,8 +1254,7 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * Get the tools added to this panel. This method only return the tools
-	 * added via <code>setTools()</code> or <code>addTool()</code>
+	 * Get the tools added to this panel. This method only return the tools added via <code>setTools()</code> or <code>addTool()</code>
 	 * 
 	 * @return the tools added to this panel
 	 */
@@ -1424,14 +1287,11 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * The alignment of any buttons added to this panel. Valid values are
-	 * 'right', 'left' and 'center' (defaults to 'right' for buttons/fbar,
-	 * 'left' for other toolbar types).
+	 * The alignment of any buttons added to this panel. Valid values are 'right', 'left' and 'center' (defaults to 'right' for buttons/fbar, 'left' for other toolbar types).
 	 * 
 	 * <p>
-	 * NOTE: The prefered way to specify toolbars is to use the dockedItems
-	 * config. Instead of buttonAlign you would add the layout: { pack: 'start'
-	 * | 'center' | 'end' } option to the dockedItem config.
+	 * NOTE: The prefered way to specify toolbars is to use the dockedItems config. Instead of buttonAlign you would add the layout: { pack: 'start' | 'center' | 'end' } option to
+	 * the dockedItem config.
 	 * 
 	 * @param align
 	 */
@@ -1440,13 +1300,10 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * Closes the Panel. By default, this method, removes it from the DOM,
-	 * destroys the Panel object and all its descendant Components. The
-	 * beforeclose event is fired before the close happens and will cancel the
-	 * close action if it returns false.
+	 * Closes the Panel. By default, this method, removes it from the DOM, destroys the Panel object and all its descendant Components. The beforeclose event is fired before the
+	 * close happens and will cancel the close action if it returns false.
 	 * 
-	 * Note: This method is also affected by the closeAction setting. For more
-	 * explicit control use destroy and hide methods.
+	 * Note: This method is also affected by the closeAction setting. For more explicit control use destroy and hide methods.
 	 */
 	public native void close() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1465,8 +1322,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Set the icon for the panel's header.It will fire the iconchange event
-	 * after completion.
+	 * Set the icon for the panel's header.It will fire the iconchange event after completion.
 	 * 
 	 * @param icon
 	 *            , the new icon path
@@ -1509,8 +1365,7 @@ public class Panel extends Container {
 	}
 
 	/**
-	 * Fires before the user closes the panel. Return false from any listener to
-	 * stop the close event being fired
+	 * Fires before the user closes the panel. Return false from any listener to stop the close event being fired
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
@@ -1530,8 +1385,7 @@ public class Panel extends Container {
 
 	}-*/;
 
-	public native HandlerRegistration addBeforeCloseHandler(
-			BeforeCloseHandler handler)/*-{
+	public native HandlerRegistration addBeforeCloseHandler(BeforeCloseHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1545,15 +1399,13 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Fires before this panel is collapsed. Return false to prevent the
-	 * collapse.
+	 * Fires before this panel is collapsed. Return false to prevent the collapse.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
 	 * @return. false to stop the close event to be fired
 	 */
-	public native void addBeforeCollapseHandler(
-			PanelBeforeCollapseHandler handler)/*-{
+	public native void addBeforeCollapseHandler(PanelBeforeCollapseHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -1567,8 +1419,7 @@ public class Panel extends Container {
 
 	}-*/;
 
-	public native HandlerRegistration addBeforeCollapseHandler(
-			BeforeCollapseHandler handler)/*-{
+	public native HandlerRegistration addBeforeCollapseHandler(BeforeCollapseHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, direction, animate, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1602,8 +1453,7 @@ public class Panel extends Container {
 
 	}-*/;
 
-	public native HandlerRegistration addBeforeExpandHandler(
-			BeforeExpandHandler handler)/*-{
+	public native HandlerRegistration addBeforeExpandHandler(BeforeExpandHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, animate, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1623,8 +1473,7 @@ public class Panel extends Container {
 	 *            , the handler that will handle the event
 	 */
 
-	public native HandlerRegistration addCloseHandler(
-			com.ait.toolkit.sencha.ext.client.events.panel.CloseHandler handler)/*-{
+	public native HandlerRegistration addCloseHandler(com.ait.toolkit.sencha.ext.client.events.panel.CloseHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1663,8 +1512,7 @@ public class Panel extends Container {
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addExpandHandler(
-			com.ait.toolkit.sencha.ext.client.events.panel.ExpandHandler handler)/*-{
+	public native HandlerRegistration addExpandHandler(com.ait.toolkit.sencha.ext.client.events.panel.ExpandHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1678,8 +1526,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Fires after a collapsed Panel has been "floated" by clicking on its
-	 * header. Only applicable when the Panel is an item in a Border Layout.
+	 * Fires after a collapsed Panel has been "floated" by clicking on its header. Only applicable when the Panel is an item in a Border Layout.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
@@ -1703,8 +1550,7 @@ public class Panel extends Container {
 	 *            , the handler that will handle the event
 	 */
 
-	public native HandlerRegistration addIconChangeHandler(
-			IconChangeHandler handler)/*-{
+	public native HandlerRegistration addIconChangeHandler(IconChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, newIcon, oldIcon, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1724,8 +1570,7 @@ public class Panel extends Container {
 	 *            , the handler that will handle the event
 	 */
 
-	public native HandlerRegistration addIconClsChangeHandler(
-			IconClsChangeHandler handler)/*-{
+	public native HandlerRegistration addIconClsChangeHandler(IconClsChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, newIconCls, oldIconCls, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1745,8 +1590,7 @@ public class Panel extends Container {
 	 *            , the handler that will handle the event
 	 */
 
-	public native HandlerRegistration addTitleChangeHandler(
-			TitleChangeHandler handler)/*-{
+	public native HandlerRegistration addTitleChangeHandler(TitleChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, newTitle, oldTitle, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.Panel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -1760,9 +1604,7 @@ public class Panel extends Container {
 	}-*/;
 
 	/**
-	 * Fires after a "floated" Panel has returned to its collapsed state as a
-	 * result of the mouse leaving the Panel. Only applicable when the Panel is
-	 * an item in a Border Layout.
+	 * Fires after a "floated" Panel has returned to its collapsed state as a result of the mouse leaving the Panel. Only applicable when the Panel is an item in a Border Layout.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event

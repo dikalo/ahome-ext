@@ -85,21 +85,17 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <p>
- * Base class for all Ext components. All subclasses of Component may
- * participate in the automated Ext component lifecycle of creation, rendering
- * and destruction which is provided by the Container class. Components may be
- * added to a Container through the items config option at the time the
- * Container is created, or they may be added dynamically via the add method.
+ * Base class for all Ext components. All subclasses of Component may participate in the automated Ext component lifecycle of creation, rendering and destruction which is provided
+ * by the Container class. Components may be added to a Container through the items config option at the time the Container is created, or they may be added dynamically via the add
+ * method.
  * </p>
  * 
  * <p>
- * The Component base class has built-in support for basic hide/show and
- * enable/disable behavior.
+ * The Component base class has built-in support for basic hide/show and enable/disable behavior.
  * </p>
  */
 
-public abstract class Component extends AbstractComponent implements
-		Observable, IsComponentElement {
+public abstract class Component extends AbstractComponent implements Observable, IsComponentElement {
 
 	private static JavaScriptObject configPrototype;
 	@SuppressWarnings("rawtypes")
@@ -181,11 +177,8 @@ public abstract class Component extends AbstractComponent implements
 	private void doInitComponent() {
 		// doClear();
 		/**
-		 * for (Iterator iterator = configListeners.keySet().iterator();
-		 * iterator.hasNext();) { String event = (String) iterator.next(); List
-		 * listeners = (List) configListeners.get(event); for (int i = 0; i <
-		 * listeners.size(); i++) { JavaScriptObject listener =
-		 * (JavaScriptObject) listeners.get(i); addListener(event, listener); }
+		 * for (Iterator iterator = configListeners.keySet().iterator(); iterator.hasNext();) { String event = (String) iterator.next(); List listeners = (List)
+		 * configListeners.get(event); for (int i = 0; i < listeners.size(); i++) { JavaScriptObject listener = (JavaScriptObject) listeners.get(i); addListener(event, listener); }
 		 * } configListeners.clear();
 		 */
 
@@ -199,9 +192,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This template method is called after the Component has been instantiated
-	 * but before it's rendered. Subclasses can override it to provide any
-	 * "constructor" type logic thats desired/
+	 * This template method is called after the Component has been instantiated but before it's rendered. Subclasses can override it to provide any "constructor" type logic thats
+	 * desired/
 	 */
 	protected void initComponent() {
 		addEvent(POST_RENDER);
@@ -268,8 +260,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The HTML fragment or an array of fragments that will make up the template
-	 * used by this DataView.
+	 * The HTML fragment or an array of fragments that will make up the template used by this DataView.
 	 * 
 	 */
 	public void setTpl(String value) {
@@ -277,8 +268,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The HTML fragment or an array of fragments that will make up the template
-	 * used by this DataView.
+	 * The HTML fragment or an array of fragments that will make up the template used by this DataView.
 	 * 
 	 */
 	public void setTpl(Template tpl) {
@@ -286,14 +276,10 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * 
 	 * @param value
 	 */
@@ -302,14 +288,10 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * 
 	 * @param value
 	 */
@@ -322,14 +304,10 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * 
 	 * @param value
 	 */
@@ -338,14 +316,10 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * 
 	 * @param value
 	 */
@@ -354,8 +328,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The HTML fragment or an array of fragments that will make up the template
-	 * used by this DataView.
+	 * The HTML fragment or an array of fragments that will make up the template used by this DataView.
 	 * 
 	 */
 	public void setTpl(JsArrayString tpl) {
@@ -472,8 +445,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Relays selected events from the specified Observable as if the events
-	 * were fired by this.
+	 * Relays selected events from the specified Observable as if the events were fired by this.
 	 * 
 	 * @param observable
 	 * @param events
@@ -487,8 +459,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Relays selected events from the specified Observable as if the events
-	 * were fired by this.
+	 * Relays selected events from the specified Observable as if the events were fired by this.
 	 * 
 	 * @param observable
 	 * @param events
@@ -502,8 +473,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Relays selected events from the specified Observable as if the events
-	 * were fired by this.
+	 * Relays selected events from the specified Observable as if the events were fired by this.
 	 * 
 	 * @param observable
 	 * @param events
@@ -517,8 +487,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Relays selected events from the specified Observable as if the events
-	 * were fired by this.
+	 * Relays selected events from the specified Observable as if the events were fired by this.
 	 * 
 	 * @param observable
 	 * @param events
@@ -541,11 +510,9 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Brings this floating Component to the front of any other visible,
-	 * floating Components managed by the same ZIndexManager
+	 * Brings this floating Component to the front of any other visible, floating Components managed by the same ZIndexManager
 	 * 
-	 * If this Component is modal, inserts the modal mask just below this
-	 * Component in the z-index stack.
+	 * If this Component is modal, inserts the modal mask just below this Component in the z-index stack.
 	 */
 	public native Component toFront() /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -562,11 +529,9 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Brings this floating Component to the front of any other visible,
-	 * floating Components managed by the same ZIndexManager
+	 * Brings this floating Component to the front of any other visible, floating Components managed by the same ZIndexManager
 	 * 
-	 * If this Component is modal, inserts the modal mask just below this
-	 * Component in the z-index stack.
+	 * If this Component is modal, inserts the modal mask just below this Component in the z-index stack.
 	 * 
 	 * @param preventFocus
 	 *            , Specify true to prevent the Component from being focused.
@@ -578,8 +543,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sends this Component to the back of (lower z-index than) any other
-	 * visible windows
+	 * Sends this Component to the back of (lower z-index than) any other visible windows
 	 * 
 	 */
 	public native Component toBack() /*-{
@@ -628,10 +592,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * The component's owner Ext.Container (defaults to undefined, and is set
-	 * automatically when the component is added to a container). <br>
-	 * <b>Note:</b> This method should be called only after the component has
-	 * been rendered.
+	 * The component's owner Ext.Container (defaults to undefined, and is set automatically when the component is added to a container). <br>
+	 * <b>Note:</b> This method should be called only after the component has been rendered.
 	 * 
 	 * @return the owner container
 	 */
@@ -685,8 +647,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Clone the current component using the original config values passed into
-	 * this instance by default.
+	 * Clone the current component using the original config values passed into this instance by default.
 	 * 
 	 * @return the cloned copy of this component
 	 */
@@ -696,8 +657,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Clone the current component using the original config values passed into
-	 * this instance by default.
+	 * Clone the current component using the original config values passed into this instance by default.
 	 * 
 	 * @param overrides
 	 *            when cloning
@@ -714,11 +674,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Destroys this component by purging any event listeners, removing the
-	 * component's element from the DOM, removing the component from its
-	 * {@link Container} (if applicable) and unregistering it from
-	 * {@link ComponentManager}. Destruction is generally handled automatically
-	 * by the framework and this method should usually not need to be called
+	 * Destroys this component by purging any event listeners, removing the component's element from the DOM, removing the component from its {@link Container} (if applicable) and
+	 * unregistering it from {@link ComponentManager}. Destruction is generally handled automatically by the framework and this method should usually not need to be called
 	 * directly.
 	 */
 	public native void destroy() /*-{
@@ -771,8 +728,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Find a container above this component at any level by a custom function.
-	 * If the passed function returns true, the container will be returned.
+	 * Find a container above this component at any level by a custom function. If the passed function returns true, the container will be returned.
 	 * 
 	 * @param cb
 	 *            the ContainerTraversalCallback
@@ -891,8 +847,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * The default Ext.Element#getAlignToXY anchor position value for this menu
-	 * relative to its element of origin. Used in conjunction with showBy.
+	 * The default Ext.Element#getAlignToXY anchor position value for this menu relative to its element of origin. Used in conjunction with showBy.
 	 * <p>
 	 * Defaults to: "tl-bl?"
 	 */
@@ -901,9 +856,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -914,9 +867,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -927,9 +878,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -942,23 +891,19 @@ public abstract class Component extends AbstractComponent implements
 		return _alignTo(element, position, numbers);
 	}
 
-	private native Component _alignTo(String element, String position,
-			JsArrayNumber offsets)/*-{
+	private native Component _alignTo(String element, String position, JsArrayNumber offsets)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.alignTo(element, position, offsets);
 		return this;
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component alignTo(String element, String position, double[] offsets,
-			boolean animate) {
+	public Component alignTo(String element, String position, double[] offsets, boolean animate) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -966,17 +911,14 @@ public abstract class Component extends AbstractComponent implements
 		return _alignTo(element, position, numbers, animate);
 	}
 
-	private native Component _alignTo(String element, String position,
-			JsArrayNumber offsets, boolean animate)/*-{
+	private native Component _alignTo(String element, String position, JsArrayNumber offsets, boolean animate)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.alignTo(element, position, offsets, animate);
 		return this;
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -988,9 +930,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1003,15 +943,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component alignTo(ExtElement element, String position,
-			double[] offsets) {
+	public Component alignTo(ExtElement element, String position, double[] offsets) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -1019,8 +956,7 @@ public abstract class Component extends AbstractComponent implements
 		return _alignTo(element, position, numbers);
 	}
 
-	private native Component _alignTo(ExtElement element, String position,
-			JsArrayNumber offsets)/*-{
+	private native Component _alignTo(ExtElement element, String position, JsArrayNumber offsets)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.alignTo(
 				element.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
@@ -1029,15 +965,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component alignTo(ExtElement element, String position,
-			double[] offsets, boolean animate) {
+	public Component alignTo(ExtElement element, String position, double[] offsets, boolean animate) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -1045,8 +978,7 @@ public abstract class Component extends AbstractComponent implements
 		return _alignTo(element, position, numbers, animate);
 	}
 
-	public Component alignTo(ExtElement element, String position,
-			double offsetX, double offsetY) {
+	public Component alignTo(ExtElement element, String position, double offsetX, double offsetY) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		numbers.push(offsetX);
 		numbers.push(offsetY);
@@ -1057,8 +989,7 @@ public abstract class Component extends AbstractComponent implements
 		return alignTo(element, position, offset, offset);
 	}
 
-	private native Component _alignTo(ExtElement element, String position,
-			JsArrayNumber offsets, boolean animate)/*-{
+	private native Component _alignTo(ExtElement element, String position, JsArrayNumber offsets, boolean animate)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.alignTo(
 				element.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
@@ -1067,9 +998,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1080,9 +1009,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1093,9 +1020,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1108,23 +1033,19 @@ public abstract class Component extends AbstractComponent implements
 		return _anchorTo(element, position, numbers);
 	}
 
-	private native Component _anchorTo(String element, String position,
-			JsArrayNumber offsets)/*-{
+	private native Component _anchorTo(String element, String position, JsArrayNumber offsets)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.anchorTo(element, position, offsets);
 		return this;
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component anchorTo(String element, String position,
-			double[] offsets, boolean animate) {
+	public Component anchorTo(String element, String position, double[] offsets, boolean animate) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -1132,17 +1053,14 @@ public abstract class Component extends AbstractComponent implements
 		return _anchorTo(element, position, numbers, animate);
 	}
 
-	private native Component _anchorTo(String element, String position,
-			JsArrayNumber offsets, boolean animate)/*-{
+	private native Component _anchorTo(String element, String position, JsArrayNumber offsets, boolean animate)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.anchorTo(element, position, offsets, animate);
 		return this;
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1154,9 +1072,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
@@ -1169,15 +1085,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component anchorTo(ExtElement element, String position,
-			double[] offsets) {
+	public Component anchorTo(ExtElement element, String position, double[] offsets) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -1185,8 +1098,7 @@ public abstract class Component extends AbstractComponent implements
 		return _anchorTo(element, position, numbers);
 	}
 
-	public Component anchorTo(ExtElement element, String position,
-			double offsetX, double offsetY) {
+	public Component anchorTo(ExtElement element, String position, double offsetX, double offsetY) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		numbers.push(offsetX);
 		numbers.push(offsetY);
@@ -1197,8 +1109,7 @@ public abstract class Component extends AbstractComponent implements
 		return anchorTo(element, position, offset, offset);
 	}
 
-	private native Component _anchorTo(ExtElement element, String position,
-			JsArrayNumber offsets)/*-{
+	private native Component _anchorTo(ExtElement element, String position, JsArrayNumber offsets)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.anchorTo(
 				element.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
@@ -1207,15 +1118,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Aligns this element with another element relative to the specified anchor
-	 * points. If the other element is the document it aligns it to the
-	 * viewport.
+	 * Aligns this element with another element relative to the specified anchor points. If the other element is the document it aligns it to the viewport.
 	 * 
 	 * @param element
 	 */
 
-	public Component anchorTo(ExtElement element, String position,
-			double[] offsets, boolean animate) {
+	public Component anchorTo(ExtElement element, String position, double[] offsets, boolean animate) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		for (double d : offsets) {
 			numbers.push(d);
@@ -1223,21 +1131,18 @@ public abstract class Component extends AbstractComponent implements
 		return _anchorTo(element, position, numbers, animate);
 	}
 
-	public Component anchorTo(ExtElement element, String position,
-			double offsetX, double offsetY, boolean animate) {
+	public Component anchorTo(ExtElement element, String position, double offsetX, double offsetY, boolean animate) {
 		JsArrayNumber numbers = JsArray.createArray().cast();
 		numbers.push(offsetX);
 		numbers.push(offsetY);
 		return _anchorTo(element, position, numbers, animate);
 	}
 
-	public Component anchorTo(ExtElement element, String position,
-			double offset, boolean animate) {
+	public Component anchorTo(ExtElement element, String position, double offset, boolean animate) {
 		return anchorTo(element, position, offset, offset, animate);
 	}
 
-	private native Component _anchorTo(ExtElement element, String position,
-			JsArrayNumber offsets, boolean animate)/*-{
+	private native Component _anchorTo(ExtElement element, String position, JsArrayNumber offsets, boolean animate)/*-{
 		var elem = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		elem.anchorTo(
 				element.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
@@ -1246,8 +1151,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Gets the xtype for this component as registered with ComponentManager.
-	 * For a list of all available xtypes, see the Component javadocs.
+	 * Gets the xtype for this component as registered with ComponentManager. For a list of all available xtypes, see the Component javadocs.
 	 * <p/>
 	 * 
 	 * <pre>
@@ -1265,8 +1169,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Returns this component's xtype hierarchy as a slash-delimited string. For
-	 * a list of all available xtypes, see the Component class javadocs.
+	 * Returns this component's xtype hierarchy as a slash-delimited string. For a list of all available xtypes, see the Component class javadocs.
 	 * <p/>
 	 * 
 	 * <pre>
@@ -1334,10 +1237,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Tests whether or not this component is of a specific xtype. This can test
-	 * whether this component is descended from the xtype (default) or whether
-	 * it is directly of the xtype specified (shallow = true). For a list of all
-	 * available xtypes, see the {@link Component} header. Example usage:
+	 * Tests whether or not this component is of a specific xtype. This can test whether this component is descended from the xtype (default) or whether it is directly of the xtype
+	 * specified (shallow = true). For a list of all available xtypes, see the {@link Component} header. Example usage:
 	 * <p/>
 	 * 
 	 * <pre>
@@ -1362,10 +1263,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Tests whether or not this component is of a specific xtype. This can test
-	 * whether this component is descended from the xtype (default) or whether
-	 * it is directly of the xtype specified (shallow = true). For a list of all
-	 * available xtypes, see the {@link Component} header. Example usage:
+	 * Tests whether or not this component is of a specific xtype. This can test whether this component is descended from the xtype (default) or whether it is directly of the xtype
+	 * specified (shallow = true). For a list of all available xtypes, see the {@link Component} header. Example usage:
 	 * <p/>
 	 * 
 	 * <pre>
@@ -1383,9 +1282,8 @@ public abstract class Component extends AbstractComponent implements
 	 * @param xtype
 	 *            the xtype to check for this component
 	 * @param shallow
-	 *            false to check whether this component is descended from the
-	 *            xtype (this is the default), or true to check whether this
-	 *            component is directly of the specified xtype.
+	 *            false to check whether this component is descended from the xtype (this is the default), or true to check whether this component is directly of the specified
+	 *            xtype.
 	 * @return true if is style
 	 */
 	public native boolean isXType(String xtype, boolean shallow)/*-{
@@ -1414,9 +1312,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Returns the offsets of this element from the passed element. The element
-	 * must both be part of the DOM tree and not have display:none to have page
-	 * coordinates.
+	 * Returns the offsets of this element from the passed element. The element must both be part of the DOM tree and not have display:none to have page coordinates.
 	 */
 	public native ComponentPosition getOffsetsTo(String element)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1425,9 +1321,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Returns the offsets of this element from the passed element. The element
-	 * must both be part of the DOM tree and not have display:none to have page
-	 * coordinates.
+	 * Returns the offsets of this element from the passed element. The element must both be part of the DOM tree and not have display:none to have page coordinates.
 	 */
 	public native ComponentPosition getOffsetsTo(Element element)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1436,9 +1330,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Returns the offsets of this element from the passed element. The element
-	 * must both be part of the DOM tree and not have display:none to have page
-	 * coordinates.
+	 * Returns the offsets of this element from the passed element. The element must both be part of the DOM tree and not have display:none to have page coordinates.
 	 */
 	public ComponentPosition getOffsetsTo(Widget widget) {
 		return this.getOffsetsTo(widget.getElement());
@@ -1492,8 +1384,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param id
 	 *            the element id
@@ -1504,8 +1395,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sets the left and top of the component. To set the page XY position
-	 * instead, use setPagePosition. This method fires the move event.
+	 * Sets the left and top of the component. To set the page XY position instead, use setPagePosition. This method fires the move event.
 	 */
 	public native void setPosition(double left, double top) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1513,8 +1403,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sets the left and top of the component. To set the page XY position
-	 * instead, use setPagePosition. This method fires the move event.
+	 * Sets the left and top of the component. To set the page XY position instead, use setPagePosition. This method fires the move event.
 	 */
 	public native void setPosition(double left, double top, boolean animate) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1522,11 +1411,9 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sets the left and top of the component. To set the page XY position
-	 * instead, use setPagePosition. This method fires the move event.
+	 * Sets the left and top of the component. To set the page XY position instead, use setPagePosition. This method fires the move event.
 	 */
-	public native void setPosition(double left, double right,
-			Animation animation) /*-{
+	public native void setPosition(double left, double right, Animation animation) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.setPosition(
@@ -1536,8 +1423,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sets the page XY position of the component. To set the left and top
-	 * instead, use setPosition. This method fires the move event.
+	 * Sets the page XY position of the component. To set the left and top instead, use setPosition. This method fires the move event.
 	 */
 	public native void setPagePosition(double left, double right) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1545,21 +1431,17 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Sets the page XY position of the component. To set the left and top
-	 * instead, use setPosition. This method fires the move event.
+	 * Sets the page XY position of the component. To set the left and top instead, use setPosition. This method fires the move event.
 	 */
-	public native void setPagePosition(double left, double right,
-			boolean animate) /*-{
+	public native void setPagePosition(double left, double right, boolean animate) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.setPagePosition(left, right, animate);
 	}-*/;
 
 	/**
-	 * Sets the page XY position of the component. To set the left and top
-	 * instead, use setPosition. This method fires the move event.
+	 * Sets the page XY position of the component. To set the left and top instead, use setPosition. This method fires the move event.
 	 */
-	public native void setPagePosition(double left, double right,
-			Animation animation) /*-{
+	public native void setPagePosition(double left, double right, Animation animation) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.setPagePosition(
@@ -1578,8 +1460,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Gets the current XY position of the component's underlying element. If
-	 * true the element's left and top are returned instead of page XY.
+	 * Gets the current XY position of the component's underlying element. If true the element's left and top are returned instead of page XY.
 	 */
 	public native ComponentPosition getPosition(boolean local)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1588,15 +1469,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param id
 	 *            the element id
 	 * @param position
-	 *            the element ID within the container <b>before</b> which this
-	 *            component will be inserted (defaults to appending to the end
-	 *            of the container)
+	 *            the element ID within the container <b>before</b> which this component will be inserted (defaults to appending to the end of the container)
 	 */
 	public native void render(String id, String position) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1604,15 +1482,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param id
 	 *            the element id
 	 * @param position
-	 *            the DOM node index within the container <b>before</b> which
-	 *            this component will be inserted (defaults to appending to the
-	 *            end of the container)
+	 *            the DOM node index within the container <b>before</b> which this component will be inserted (defaults to appending to the end of the container)
 	 */
 	public native void render(String id, int position) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1620,8 +1495,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param element
 	 *            the element
@@ -1632,15 +1506,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param element
 	 *            the element
 	 * @param position
-	 *            the element ID within the container <b>before</b> which this
-	 *            component will be inserted (defaults to appending to the end
-	 *            of the container)
+	 *            the element ID within the container <b>before</b> which this component will be inserted (defaults to appending to the end of the container)
 	 */
 	public native void render(Element element, String position) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1648,15 +1519,12 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * If this is a lazy rendering component, render it to its container
-	 * element.
+	 * If this is a lazy rendering component, render it to its container element.
 	 * 
 	 * @param element
 	 *            the element
 	 * @param position
-	 *            the DOM node index within the container <b>before</b> which
-	 *            this component will be inserted (defaults to appending to the
-	 *            end of the container)
+	 *            the DOM node index within the container <b>before</b> which this component will be inserted (defaults to appending to the end of the container)
 	 */
 	public native void render(Element element, int position) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1750,18 +1618,13 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * he supplied default state gathering method for the AbstractComponent
-	 * class.
+	 * he supplied default state gathering method for the AbstractComponent class.
 	 * 
-	 * This method returns dimension settings such as flex, anchor, width and
-	 * height along with collapsed state.
+	 * This method returns dimension settings such as flex, anchor, width and height along with collapsed state.
 	 * 
-	 * Subclasses which implement more complex state should call the
-	 * superclass's implementation, and apply their state to the result if this
-	 * basic state is to be saved.
+	 * Subclasses which implement more complex state should call the superclass's implementation, and apply their state to the result if this basic state is to be saved.
 	 * 
-	 * Note that Component state will only be saved if the Component has a
-	 * stateId and there as a StateProvider configured for the document.
+	 * Note that Component state will only be saved if the Component has a stateId and there as a StateProvider configured for the document.
 	 */
 	public native JavaScriptObject getState()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -1771,11 +1634,8 @@ public abstract class Component extends AbstractComponent implements
 	protected void check() throws IllegalStateException {
 		if (isRendered()) {
 			if (GWT.isScript()) {
-				MessageBox
-						.alert("Error",
-								"Cannot change configuration property after the component has been rendered");
-				throw new IllegalStateException(
-						"Cannot change configuration property after the component has been rendered");
+				MessageBox.alert("Error", "Cannot change configuration property after the component has been rendered");
+				throw new IllegalStateException("Cannot change configuration property after the component has been rendered");
 			}
 		}
 	}
@@ -1785,21 +1645,15 @@ public abstract class Component extends AbstractComponent implements
 	// public abstract String getXType();
 
 	/**
-	 * The id of the node, a DOM node or an existing Element corresponding to a
-	 * DIV that is already present in the document that specifies some
-	 * structural markup for this component. When applyTo is used, constituent
-	 * parts of the component can also be specified by id or CSS class name
-	 * within the main element, and the component being created may attempt to
-	 * create its subcomponents from that markup if applicable. Using this
-	 * config, a call to render() is not required. If applyTo is specified, any
-	 * value passed for renderTo will be ignored and the target element's parent
-	 * node will automatically be used as the component's container.
+	 * The id of the node, a DOM node or an existing Element corresponding to a DIV that is already present in the document that specifies some structural markup for this
+	 * component. When applyTo is used, constituent parts of the component can also be specified by id or CSS class name within the main element, and the component being created
+	 * may attempt to create its subcomponents from that markup if applicable. Using this config, a call to render() is not required. If applyTo is specified, any value passed for
+	 * renderTo will be ignored and the target element's parent node will automatically be used as the component's container.
 	 * 
 	 * @param element
 	 *            the ID of existing DIV
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setApplyTo(Element element) throws IllegalStateException {
 		setAttribute("applyTo", element, false);
@@ -1813,9 +1667,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * A tag name to create an element with. This is intended to create
-	 * shorthand utility components. It should not be used for higher level
-	 * components which already create their own elements.
+	 * A tag name to create an element with. This is intended to create shorthand utility components. It should not be used for higher level components which already create their
+	 * own elements.
 	 * 
 	 * @param autoEl
 	 *            the tag name
@@ -1825,9 +1678,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * A DomConfig specification to create an element with. This is intended to
-	 * create shorthand utility components. It should not be used for higher
-	 * level components which already create their own elements.
+	 * A DomConfig specification to create an element with. This is intended to create shorthand utility components. It should not be used for higher level components which already
+	 * create their own elements.
 	 * 
 	 * @param domConfig
 	 *            the DomConfig specification
@@ -1837,9 +1689,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * true to automatically show the component upon creation. This config
-	 * option may only be used for floating components or components that use
-	 * autoRender.
+	 * true to automatically show the component upon creation. This config option may only be used for floating components or components that use autoRender.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -1848,17 +1698,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * <p>
-	 * Specify as an element, or the ID of an element to have this Component
-	 * render to a specific element upon first show.
+	 * Specify as an element, or the ID of an element to have this Component render to a specific element upon first show.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -1867,17 +1712,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * <p>
-	 * Specify as an element, or the ID of an element to have this Component
-	 * render to a specific element upon first show.
+	 * Specify as an element, or the ID of an element to have this Component render to a specific element upon first show.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -1886,17 +1726,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * This config is intended mainly for non-floating Components which may or
-	 * may not be shown. Instead of using renderTo in the configuration, and
-	 * rendering upon construction, this allows a Component to render itself
-	 * upon first show. If floating is true, the value of this config is omitted
-	 * as if it is true.
+	 * This config is intended mainly for non-floating Components which may or may not be shown. Instead of using renderTo in the configuration, and rendering upon construction,
+	 * this allows a Component to render itself upon first show. If floating is true, the value of this config is omitted as if it is true.
 	 * <p>
-	 * Specify as true to have this Component render to the document body upon
-	 * first show.
+	 * Specify as true to have this Component render to the document body upon first show.
 	 * <p>
-	 * Specify as an element, or the ID of an element to have this Component
-	 * render to a specific element upon first show.
+	 * Specify as an element, or the ID of an element to have this Component render to a specific element upon first show.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -1905,12 +1740,9 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The base CSS class to apply to this component's element. This will also
-	 * be prepended to elements within this component like Panel's body will get
-	 * a class x-panel-body. This means that if you create a subclass of Panel,
-	 * and you want it to get all the Panels styling for the element and the
-	 * body, you leave the baseCls x-panel and use componentCls to add specific
-	 * styling for this component.
+	 * The base CSS class to apply to this component's element. This will also be prepended to elements within this component like Panel's body will get a class x-panel-body. This
+	 * means that if you create a subclass of Panel, and you want it to get all the Panels styling for the element and the body, you leave the baseCls x-panel and use componentCls
+	 * to add specific styling for this component.
 	 * 
 	 * Defaults to: 'x-component'
 	 */
@@ -1926,9 +1758,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * An optional extra CSS class that will be added to this component's
-	 * Element (defaults to ''). This can be useful for adding customized styles
-	 * to the component or any of its children using standard CSS rules.
+	 * An optional extra CSS class that will be added to this component's Element (defaults to ''). This can be useful for adding customized styles to the component or any of its
+	 * children using standard CSS rules.
 	 * 
 	 * @param cls
 	 *            the CSS class
@@ -1949,15 +1780,13 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * An optional extra CSS class that will be added to this component's
-	 * container (defaults to ''). This can be useful for adding customized
-	 * styles to the container or any of its children using standard CSS rules.
+	 * An optional extra CSS class that will be added to this component's container (defaults to ''). This can be useful for adding customized styles to the container or any of its
+	 * children using standard CSS rules.
 	 * 
 	 * @param ctCls
 	 *            the container CSS class
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setCtCls(String ctCls) throws IllegalStateException {
 		setAttribute("ctCls", ctCls, true);
@@ -1991,17 +1820,13 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Defines the column width inside column layout.
 	 */
-	public void setComponentColumnWidth(double value)
-			throws IllegalStateException {
+	public void setComponentColumnWidth(double value) throws IllegalStateException {
 		setAttribute("columnWidth", value, true);
 	}
 
 	/**
-	 * True to constrain the window within its containing element, false to
-	 * allow it to fall outside of its containing element. By default the window
-	 * will be rendered to document.body. To render and constrain the window
-	 * within another element specify renderTo. Optionally the header only can
-	 * be constrained using constrainHeader.
+	 * True to constrain the window within its containing element, false to allow it to fall outside of its containing element. By default the window will be rendered to
+	 * document.body. To render and constrain the window within another element specify renderTo. Optionally the header only can be constrained using constrainHeader.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -2032,16 +1857,14 @@ public abstract class Component extends AbstractComponent implements
 
 	/**
 	 * 
-	 * CSS Class to be added to a components root level element to give
-	 * distinction to it via styling.
+	 * CSS Class to be added to a components root level element to give distinction to it via styling.
 	 */
 	public void setComponentCls(String value) throws IllegalStateException {
 		setAttribute("componentCls", value, true);
 	}
 
 	/**
-	 * CSS class added to the component when it is disabled (defaults to
-	 * "x-item-disabled").
+	 * CSS class added to the component when it is disabled (defaults to "x-item-disabled").
 	 * 
 	 * @param disabledClass
 	 *            the disabled CSS class
@@ -2063,8 +1886,7 @@ public abstract class Component extends AbstractComponent implements
 	 * @param el
 	 *            the element
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setEl(Element el) throws IllegalStateException {
 		setAttribute("el", new ExtElement(el).getJsObj(), false);
@@ -2075,9 +1897,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * How this component should hidden. Supported values are "visibility" (css
-	 * visibility), "offsets" (negative offset position) and "display" (css
-	 * display) - defaults to "display".
+	 * How this component should hidden. Supported values are "visibility" (css visibility), "offsets" (negative offset position) and "display" (css display) - defaults to
+	 * "display".
 	 * 
 	 * @param hideMode
 	 *            the hide mode
@@ -2087,9 +1908,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * How this component should hidden. Supported values are "visibility" (css
-	 * visibility), "offsets" (negative offset position) and "display" (css
-	 * display) - defaults to "display".
+	 * How this component should hidden. Supported values are "visibility" (css visibility), "offsets" (negative offset position) and "display" (css display) - defaults to
+	 * "display".
 	 * 
 	 * @return the hide mode
 	 */
@@ -2098,18 +1918,13 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * True to hide and show the component's container when hide/show is called
-	 * on the component, false to hide and show the component itself (defaults
-	 * to false). For example, this can be used as a shortcut for a hide button
-	 * on a window by setting hide:true on the button when adding it to its
-	 * parent container.
+	 * True to hide and show the component's container when hide/show is called on the component, false to hide and show the component itself (defaults to false). For example, this
+	 * can be used as a shortcut for a hide button on a window by setting hide:true on the button when adding it to its parent container.
 	 * 
 	 * @param hideParent
-	 *            true to hide and show the component's container when hide/show
-	 *            is called on the component
+	 *            true to hide and show the component's container when hide/show is called on the component
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setHideParent(boolean hideParent) throws IllegalStateException {
 		setAttribute("hideParent", hideParent, true);
@@ -2126,14 +1941,12 @@ public abstract class Component extends AbstractComponent implements
 	 * The unique id of this component (defaults to an auto-assigned id).
 	 * <p/>
 	 * <br>
-	 * <b>Note:</b> ID's cannot be changed after the component has been
-	 * rendered.
+	 * <b>Note:</b> ID's cannot be changed after the component has been rendered.
 	 * 
 	 * @param id
 	 *            the components ID
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public final void setId(String id) throws IllegalStateException {
 		setAttribute("id", id, false);
@@ -2148,15 +1961,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The id of the node, a DOM node or an existing Element that will be the
-	 * container to render this component into. Using this config, a call to
-	 * render() is not required.
+	 * The id of the node, a DOM node or an existing Element that will be the container to render this component into. Using this config, a call to render() is not required.
 	 * 
 	 * @param elem
 	 *            the container element
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setRenderTo(Element elem) throws IllegalStateException {
 		setAttribute("renderTo", elem, true, true);
@@ -2167,15 +1977,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The id of the node, a DOM node or an existing Element that will be the
-	 * container to render this component into. Using this config, a call to
-	 * render() is not required.
+	 * The id of the node, a DOM node or an existing Element that will be the container to render this component into. Using this config, a call to render() is not required.
 	 * 
 	 * @param elemID
 	 *            the container element
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setRenderToID(String elemID) throws IllegalStateException {
 		setAttribute("renderTo", elemID, false);
@@ -2189,27 +1996,21 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * An array of events that, when fired, should trigger this component to
-	 * save its state (defaults to none). These can be any types of events
-	 * supported by this component, including browser or custom events (e.g.,
-	 * ['click', 'customerchange']).
+	 * An array of events that, when fired, should trigger this component to save its state (defaults to none). These can be any types of events supported by this component,
+	 * including browser or custom events (e.g., ['click', 'customerchange']).
 	 * 
 	 * @param stateEvents
 	 *            an array of state events
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setStateEvents(String[] stateEvents)
-			throws IllegalStateException {
+	public void setStateEvents(String[] stateEvents) throws IllegalStateException {
 		setAttribute("stateEvents", stateEvents, true);
 	}
 
 	/**
-	 * An array of events that, when fired, should trigger this component to
-	 * save its state (defaults to none). These can be any types of events
-	 * supported by this component, including browser or custom events (e.g.,
-	 * ['click', 'customerchange']).
+	 * An array of events that, when fired, should trigger this component to save its state (defaults to none). These can be any types of events supported by this component,
+	 * including browser or custom events (e.g., ['click', 'customerchange']).
 	 * 
 	 * @return an array of state events
 	 */
@@ -2218,23 +2019,19 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The unique id for this component to use for state management purposes
-	 * (defaults to the component id).
+	 * The unique id for this component to use for state management purposes (defaults to the component id).
 	 * 
 	 * @param stateId
 	 *            the state ID
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setStateId(String stateId) throws IllegalStateException {
 		setAttribute("stateId", stateId, true);
 	}
 
 	/**
-	 * A flag which causes the object to attempt to restore the state of
-	 * internal properties from a saved state on startup. The object must have a
-	 * stateId for state to be managed.
+	 * A flag which causes the object to attempt to restore the state of internal properties from a saved state on startup. The object must have a stateId for state to be managed.
 	 * 
 	 * @param value
 	 * @throws IllegalStateException
@@ -2244,8 +2041,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * The unique id for this component to use for state management purposes
-	 * (defaults to the component id).
+	 * The unique id for this component to use for state management purposes (defaults to the component id).
 	 * 
 	 * @return the state ID
 	 */
@@ -2259,8 +2055,7 @@ public abstract class Component extends AbstractComponent implements
 	 * @param style
 	 *            the CSS style specification
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setStyle(String style) throws IllegalStateException {
 		if (!isRendered()) {
@@ -2275,8 +2070,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Just calls setCls(cls). It is recommended that this method not be used,
-	 * to avoid confusion.
+	 * Just calls setCls(cls). It is recommended that this method not be used, to avoid confusion.
 	 * 
 	 * @param cls
 	 *            the CSS class
@@ -2287,8 +2081,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Just calls addCls(cls). It is recommended that this method not be used,
-	 * to avoid confusion.
+	 * Just calls addCls(cls). It is recommended that this method not be used, to avoid confusion.
 	 * 
 	 * @param cls
 	 *            the CSS class
@@ -2299,8 +2092,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Just calls removeCls(cls). It is recommended that this method not be
-	 * used, to avoid confusion.
+	 * Just calls removeCls(cls). It is recommended that this method not be used, to avoid confusion.
 	 * 
 	 * @param cls
 	 *            the CSS class
@@ -2374,8 +2166,7 @@ public abstract class Component extends AbstractComponent implements
 
 	protected JavaScriptObject getAttributeAsJavaScriptObject(String attribute) {
 		if (isCreated()) {
-			return JsoHelper.getAttributeAsJavaScriptObject(getJsObj(),
-					attribute);
+			return JsoHelper.getAttributeAsJavaScriptObject(getJsObj(), attribute);
 		} else {
 			return JsoHelper.getAttributeAsJavaScriptObject(config, attribute);
 		}
@@ -2405,14 +2196,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	private void error(String attribute, String value, boolean allowPostCreate)
-			throws IllegalStateException {
+	private void error(String attribute, String value, boolean allowPostCreate) throws IllegalStateException {
 		if (allowPostCreate) {
-			error("Cannot change configuration property '" + attribute
-					+ "' after the component has been rendered.");
+			error("Cannot change configuration property '" + attribute + "' after the component has been rendered.");
 		} else {
-			error("Cannot change configuration property '" + attribute
-					+ "' after the component has been created.");
+			error("Cannot change configuration property '" + attribute + "' after the component has been created.");
 		}
 	}
 
@@ -2423,13 +2211,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, String value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, String value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, String value,
-			boolean allowPostCreate, boolean allowPostRendered) {
+	protected void setAttribute(String attribute, String value, boolean allowPostCreate, boolean allowPostRendered) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRendered) {
@@ -2440,14 +2226,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	@SuppressWarnings("rawtypes")
-	protected void setAttribute(String attribute, Map value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, Map value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
 	@SuppressWarnings("rawtypes")
-	protected void setAttribute(String attribute, Map value,
-			boolean allowPostCreate, boolean allowPostRendered) {
+	protected void setAttribute(String attribute, Map value, boolean allowPostCreate, boolean allowPostRendered) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRendered) {
@@ -2457,13 +2241,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, int[] value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, int[] value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, int[] value,
-			boolean allowPostCreate, boolean allowPostRender) {
+	protected void setAttribute(String attribute, int[] value, boolean allowPostCreate, boolean allowPostRender) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRender) {
@@ -2473,8 +2255,7 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, long value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, long value, boolean allowPostCreate) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate) {
@@ -2484,8 +2265,7 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, double value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, double value, boolean allowPostCreate) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate) {
@@ -2495,13 +2275,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, int value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, int value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, int value,
-			boolean allowPostCreate, boolean allowPostRender) {
+	protected void setAttribute(String attribute, int value, boolean allowPostCreate, boolean allowPostRender) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRender) {
@@ -2511,8 +2289,7 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, Date value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, Date value, boolean allowPostCreate) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate) {
@@ -2522,13 +2299,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, JavaScriptObject value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, JavaScriptObject value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, JavaScriptObject value,
-			boolean allowPostCreate, boolean allowPostRender) {
+	protected void setAttribute(String attribute, JavaScriptObject value, boolean allowPostCreate, boolean allowPostRender) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRender) {
@@ -2538,13 +2313,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, String[] value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, String[] value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, String[] value,
-			boolean allowPostCreate, boolean allowPostRender) {
+	protected void setAttribute(String attribute, String[] value, boolean allowPostCreate, boolean allowPostRender) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRender) {
@@ -2554,13 +2327,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, boolean value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, boolean value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, boolean value,
-			boolean allowPostCreate, boolean allowPostRendered) {
+	protected void setAttribute(String attribute, boolean value, boolean allowPostCreate, boolean allowPostRendered) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRendered) {
@@ -2570,13 +2341,11 @@ public abstract class Component extends AbstractComponent implements
 		}
 	}
 
-	protected void setAttribute(String attribute, Element value,
-			boolean allowPostCreate) {
+	protected void setAttribute(String attribute, Element value, boolean allowPostCreate) {
 		setAttribute(attribute, value, allowPostCreate, false);
 	}
 
-	protected void setAttribute(String attribute, Element value,
-			boolean allowPostCreate, boolean allowPostRendered) {
+	protected void setAttribute(String attribute, Element value, boolean allowPostCreate, boolean allowPostRendered) {
 		if (!isCreated()) {
 			JsoHelper.setAttribute(config, attribute, value);
 		} else if (!isRendered() && allowPostCreate || allowPostRendered) {
@@ -2713,8 +2482,7 @@ public abstract class Component extends AbstractComponent implements
 	 * @param loadScript
 	 *            , Only legitimate when using the html configuration.
 	 * @param callback
-	 *            ,Only legitimate when using the html configuration. Callback
-	 *            to execute when scripts have finished loading
+	 *            ,Only legitimate when using the html configuration. Callback to execute when scripts have finished loading
 	 */
 	public final native void update(boolean loadScript, Function callback)/*-{
 		var comp = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -2739,8 +2507,7 @@ public abstract class Component extends AbstractComponent implements
 		comp.update(value, loadScript);
 	}-*/;
 
-	public final native void update(String value, boolean loadScript,
-			Function callback)/*-{
+	public final native void update(String value, boolean loadScript, Function callback)/*-{
 		var comp = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		comp.update(value, loadScript, function() {
 			callback.@com.ait.toolkit.core.client.Function::execute()();
@@ -2756,8 +2523,7 @@ public abstract class Component extends AbstractComponent implements
 		comp.update(data, loadScript);
 	}-*/;
 
-	public final native void update(Object data, boolean loadScript,
-			Function callback)/*-{
+	public final native void update(Object data, boolean loadScript, Function callback)/*-{
 		var comp = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		comp.update(data, loadScript, function() {
 			callback.@com.ait.toolkit.core.client.Function::execute()();
@@ -2765,11 +2531,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Set the width in pixels or auto. Note that setting percentage based
-	 * widths will lead to unpredictable display behavior. You should use the
-	 * various layouts like
-	 * {@link com.ait.toolkit.sencha.ext.client.core.CenterLayout.AnchorLayout}
-	 * to control percentage based rendering of components.
+	 * Set the width in pixels or auto. Note that setting percentage based widths will lead to unpredictable display behavior. You should use the various layouts like
+	 * {@link com.ait.toolkit.sencha.ext.client.core.CenterLayout.AnchorLayout} to control percentage based rendering of components.
 	 * 
 	 * @param width
 	 *            the component height
@@ -2830,28 +2593,22 @@ public abstract class Component extends AbstractComponent implements
 	 * @param config
 	 *            , the dragging config of this panel
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setDraggable(DragDropConfig config) {
 		setAttribute("draggable", config.getJsObj(), true);
 	}
 
 	/**
-	 * True to float the panel (absolute position it with automatic shimming and
-	 * shadow), false to display it inline where it is rendered. Note that by
-	 * default, setting floating to true will cause the panel to display at
-	 * negative offsets so that it is hidden -- because the panel is absolute
-	 * positioned, the position must be set explicitly after render (e.g.,
-	 * myPanel.setPosition(100,100);). Also, when floating a panel you should
-	 * always assign a fixed width, otherwise it will be auto width and will
-	 * expand to fill to the right edge of the viewport.
+	 * True to float the panel (absolute position it with automatic shimming and shadow), false to display it inline where it is rendered. Note that by default, setting floating to
+	 * true will cause the panel to display at negative offsets so that it is hidden -- because the panel is absolute positioned, the position must be set explicitly after render
+	 * (e.g., myPanel.setPosition(100,100);). Also, when floating a panel you should always assign a fixed width, otherwise it will be auto width and will expand to fill to the
+	 * right edge of the viewport.
 	 * 
 	 * @param floating
 	 *            Defaults to false
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setFloating(boolean floating) throws IllegalStateException {
 		setAttribute("floating", floating, true, true);
@@ -2862,13 +2619,11 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Important: This config is only effective for collapsible Panels which are
-	 * direct child items of a border layout.
+	 * Important: This config is only effective for collapsible Panels which are direct child items of a border layout.
 	 * 
 	 * <p>
-	 * true to allow clicking a collapsed Panel's placeholder to display the
-	 * Panel floated above the layout, false to force the user to fully expand a
-	 * collapsed region by clicking the expand button to see it again.
+	 * true to allow clicking a collapsed Panel's placeholder to display the Panel floated above the layout, false to force the user to fully expand a collapsed region by clicking
+	 * the expand button to see it again.
 	 * <p>
 	 * Defaults to: true
 	 * 
@@ -2879,17 +2634,12 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * True to float the panel (absolute position it with automatic shimming and
-	 * shadow), false to display it inline where it is rendered. Note that by
-	 * default, setting floating to true will cause the panel to display at
-	 * negative offsets so that it is hidden -- because the panel is absolute
-	 * positioned, the position must be set explicitly after render (e.g.,
-	 * myPanel.setPosition(100,100);). Also, when floating a panel you should
-	 * always assign a fixed width, otherwise it will be auto width and will
-	 * expand to fill to the right edge of the viewport.
+	 * True to float the panel (absolute position it with automatic shimming and shadow), false to display it inline where it is rendered. Note that by default, setting floating to
+	 * true will cause the panel to display at negative offsets so that it is hidden -- because the panel is absolute positioned, the position must be set explicitly after render
+	 * (e.g., myPanel.setPosition(100,100);). Also, when floating a panel you should always assign a fixed width, otherwise it will be auto width and will expand to fill to the
+	 * right edge of the viewport.
 	 * 
-	 * @return true to float panel, false to display it inline where it is
-	 *         rendered
+	 * @return true to float panel, false to display it inline where it is rendered
 	 */
 	public boolean getFloating() {
 		return JsoHelper.getAttributeAsBoolean(config, "floating");
@@ -2903,8 +2653,7 @@ public abstract class Component extends AbstractComponent implements
 	 */
 	public void setWidth(double width) {
 		/*
-		 * if (width == -1) { setAttribute("width", "auto", true, true); } else
-		 * { setAttribute("width", width, true); }
+		 * if (width == -1) { setAttribute("width", "auto", true, true); } else { setAttribute("width", width, true); }
 		 */
 		setWidthRendered(width);
 
@@ -2946,8 +2695,7 @@ public abstract class Component extends AbstractComponent implements
 	 * @param autoWidth
 	 *            true for auto width
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutoWidth(boolean autoWidth) throws IllegalStateException {
 		setAttribute("autoWidth", autoWidth, true);
@@ -2961,8 +2709,7 @@ public abstract class Component extends AbstractComponent implements
 	 */
 	public void setHeight(double height) {
 		/*
-		 * if (height == -1) { setAttribute("height", "auto", true, true); }
-		 * else { setAttribute("height", height, true); }
+		 * if (height == -1) { setAttribute("height", "auto", true, true); } else { setAttribute("height", height, true); }
 		 */
 		setHeightRendered(height);
 	}
@@ -2976,9 +2723,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Sets the UI for the component. This will remove any existing UIs on the
-	 * component. It will also loop through any uiCls set on the component and
-	 * rename them so they include the new UI
+	 * Sets the UI for the component. This will remove any existing UIs on the component. It will also loop through any uiCls set on the component and rename them so they include
+	 * the new UI
 	 * 
 	 * @param ui
 	 *            , the new ui for the component
@@ -2989,9 +2735,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * true to use overflow:'auto' on the components layout element and show
-	 * scroll bars automatically when necessary, false to clip any overflowing
-	 * content. This should not be combined with overflowX or overflowY.
+	 * true to use overflow:'auto' on the components layout element and show scroll bars automatically when necessary, false to clip any overflowing content. This should not be
+	 * combined with overflowX or overflowY.
 	 * 
 	 * Defaults to: false
 	 * 
@@ -3022,9 +2767,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Specifies the margin for this component. The margin can be a single
-	 * numeric value to apply to all sides or it can be a CSS style
-	 * specification for each style, for example: '10 5 3 10'.
+	 * Specifies the margin for this component. The margin can be a single numeric value to apply to all sides or it can be a CSS style specification for each style, for example:
+	 * '10 5 3 10'.
 	 * 
 	 * @param value
 	 */
@@ -3033,9 +2777,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Specifies the margin for this component. The margin can be a single
-	 * numeric value to apply to all sides or it can be a CSS style
-	 * specification for each style, for example: '10 5 3 10'.
+	 * Specifies the margin for this component. The margin can be a single numeric value to apply to all sides or it can be a CSS style specification for each style, for example:
+	 * '10 5 3 10'.
 	 * 
 	 * @param value
 	 */
@@ -3044,12 +2787,9 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Only valid when a sibling element of a Splitter within a VBox or HBox
-	 * layout.
+	 * Only valid when a sibling element of a Splitter within a VBox or HBox layout.
 	 * 
-	 * Specifies that if an immediate sibling Splitter is moved, the Component
-	 * on the other side is resized, and this Component maintains its configured
-	 * flex value.
+	 * Specifies that if an immediate sibling Splitter is moved, the Component on the other side is resized, and this Component maintains its configured flex value.
 	 * 
 	 * Defaults to: false
 	 * 
@@ -3080,8 +2820,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * The minimum value in pixels which this Component will set its width to.
 	 * <p>
-	 * Warning: This will override any size management applied by layout
-	 * managers.
+	 * Warning: This will override any size management applied by layout managers.
 	 * 
 	 * @param value
 	 */
@@ -3092,8 +2831,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * The minimum value in pixels which this Component will set its height to.
 	 * <p>
-	 * Warning: This will override any size management applied by layout
-	 * managers.
+	 * Warning: This will override any size management applied by layout managers.
 	 * 
 	 * @param value
 	 */
@@ -3115,8 +2853,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * The maximun value in pixels which this Component will set its width to.
 	 * <p>
-	 * Warning: This will override any size management applied by layout
-	 * managers.
+	 * Warning: This will override any size management applied by layout managers.
 	 * 
 	 * @param value
 	 */
@@ -3127,8 +2864,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * The maximun value in pixels which this Component will set its height to.
 	 * <p>
-	 * Warning: This will override any size management applied by layout
-	 * managers.
+	 * Warning: This will override any size management applied by layout managers.
 	 * 
 	 * @param value
 	 */
@@ -3171,8 +2907,7 @@ public abstract class Component extends AbstractComponent implements
 	// Eventhandlers
 
 	/**
-	 * Listen to before a Component has been visually activated. Returning false
-	 * from an event listener can prevent the activate from occurring.
+	 * Listen to before a Component has been visually activated. Returning false from an event listener can prevent the activate from occurring.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3182,8 +2917,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Listen to before a Component has been visually deactivated. Returning
-	 * false from an event listener can prevent the deactivate from occurring.
+	 * Listen to before a Component has been visually deactivated. Returning false from an event listener can prevent the deactivate from occurring.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3193,8 +2927,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Listen to before the component is destroyed. Return false from an event
-	 * handler to stop the destroy.
+	 * Listen to before the component is destroyed. Return false from an event handler to stop the destroy.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3204,8 +2937,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Listen before the component is hidden when calling the hide method.
-	 * Return false from an event handler to stop the hide.
+	 * Listen before the component is hidden when calling the hide method. Return false from an event handler to stop the hide.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3215,8 +2947,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Listen to before the component is rendered. Return false from an event
-	 * handler to stop the render.
+	 * Listen to before the component is rendered. Return false from an event handler to stop the render.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3226,8 +2957,7 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Listen to before the component is shown when calling the show method.
-	 * Return false from an event handler to stop the show.
+	 * Listen to before the component is shown when calling the show method. Return false from an event handler to stop the show.
 	 * 
 	 * @param handler
 	 *            , the handler to use
@@ -3237,10 +2967,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Specifies the border size for this component. The border can be a single
-	 * numeric value to apply to all sides or it can be a CSS style
-	 * specification for each style, for example: '10 5 3 10' (top, right,
-	 * bottom, left).
+	 * Specifies the border size for this component. The border can be a single numeric value to apply to all sides or it can be a CSS style specification for each style, for
+	 * example: '10 5 3 10' (top, right, bottom, left).
 	 * 
 	 * @param value
 	 */
@@ -3249,10 +2977,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Specifies the border size for this component. The border can be a single
-	 * numeric value to apply to all sides or it can be a CSS style
-	 * specification for each style, for example: '10 5 3 10' (top, right,
-	 * bottom, left).
+	 * Specifies the border size for this component. The border can be a single numeric value to apply to all sides or it can be a CSS style specification for each style, for
+	 * example: '10 5 3 10' (top, right, bottom, left).
 	 * 
 	 * @param value
 	 */
@@ -3261,10 +2987,8 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Specifies the border size for this component. The border can be a single
-	 * numeric value to apply to all sides or it can be a CSS style
-	 * specification for each style, for example: '10 5 3 10' (top, right,
-	 * bottom, left).
+	 * Specifies the border size for this component. The border can be a single numeric value to apply to all sides or it can be a CSS style specification for each style, for
+	 * example: '10 5 3 10' (top, right, bottom, left).
 	 * 
 	 * @param value
 	 */
@@ -3299,17 +3023,15 @@ public abstract class Component extends AbstractComponent implements
 	}
 
 	/**
-	 * Template method that is called after the Component's config has been
-	 * created. Subclasses can extend this method to add properties that can
-	 * only be set on the config prototype of the component
+	 * Template method that is called after the Component's config has been created. Subclasses can extend this method to add properties that can only be set on the config
+	 * prototype of the component
 	 */
 	protected void onConfigCreated() {
 
 	}
 
 	/**
-	 * Clone the current component using the original config values passed into
-	 * this instance by default.
+	 * Clone the current component using the original config values passed into this instance by default.
 	 * 
 	 * @return The cloned copy of this component
 	 */
@@ -3318,8 +3040,7 @@ public abstract class Component extends AbstractComponent implements
 		return component.cloneConfig();
 	}-*/;
 
-	private native void _addActivationHandler(String event,
-			LifeCycleHandler handler)/*-{
+	private native void _addActivationHandler(String event, LifeCycleHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -3333,8 +3054,7 @@ public abstract class Component extends AbstractComponent implements
 
 	}-*/;
 
-	private native void _addVisualStateChangeHandler(String event,
-			VisualStateChangeHandler handler)/*-{
+	private native void _addVisualStateChangeHandler(String event, VisualStateChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -3356,7 +3076,11 @@ public abstract class Component extends AbstractComponent implements
 
 	private native void setDockedRendered(String dock) /*-{
 		var c = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		c.setDocked(dock, true);
+		if (c.setDocked) {
+			c.setDocked(dock, true);
+		} else {
+			c.setDock(dock, true);
+		}
 	}-*/;
 
 	private native void setYRendered(double x) /*-{
@@ -3377,9 +3101,8 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires after a Component has been visually activated.
 	 * <p>
-	 * Note This event is only fired if this Component is a child of a
-	 * Ext.container.Container that uses Ext.layout.container.Card as it's
-	 * layout or this Component is a floating Component.
+	 * Note This event is only fired if this Component is a child of a Ext.container.Container that uses Ext.layout.container.Card as it's layout or this Component is a floating
+	 * Component.
 	 */
 	public native HandlerRegistration addActivateHandler(ActivateHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -3398,8 +3121,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires after a Component had been added to a Container.
 	 */
-	public native HandlerRegistration addAddedHandler(
-			com.ait.toolkit.sencha.ext.client.events.component.AddedHandler handler)/*-{
+	public native HandlerRegistration addAddedHandler(com.ait.toolkit.sencha.ext.client.events.component.AddedHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, cont, pos, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3417,11 +3139,9 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires after the component rendering is finished.
 	 * <p>
-	 * The afterrender event is fired after this Component has been rendered,
-	 * been postprocessed by any afterRender method defined for the Component.
+	 * The afterrender event is fired after this Component has been rendered, been postprocessed by any afterRender method defined for the Component.
 	 */
-	public native HandlerRegistration addAfterRenderHandler(
-			AfterRenderHandler handler)/*-{
+	public native HandlerRegistration addAfterRenderHandler(AfterRenderHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3437,12 +3157,9 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before a Component has been visually activated.
 	 * <p>
-	 * Note This event is only fired if this Component is a child of a
-	 * Ext.container.Container that uses Ext.layout.container.Card as it's
-	 * layout.
+	 * Note This event is only fired if this Component is a child of a Ext.container.Container that uses Ext.layout.container.Card as it's layout.
 	 */
-	public native HandlerRegistration addBeforeActivateHandler(
-			BeforeActivateHandler handler)/*-{
+	public native HandlerRegistration addBeforeActivateHandler(BeforeActivateHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3458,12 +3175,9 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before a Component has been visually deactivated.
 	 * <p>
-	 * Note This event is only fired if this Component is a child of a
-	 * Ext.container.Container that uses Ext.layout.container.Card as it's
-	 * layout.
+	 * Note This event is only fired if this Component is a child of a Ext.container.Container that uses Ext.layout.container.Card as it's layout.
 	 */
-	public native HandlerRegistration addBeforeDeactivateHandler(
-			BeforeDeactivateHandler handler)/*-{
+	public native HandlerRegistration addBeforeDeactivateHandler(BeforeDeactivateHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3479,8 +3193,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the component is destroyed.
 	 */
-	public native HandlerRegistration addBeforeDestroyHandler(
-			BeforeDestroyHandler handler)/*-{
+	public native HandlerRegistration addBeforeDestroyHandler(BeforeDestroyHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3496,8 +3209,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the component is hidden when calling the hide method.
 	 */
-	public native HandlerRegistration addBeforeHideHandler(
-			BeforeHideHandler handler)/*-{
+	public native HandlerRegistration addBeforeHideHandler(BeforeHideHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3513,8 +3225,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the component is rendered.
 	 */
-	public native HandlerRegistration addBeforeRenderHandler(
-			BeforeRenderHandler handler)/*-{
+	public native HandlerRegistration addBeforeRenderHandler(BeforeRenderHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3530,8 +3241,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the component is shown when calling the show method.
 	 */
-	public native HandlerRegistration addBeforeShowHandler(
-			BeforeShowHandler handler)/*-{
+	public native HandlerRegistration addBeforeShowHandler(BeforeShowHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3547,8 +3257,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the state of the object is restored.
 	 */
-	public native HandlerRegistration addBeforeStateRestoreHandler(
-			BeforeStateRestoreHandler handler)/*-{
+	public native HandlerRegistration addBeforeStateRestoreHandler(BeforeStateRestoreHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, st, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3565,8 +3274,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires before the state of the object is saved.
 	 */
-	public native HandlerRegistration addBeforeStateSaveHandler(
-			BeforeStateSaveHandler handler)/*-{
+	public native HandlerRegistration addBeforeStateSaveHandler(BeforeStateSaveHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, st, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3597,11 +3305,9 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Fires one time - after the component has been laid out for the first time
-	 * at its initial size.
+	 * Fires one time - after the component has been laid out for the first time at its initial size.
 	 */
-	public native HandlerRegistration addBoxReadyHandler(
-			com.ait.toolkit.sencha.ext.client.events.component.BoxReadyHandler handler)/*-{
+	public native HandlerRegistration addBoxReadyHandler(com.ait.toolkit.sencha.ext.client.events.component.BoxReadyHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, w, h, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3617,12 +3323,10 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires after a Component has been visually deactivated.
 	 * <p>
-	 * Note This event is only fired if this Component is a child of a
-	 * Ext.container.Container that uses Ext.layout.container.Card as it's
-	 * layout or this Component is a floating Component.
+	 * Note This event is only fired if this Component is a child of a Ext.container.Container that uses Ext.layout.container.Card as it's layout or this Component is a floating
+	 * Component.
 	 */
-	public native HandlerRegistration addDeactivateHandler(
-			DeactivateHandler handler)/*-{
+	public native HandlerRegistration addDeactivateHandler(DeactivateHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3705,8 +3409,7 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Fires after the component is hidden. Fires after the component is hidden
-	 * when calling the hide method.
+	 * Fires after the component is hidden. Fires after the component is hidden when calling the hide method.
 	 */
 	public native HandlerRegistration addHideHandler(HideHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -3789,9 +3492,8 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Fires after the component is resized. Note that this does not fire when
-	 * the component is first laid out at its initial size. To hook that point
-	 * in the life cycle, use the boxready event.
+	 * Fires after the component is resized. Note that this does not fire when the component is first laid out at its initial size. To hook that point in the life cycle, use the
+	 * boxready event.
 	 */
 	public native HandlerRegistration addResizeHandler(ResizeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -3809,8 +3511,7 @@ public abstract class Component extends AbstractComponent implements
 	/**
 	 * Fires after the state of the object is restored.
 	 */
-	public native HandlerRegistration addStateRestoreHandler(
-			StateRestoreHandler handler)/*-{
+	public native HandlerRegistration addStateRestoreHandler(StateRestoreHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, st, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);
@@ -3825,11 +3526,9 @@ public abstract class Component extends AbstractComponent implements
 	}-*/;
 
 	/**
-	 * Fires after the state of the object is saved to the configured state
-	 * provider.
+	 * Fires after the state of the object is saved to the configured state provider.
 	 */
-	public native HandlerRegistration addStateSaveHandler(
-			StateSaveHandler handler)/*-{
+	public native HandlerRegistration addStateSaveHandler(StateSaveHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(c, st, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.core.Component::createComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(c);

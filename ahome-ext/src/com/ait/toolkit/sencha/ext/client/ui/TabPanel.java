@@ -26,15 +26,11 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 /**
- * A basic tab container. TabPanels can be used exactly like a standard
- * {@link Panel} for layout purposes, but also have special support for
- * containing child Components (items) that are managed using a CardLayout
- * layout manager, and displayed as separate tabs.
+ * A basic tab container. TabPanels can be used exactly like a standard {@link Panel} for layout purposes, but also have special support for containing child Components (items)
+ * that are managed using a CardLayout layout manager, and displayed as separate tabs.
  * <p>
- * Note: By default, a tab's close tool destroys the child tab Component and all
- * its descendants. This makes the child tab Component, and all its descendants
- * unusable. To enable re-use of a tab, configure the TabPanel with autoDestroy:
- * false.
+ * Note: By default, a tab's close tool destroys the child tab Component and all its descendants. This makes the child tab Component, and all its descendants unusable. To enable
+ * re-use of a tab, configure the TabPanel with autoDestroy: false.
  */
 public class TabPanel extends Panel {
 
@@ -124,15 +120,12 @@ public class TabPanel extends Panel {
 	}-*/;
 
 	/**
-	 * True by default to defer the rendering of child items to the browsers DOM
-	 * until a tab is activated. False will render all contained items as soon
-	 * as the layout is rendered. If there is a significant amount of content or
-	 * a lot of heavy controls being rendered into panels that are not displayed
-	 * by default, setting this to true might improve performance.
+	 * True by default to defer the rendering of child items to the browsers DOM until a tab is activated. False will render all contained items as soon as the layout is rendered.
+	 * If there is a significant amount of content or a lot of heavy controls being rendered into panels that are not displayed by default, setting this to true might improve
+	 * performance.
 	 * 
 	 * <p>
-	 * <b>Note: </b> leaving deferredRender as true means that the content
-	 * within an unactivated tab will not be available
+	 * <b>Note: </b> leaving deferredRender as true means that the content within an unactivated tab will not be available
 	 * 
 	 */
 	public void setDeferredRender(boolean value) {
@@ -180,9 +173,7 @@ public class TabPanel extends Panel {
 	}
 
 	/**
-	 * True to instruct each NotificationContainer added to the TabContainer to
-	 * not render its header element. This is to ensure that the title of the
-	 * panel does not appear twice.
+	 * True to instruct each NotificationContainer added to the TabContainer to not render its header element. This is to ensure that the title of the panel does not appear twice.
 	 * <p>
 	 * Defaults to: true
 	 */
@@ -191,8 +182,7 @@ public class TabPanel extends Panel {
 	}
 
 	/**
-	 * The position where the tab strip should be rendered. Can be top or
-	 * bottom.
+	 * The position where the tab strip should be rendered. Can be top or bottom.
 	 * <p>
 	 * Defaults to: "top"
 	 * 
@@ -210,10 +200,9 @@ public class TabPanel extends Panel {
 	 * Fires when a new tab has been activated (activated by setActiveTab).
 	 */
 
-	public native HandlerRegistration addTabChangeHandler(
-			com.ait.toolkit.sencha.ext.client.events.tab.TabChangeHandler handler)/*-{
+	public native HandlerRegistration addTabChangeHandler(com.ait.toolkit.sencha.ext.client.events.tab.TabChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		var fn = function(tp, oc, nc, e) {
+		var fn = function(tp, nc, oc, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.TabPanel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(tp);
 			var oldCard = @com.ait.toolkit.sencha.ext.client.core.SimpleComponent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(oc);
 			var newCard = @com.ait.toolkit.sencha.ext.client.core.SimpleComponent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(nc);
@@ -227,13 +216,11 @@ public class TabPanel extends Panel {
 	}-*/;
 
 	/**
-	 * Fires before a tab change (activated by setActiveTab). Return false in
-	 * any listener to cancel the tabchange
+	 * Fires before a tab change (activated by setActiveTab). Return false in any listener to cancel the tabchange
 	 * 
 	 * @param handler
 	 */
-	public native void addBeforeTabChangeHandler(
-			TabPanelBeforeTabChangeHandler handler)/*-{
+	public native void addBeforeTabChangeHandler(TabPanelBeforeTabChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -255,8 +242,7 @@ public class TabPanel extends Panel {
 	/**
 	 * Fires before a tab change (activated by setActiveTab).
 	 */
-	public native HandlerRegistration addBeforeTabChangeHandler(
-			BeforeTabChangeHandler handler)/*-{
+	public native HandlerRegistration addBeforeTabChangeHandler(BeforeTabChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(tp, oc, nc, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.TabPanel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(tp);

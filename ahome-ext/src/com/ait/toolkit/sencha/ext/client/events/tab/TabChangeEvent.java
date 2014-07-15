@@ -16,63 +16,63 @@
 package com.ait.toolkit.sencha.ext.client.events.tab;
 
 import com.ait.toolkit.sencha.ext.client.core.Component;
-import com.ait.toolkit.sencha.shared.client.core.EventObject;
 import com.ait.toolkit.sencha.ext.client.events.Event;
 import com.ait.toolkit.sencha.ext.client.ui.TabPanel;
+import com.ait.toolkit.sencha.shared.client.core.EventObject;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class TabChangeEvent extends EventObject {
 
-    public static String EVENT_NAME = Event.TAB_CHANGE;
+	public static String EVENT_NAME = Event.TAB_CHANGE;
 
-    private TabPanel source;
-    private Component oldCard;
-    private Component newCard;
+	private TabPanel source;
+	private Component oldCard;
+	private Component newCard;
 
-    /**
-     * UiBinder implementations
-     */
-    private static Type<BeforeTabChangeHandler> TYPE = new Type<BeforeTabChangeHandler>(EVENT_NAME, null);
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<TabChangeHandler> TYPE = new Type<TabChangeHandler>(EVENT_NAME, null);
 
-    public static Type<BeforeTabChangeHandler> getType() {
-        return TYPE;
-    }
+	public static Type<TabChangeHandler> getType() {
+		return TYPE;
+	}
 
-    public static Type<BeforeTabChangeHandler> getAssociatedType() {
-        return TYPE;
-    }
+	public static Type<TabChangeHandler> getAssociatedType() {
+		return TYPE;
+	}
 
-    public TabChangeEvent(JavaScriptObject jsObj) {
-        super(jsObj);
-    }
+	public TabChangeEvent(JavaScriptObject jsObj) {
+		super(jsObj);
+	}
 
-    public TabChangeEvent(TabPanel source, Component oldCard, Component newCard, JavaScriptObject nativeEvent) {
-        super(nativeEvent);
-        this.source = source;
-        this.oldCard = oldCard;
-        this.newCard = newCard;
-    }
+	public TabChangeEvent(TabPanel source, Component oldCard, Component newCard, JavaScriptObject nativeEvent) {
+		super(nativeEvent);
+		this.source = source;
+		this.oldCard = oldCard;
+		this.newCard = newCard;
+	}
 
-    /**
-     * @return the source
-     */
-    public TabPanel getSource() {
-        return source;
-    }
+	/**
+	 * @return the source
+	 */
+	public TabPanel getSource() {
+		return source;
+	}
 
-    /**
-     * @return the oldValue
-     */
-    public Component getOldCard() {
-        return oldCard;
-    }
+	/**
+	 * @return the oldValue
+	 */
+	public Component getOldCard() {
+		return oldCard;
+	}
 
-    /**
-     * @return the newValue
-     */
-    public Component getNewCard() {
-        return newCard;
-    }
+	/**
+	 * @return the newValue
+	 */
+	public Component getNewCard() {
+		return newCard;
+	}
 
 }
