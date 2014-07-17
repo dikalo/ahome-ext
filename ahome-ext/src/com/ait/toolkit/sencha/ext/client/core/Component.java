@@ -634,16 +634,14 @@ public abstract class Component extends AbstractComponent implements Observable,
 	 *            the CSS class
 	 */
 	public void addCls(String cls) {
-		if (!isCreated()) {
-			setCls(getCls() == null ? cls : getCls() + " " + cls);
-		} else {
-			addClsCreated(cls);
-		}
+		addClsCreated(cls);
 	}
 
-	public native void addClsCreated(String cls) /*-{
+	private native void addClsCreated(String cls) /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		component.addCls(cls);
+		if (component) {
+			component.addCls(cls);
+		}
 	}-*/;
 
 	/**
