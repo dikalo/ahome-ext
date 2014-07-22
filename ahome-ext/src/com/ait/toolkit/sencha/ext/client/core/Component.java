@@ -1763,11 +1763,8 @@ public abstract class Component extends AbstractComponent implements Observable,
 	 *            the CSS class
 	 */
 	public void setCls(String cls) {
-		if (isCreated()) {
-			addCls(cls);
-		} else {
-			setAttribute("cls", cls, false);
-		}
+		addClsCreated(cls);
+		setAttribute("cls", cls, true);
 	}
 
 	/**

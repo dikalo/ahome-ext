@@ -16,6 +16,7 @@
 package com.ait.toolkit.sencha.ext.client.ui;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 import com.ait.toolkit.core.client.JsoHelper;
@@ -59,9 +60,7 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 
 /**
- * Base class for any {@link Component} that can contain other components.
- * Containers handle the basic behavior of containing items, namely adding,
- * inserting and removing items.
+ * Base class for any {@link Component} that can contain other components. Containers handle the basic behavior of containing items, namely adding, inserting and removing items.
  */
 public class Container extends Component implements HasWidgets {
 
@@ -127,11 +126,9 @@ public class Container extends Component implements HasWidgets {
 	 * @param bottom
 	 *            the botton padding
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setPaddings(int top, int left, int right, int bottom)
-			throws IllegalStateException {
+	public void setPaddings(int top, int left, int right, int bottom) throws IllegalStateException {
 		Paddings paddings = new Paddings(top, left, right, bottom);
 		String style = paddings.getStyleString();
 		String bodyStyle = getBodyStyle();
@@ -172,8 +169,7 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * Custom CSS styles to be applied to the body element in the format
-	 * expected by {@link ExtElement#applyStyles(String)}
+	 * Custom CSS styles to be applied to the body element in the format expected by {@link ExtElement#applyStyles(String)}
 	 * 
 	 * @return the custom CSS styles to be applied to the body element
 	 */
@@ -192,8 +188,7 @@ public class Container extends Component implements HasWidgets {
 	 *            the component to add
 	 */
 	public void add(Component component) {
-		JavaScriptObject componentJS = component.isCreated() ? component
-				.getOrCreateJsObj() : component.getConfig();
+		JavaScriptObject componentJS = component.isCreated() ? component.getOrCreateJsObj() : component.getConfig();
 		if (layout != null && layout.getSpacing() != null) {
 			Panel panel = new Panel();
 			panel.setBaseCls("x-plain");
@@ -223,8 +218,7 @@ public class Container extends Component implements HasWidgets {
 		if (defaultsHandler != null) {
 			defaultsHandler.apply(component);
 		}
-		JavaScriptObject componentJS = component.isCreated() ? component
-				.getOrCreateJsObj() : component.getConfig();
+		JavaScriptObject componentJS = component.isCreated() ? component.getOrCreateJsObj() : component.getConfig();
 		// JavaScriptObject componentJS = component.getJsObj();
 		JsoHelper.apply(layoutData.getJsObj(), componentJS);
 		if (layout != null && layout.getSpacing() != null) {
@@ -317,9 +311,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Inserts a Component into this Container at a specified index. Fires the
-	 * beforeadd event before inserting, then fires the add event after the
-	 * Component has been inserted.
+	 * Inserts a Component into this Container at a specified index. Fires the beforeadd event before inserting, then fires the add event after the Component has been inserted.
 	 * 
 	 * @param index
 	 *            the index to insert the component at
@@ -327,8 +319,7 @@ public class Container extends Component implements HasWidgets {
 	 *            the component to insert
 	 */
 	public void insert(int index, Component component) {
-		JavaScriptObject componentJS = component.isCreated() ? component
-				.getOrCreateJsObj() : component.getConfig();
+		JavaScriptObject componentJS = component.isCreated() ? component.getOrCreateJsObj() : component.getConfig();
 		doInsert(index, componentJS);
 	}
 
@@ -338,9 +329,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Removes a component from this container. Fires the beforeremove event
-	 * before removing, then fires the remove event after the component has been
-	 * removed.
+	 * Removes a component from this container. Fires the beforeremove event before removing, then fires the remove event after the component has been removed.
 	 * 
 	 * @param id
 	 *            the id of the Component to remove
@@ -368,8 +357,7 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * The collection of components in this container. Alias for
-	 * {@link #getComponents()}
+	 * The collection of components in this container. Alias for {@link #getComponents()}
 	 * 
 	 * @return child components
 	 */
@@ -406,21 +394,20 @@ public class Container extends Component implements HasWidgets {
 		return @com.ait.toolkit.sencha.ext.client.core.Ext::convertToJavaComponentArray(Lcom/google/gwt/core/client/JavaScriptObject;)(items);
 	}-*/;
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public Iterator iterator() {
-		ArrayList list = new ArrayList();
+	@Override
+	public Iterator<Widget> iterator() {
 		Component[] items = getComponents();
+
+		ArrayList<Widget> list = new ArrayList<Widget>(items.length);
+
 		for (int i = 0; i < items.length; i++) {
-			Component item = items[i];
-			list.add(item);
+			list.add(items[i]);
 		}
-		return list.iterator();
+		return Collections.unmodifiableList(list).iterator();
 	}
 
 	/**
-	 * Removes a component from this container. Fires the beforeremove event
-	 * before removing, then fires the remove event after the component has been
-	 * removed.
+	 * Removes a component from this container. Fires the beforeremove event before removing, then fires the remove event after the component has been removed.
 	 * 
 	 * @param component
 	 *            the id of the Component to remove
@@ -434,9 +421,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Removes a component from this container. Fires the beforeremove event
-	 * before removing, then fires the remove event after the component has been
-	 * removed.
+	 * Removes a component from this container. Fires the beforeremove event before removing, then fires the remove event after the component has been removed.
 	 * 
 	 * @param id
 	 *            the id of the Component to remove
@@ -464,9 +449,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Removes all components from this container. Fires the beforeremove event
-	 * before removing, then fires the remove event after the component has been
-	 * removed.
+	 * Removes all components from this container. Fires the beforeremove event before removing, then fires the remove event after the component has been removed.
 	 * 
 	 * @param autoDestroy
 	 *            true to automatically invoke the component's destroy
@@ -485,10 +468,8 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Force this container's layout to be recalculated. A call to this function
-	 * is required after adding a new component to an already rendered
-	 * container. If you are not dynamically adding and removing components
-	 * after render, this function will generally not need to be called.
+	 * Force this container's layout to be recalculated. A call to this function is required after adding a new component to an already rendered container. If you are not
+	 * dynamically adding and removing components after render, this function will generally not need to be called.
 	 */
 	public native void doLayout() /*-{
 		var container = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -496,14 +477,11 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Force this container's layout to be recalculated. A call to this function
-	 * is required after adding a new component to an already rendered
-	 * container. If you are not dynamically adding and removing components
-	 * after render, this function will generally not need to be called.
+	 * Force this container's layout to be recalculated. A call to this function is required after adding a new component to an already rendered container. If you are not
+	 * dynamically adding and removing components after render, this function will generally not need to be called.
 	 * 
 	 * @param shallow
-	 *            True to only calculate the layout of this component, and let
-	 *            child components auto calculate layouts as required
+	 *            True to only calculate the layout of this component, and let child components auto calculate layouts as required
 	 */
 	public native void doLayout(boolean shallow) /*-{
 		var container = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -511,9 +489,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Find a component under this container at any level by a custom function.
-	 * If the passed function returns true, the component will be included in
-	 * the results.
+	 * Find a component under this container at any level by a custom function. If the passed function returns true, the component will be included in the results.
 	 * 
 	 * @param cb
 	 *            the find function
@@ -533,13 +509,9 @@ public class Container extends Component implements HasWidgets {
 	// --- config properties ---
 
 	/**
-	 * A string component id or the numeric index of the component that should
-	 * be initially activated within the container's layout on render. For
-	 * example, activeItem: 'item-1' or activeItem: 0 (index 0 = the first item
-	 * in the container's collection). activeItem only applies to layout styles
-	 * that can display items one at a time (like
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} ,
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
+	 * A string component id or the numeric index of the component that should be initially activated within the container's layout on render. For example, activeItem: 'item-1' or
+	 * activeItem: 0 (index 0 = the first item in the container's collection). activeItem only applies to layout styles that can display items one at a time (like
+	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} , {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
 	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.FitLayout} ).
 	 * 
 	 * @param activeItem
@@ -566,13 +538,9 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * A string component id or the numeric index of the component that should
-	 * be initially activated within the container's layout on render. For
-	 * example, activeItem: 'item-1' or activeItem: 0 (index 0 = the first item
-	 * in the container's collection). activeItem only applies to layout styles
-	 * that can display items one at a time (like
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} ,
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
+	 * A string component id or the numeric index of the component that should be initially activated within the container's layout on render. For example, activeItem: 'item-1' or
+	 * activeItem: 0 (index 0 = the first item in the container's collection). activeItem only applies to layout styles that can display items one at a time (like
+	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} , {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
 	 * {@link com.ait.toolkit.sencha.ext.client.layout.FitLayout} ).
 	 * 
 	 * 
@@ -589,13 +557,9 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * A string component id or the numeric index of the component that should
-	 * be initially activated within the container's layout on render. For
-	 * example, activeItem: 'item-1' or activeItem: 0 (index 0 = the first item
-	 * in the container's collection). activeItem only applies to layout styles
-	 * that can display items one at a time (like
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} ,
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
+	 * A string component id or the numeric index of the component that should be initially activated within the container's layout on render. For example, activeItem: 'item-1' or
+	 * activeItem: 0 (index 0 = the first item in the container's collection). activeItem only applies to layout styles that can display items one at a time (like
+	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} , {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
 	 * {@link com.ait.toolkit.sencha.ext.client.layout.FitLayout} ).
 	 * 
 	 * 
@@ -612,13 +576,9 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * A string component id or the numeric index of the component that should
-	 * be initially activated within the container's layout on render. For
-	 * example, activeItem: 'item-1' or activeItem: 0 (index 0 = the first item
-	 * in the container's collection). activeItem only applies to layout styles
-	 * that can display items one at a time (like
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} ,
-	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
+	 * A string component id or the numeric index of the component that should be initially activated within the container's layout on render. For example, activeItem: 'item-1' or
+	 * activeItem: 0 (index 0 = the first item in the container's collection). activeItem only applies to layout styles that can display items one at a time (like
+	 * {@link com.ait.toolkit.sencha.ext.client.core.layout.AccordionLayout} , {@link com.ait.toolkit.sencha.ext.client.core.layout.CardLayout} and
 	 * {@link com.ait.toolkit.sencha.ext.client.layout.FitLayout} ).
 	 * 
 	 * 
@@ -652,9 +612,7 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * If true the container will automatically destroy any contained component
-	 * that is removed from it, else destruction must be handled manually
-	 * (defaults to true).
+	 * If true the container will automatically destroy any contained component that is removed from it, else destruction must be handled manually (defaults to true).
 	 * 
 	 * @param autoDestroy
 	 *            true to autodestroy
@@ -664,19 +622,15 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * @return true if Component is configured to auto destroy contained
-	 *         components on destruction
+	 * @return true if Component is configured to auto destroy contained components on destruction
 	 */
 	public boolean getAutoDestroy() {
 		return getAttributeAsBoolean("autoDestroy");
 	}
 
 	/**
-	 * When set to true (100 milliseconds), the layout assigned for this
-	 * container will buffer the frequency it calculates and does a re-layout of
-	 * components. This is useful for heavy containers or containers with a
-	 * large amount of sub components that frequent calls to layout are
-	 * expensive.
+	 * When set to true (100 milliseconds), the layout assigned for this container will buffer the frequency it calculates and does a re-layout of components. This is useful for
+	 * heavy containers or containers with a large amount of sub components that frequent calls to layout are expensive.
 	 * 
 	 * @param bufferResize
 	 *            true to buffer resize
@@ -693,8 +647,7 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * True to hide the borders of each contained component, false to defer to
-	 * the component's existing border settings (defaults to false).
+	 * True to hide the borders of each contained component, false to defer to the component's existing border settings (defaults to false).
 	 * 
 	 * @param hideBorders
 	 *            true to hide borders
@@ -704,8 +657,7 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * True to hide the borders of each contained component, false to defer to
-	 * the component's existing border settings (defaults to false).
+	 * True to hide the borders of each contained component, false to defer to the component's existing border settings (defaults to false).
 	 * 
 	 * @return true if hide borders
 	 */
@@ -714,14 +666,12 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * The layout type to be used in this container. If not specified, a default
-	 * ContainerLayout will be created and used.
+	 * The layout type to be used in this container. If not specified, a default ContainerLayout will be created and used.
 	 * 
 	 * @param layout
 	 *            the layout to use
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setLayout(ContainerLayout layout) throws IllegalStateException {
 		this.layout = layout;
@@ -730,20 +680,17 @@ public class Container extends Component implements HasWidgets {
 		}
 		setAttribute("layout", layout.getJsObj(), true);
 		if (layout.getContainerAttributes() != null) {
-			JsoHelper.apply(layout.getContainerAttributes(),
-					isCreated() ? getJsObj() : config);
+			JsoHelper.apply(layout.getContainerAttributes(), isCreated() ? getJsObj() : config);
 		}
 	}
 
 	/**
-	 * The layout type to be used in this container. If not specified, a default
-	 * ContainerLayout will be created and used.
+	 * The layout type to be used in this container. If not specified, a default ContainerLayout will be created and used.
 	 * 
 	 * @param layout
 	 *            the layout to use
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setLayout(Layout layout) throws IllegalStateException {
 		if (layout == Layout.ABSOLUTE) {
@@ -774,14 +721,12 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * The layout type to be used in this container. If not specified, a default
-	 * ContainerLayout will be created and used.
+	 * The layout type to be used in this container. If not specified, a default ContainerLayout will be created and used.
 	 * 
 	 * @param layout
 	 *            the layout to use
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setLayout(String layout) throws IllegalStateException {
 		setLayout(Layout.fromValue(layout));
@@ -814,16 +759,14 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * A single item, or an array of child Components to be added to this
-	 * container
+	 * A single item, or an array of child Components to be added to this container
 	 */
 	public void setItems(Component... items) {
 		setAttribute("items", ComponentFactory.fromArray(items), true);
 	}
 
 	/**
-	 * A single item, or an array of child Components to be added to this
-	 * container
+	 * A single item, or an array of child Components to be added to this container
 	 */
 	public void add(Component... items) {
 		for (Component c : items) {
@@ -834,11 +777,9 @@ public class Container extends Component implements HasWidgets {
 	// Event handlers
 
 	/**
-	 * Fires after any {@link Component} is added or inserted into the
-	 * container.
+	 * Fires after any {@link Component} is added or inserted into the container.
 	 * <p>
-	 * This event bubbles: 'add' will also be fired when Component is added to
-	 * any of the child containers or their childern or ...
+	 * This event bubbles: 'add' will also be fired when Component is added to any of the child containers or their childern or ...
 	 */
 	public native HandlerRegistration addAddHandler(AddHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -856,14 +797,12 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Fires when the components in this container are arranged by the
-	 * associated layout manager.
+	 * Fires when the components in this container are arranged by the associated layout manager.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addAfterLayoutHandler(
-			AfterLayoutHandler handler)/*-{
+	public native HandlerRegistration addAfterLayoutHandler(AfterLayoutHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(ct, l, e) {
 			var container = @com.ait.toolkit.sencha.ext.client.ui.Container::new(Lcom/google/gwt/core/client/JavaScriptObject;)(ct);
@@ -879,8 +818,7 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Fires before any {@link Component} is added or inserted into the
-	 * container.
+	 * Fires before any {@link Component} is added or inserted into the container.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
@@ -889,8 +827,7 @@ public class Container extends Component implements HasWidgets {
 		_addChildrenChangeHandler(Event.BEFORE_ADD, handler);
 	}
 
-	public native HandlerRegistration addBeforeAddHandler(
-			BeforeAddHandler handler)/*-{
+	public native HandlerRegistration addBeforeAddHandler(BeforeAddHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(ct, cmp, index, e) {
 			var container = @com.ait.toolkit.sencha.ext.client.ui.Container::new(Lcom/google/gwt/core/client/JavaScriptObject;)(ct);
@@ -906,14 +843,12 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Fires before any Ext.Component is removed from the container. A handler
-	 * can return false to cancel the remove.
+	 * Fires before any Ext.Component is removed from the container. A handler can return false to cancel the remove.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native void addBeforeRemoveHandler(
-			ContainerBeforeRemoveHandler handler)/*-{
+	public native void addBeforeRemoveHandler(ContainerBeforeRemoveHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -927,8 +862,7 @@ public class Container extends Component implements HasWidgets {
 		}
 	}-*/;
 
-	public native HandlerRegistration addBeforeRemoveHandler(
-			BeforeRemoveHandler handler)/*-{
+	public native HandlerRegistration addBeforeRemoveHandler(BeforeRemoveHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(ct, cmp, e) {
 			var container = @com.ait.toolkit.sencha.ext.client.ui.Container::new(Lcom/google/gwt/core/client/JavaScriptObject;)(ct);
@@ -948,14 +882,12 @@ public class Container extends Component implements HasWidgets {
 	}
 
 	/**
-	 * Fires before any Ext.Component is removed from the container. A handler
-	 * can return false to cancel the remove.
+	 * Fires before any Ext.Component is removed from the container. A handler can return false to cancel the remove.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addRemoveHandler(
-			com.ait.toolkit.sencha.ext.client.events.container.RemoveHandler handler)/*-{
+	public native HandlerRegistration addRemoveHandler(com.ait.toolkit.sencha.ext.client.events.container.RemoveHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(ct, cmp, e) {
 			var container = @com.ait.toolkit.sencha.ext.client.ui.Container::new(Lcom/google/gwt/core/client/JavaScriptObject;)(ct);
@@ -970,8 +902,7 @@ public class Container extends Component implements HasWidgets {
 
 	}-*/;
 
-	private native void _addChildrenChangeHandler(String event,
-			ContainerContentChangeHandler handler)/*-{
+	private native void _addChildrenChangeHandler(String event, ContainerContentChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component

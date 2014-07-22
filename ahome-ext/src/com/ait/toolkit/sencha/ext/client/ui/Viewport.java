@@ -28,44 +28,31 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 
 /**
- * A specialized container representing the viewable application area (the
- * browser viewport).
+ * A specialized container representing the viewable application area (the browser viewport).
  * 
  * <p>
- * The Viewport renders itself to the document body, and automatically sizes
- * itself to the size of the browser viewport and manages window resizing. There
- * may only be one Viewport created in a page.
+ * The Viewport renders itself to the document body, and automatically sizes itself to the size of the browser viewport and manages window resizing. There may only be one Viewport
+ * created in a page.
  * <p>
- * Like any Container, a Viewport will only perform sizing and positioning on
- * its child Components if you configure it with a layout.
+ * Like any Container, a Viewport will only perform sizing and positioning on its child Components if you configure it with a layout.
  * <p>
- * A Common layout used with Viewports is border layout, but if the required
- * layout is simpler, a different layout should be chosen.
+ * A Common layout used with Viewports is border layout, but if the required layout is simpler, a different layout should be chosen.
  * <p>
- * For example, to simply make a single child item occupy all available space,
- * use fit layout.
+ * For example, to simply make a single child item occupy all available space, use fit layout.
  * <p>
- * To display one "active" item at full size from a choice of several child
- * items, use card layout.
+ * To display one "active" item at full size from a choice of several child items, use card layout.
  * <p>
- * Inner layouts are available because all Panels added to the Viewport, either
- * through its items, or the add method of any of its child Panels may
- * themselves have a layout.
+ * Inner layouts are available because all Panels added to the Viewport, either through its items, or the add method of any of its child Panels may themselves have a layout.
  * <p>
- * The Viewport does not provide scrolling, so child Panels within the Viewport
- * should provide for scrolling if needed using the autoScroll config.
+ * The Viewport does not provide scrolling, so child Panels within the Viewport should provide for scrolling if needed using the autoScroll config.
  * 
  * <p>
- * * Adding a AcceptsOneWidget interface with an empty setWidget overriden
- * method to fake the operation and allow for a pure GWT Activty And Place
- * implementation.
+ * * Adding a AcceptsOneWidget interface with an empty setWidget overriden method to fake the operation and allow for a pure GWT Activty And Place implementation.
  * 
  * 
- * You must not add the "viewport" panel to GWT's RootPanel via
- * RootPanel.get().add(..) - this is done automatically for you.
+ * You must not add the "viewport" panel to GWT's RootPanel via RootPanel.get().add(..) - this is done automatically for you.
  */
 
-@SuppressWarnings("unchecked")
 public class Viewport extends Container implements AcceptsOneWidget {
 
 	private JavaScriptObject jsObj;
@@ -182,8 +169,7 @@ public class Viewport extends Container implements AcceptsOneWidget {
 	}-*/;
 
 	/**
-	 * Calling layout on the viewport has no effect. You must specify the
-	 * initial layout while calling <br/>
+	 * Calling layout on the viewport has no effect. You must specify the initial layout while calling <br/>
 	 * <code>
 	 * Viewport.get(Layout layout)
 	 * </code>
@@ -196,7 +182,7 @@ public class Viewport extends Container implements AcceptsOneWidget {
 	private native static Viewport initViewPort(String l, int padding) /*-{
 		var viewport = new $wnd.Ext.container.Viewport({
 			layout : l,
-			bodyPadding : '100'
+			bodyPadding : padding
 		});
 		var container = @com.ait.toolkit.sencha.ext.client.ui.Viewport::new(Lcom/google/gwt/core/client/JavaScriptObject;)(viewport);
 		return container;
