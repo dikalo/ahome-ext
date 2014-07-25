@@ -15,6 +15,7 @@
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
+import com.ait.toolkit.sencha.ext.client.util.ClickRepeater;
 import com.ait.toolkit.sencha.shared.client.core.EventObject;
 import com.ait.toolkit.sencha.shared.client.dom.CompositeElement;
 import com.ait.toolkit.sencha.shared.client.dom.ExtElement;
@@ -22,15 +23,12 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 /**
- * Provides a convenient wrapper for TextFields that adds a clickable trigger
- * button (looks like a combobox by default). The trigger has no default action,
- * so you mustimplement the trigger click handler by overriding
- * {@link #onTriggerClick(com.gwtext.client.core.EventObject)}. You can create a
- * TriggerField directly, as it renders exactly like a combobox for which you
- * can provide a custom implementation.
+ * Provides a convenient wrapper for TextFields that adds a clickable trigger button (looks like a combobox by default). The trigger has no default action, so you mustimplement the
+ * trigger click handler by overriding {@link #onTriggerClick(com.gwtext.client.core.EventObject)}. You can create a TriggerField directly, as it renders exactly like a combobox
+ * for which you can provide a custom implementation.
  * 
  */
-public abstract class TriggerField extends TextField {
+public class TriggerField extends TextField {
 
 	/**
 	 * Construct a new TriggerField.
@@ -74,13 +72,14 @@ public abstract class TriggerField extends TextField {
 	}-*/;
 
 	/**
-	 * Abstract method that must be implmented for custom trigger field
-	 * behavior.
+	 * method that must be implemented for custom trigger field behavior.
 	 * 
 	 * @param event
 	 *            the event object
 	 */
-	protected abstract void onTriggerClick(EventObject event);
+	protected void onTriggerClick(EventObject event) {
+
+	}
 
 	// config properties ---
 	public String getXType() {
@@ -88,17 +87,14 @@ public abstract class TriggerField extends TextField {
 	}
 
 	/**
-	 * True to hide the trigger element and display only the base text field
-	 * (defaults to false).
+	 * True to hide the trigger element and display only the base text field (defaults to false).
 	 * 
 	 * @param hideTrigger
 	 *            true to hide trigger
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setHideTrigger(boolean hideTrigger)
-			throws IllegalStateException {
+	public void setHideTrigger(boolean hideTrigger) throws IllegalStateException {
 		setAttribute("hideTrigger", hideTrigger, true);
 	}
 
@@ -108,41 +104,35 @@ public abstract class TriggerField extends TextField {
 	 * @param triggerClass
 	 *            the trigger CSS class.
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTriggerCls(String triggerClass) throws IllegalStateException {
 		setAttribute("triggerCls", triggerClass, true);
 	}
 
 	/**
-	 * The base CSS class that is always added to the trigger button. The
-	 * triggerCls will be appended in addition to this class.
+	 * The base CSS class that is always added to the trigger button. The triggerCls will be appended in addition to this class.
 	 * <p>
 	 * Defaults to: Ext.baseCSSPrefix + 'form-trigger'
 	 * 
 	 * @param triggerClass
 	 *            the trigger CSS class.
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setTriggerBaseCls(String triggerClass)
-			throws IllegalStateException {
+	public void setTriggerBaseCls(String triggerClass) throws IllegalStateException {
 		setAttribute("triggerBaseCls", triggerClass, true);
 	}
 
 	/**
-	 * The CSS class that is added to the text field when component is read-only
-	 * or not editable.
+	 * The CSS class that is added to the text field when component is read-only or not editable.
 	 * <p>
 	 * Defaults to: Ext.baseCSSPrefix + 'trigger-noedit'
 	 * 
 	 * @param triggerClass
 	 *            the trigger CSS class.
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTriggerNoEditCls(String value) throws IllegalStateException {
 		setAttribute("triggerNoEditCls", value, true);
@@ -156,16 +146,14 @@ public abstract class TriggerField extends TextField {
 	 * @param triggerClass
 	 *            the trigger CSS class.
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setTriggerWrapCls(String value) throws IllegalStateException {
 		setAttribute("triggerWrapCls", value, true);
 	}
 
 	/**
-	 * false to prevent the user from typing text directly into the field; the
-	 * field can only have its value set via an action invoked by the trigger.
+	 * false to prevent the user from typing text directly into the field; the field can only have its value set via an action invoked by the trigger.
 	 * <p>
 	 * Defaults to: true
 	 */
@@ -183,8 +171,7 @@ public abstract class TriggerField extends TextField {
 	}
 
 	/**
-	 * A reference to the TD element wrapping the input element. Only set after
-	 * the field has been rendered.
+	 * A reference to the TD element wrapping the input element. Only set after the field has been rendered.
 	 */
 	public native ExtElement getInputCell() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -193,8 +180,7 @@ public abstract class TriggerField extends TextField {
 	}-*/;
 
 	/**
-	 * A composite of all the trigger button elements. Only set after the field
-	 * has been rendered.
+	 * A composite of all the trigger button elements. Only set after the field has been rendered.
 	 */
 	public native CompositeElement getTriggerEl() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -203,8 +189,7 @@ public abstract class TriggerField extends TextField {
 	}-*/;
 
 	/**
-	 * A reference to the TABLE element which encapsulates the input field and
-	 * all trigger button(s). Only set after the field has been rendered.
+	 * A reference to the TABLE element which encapsulates the input field and all trigger button(s). Only set after the field has been rendered.
 	 */
 	public native ExtElement getTriggerWrap() /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();

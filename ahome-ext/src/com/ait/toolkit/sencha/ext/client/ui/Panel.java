@@ -15,11 +15,7 @@
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import com.ait.toolkit.core.client.JsoHelper;
 import com.ait.toolkit.sencha.ext.client.core.Component;
@@ -50,7 +46,6 @@ import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.user.client.ui.Image;
 
 /**
  * Panel is a container that has specific functionality and structural components that make it the perfect building block for application-oriented user interfaces. The Panel
@@ -61,12 +56,6 @@ import com.google.gwt.user.client.ui.Image;
 public class Panel extends Container {
 
 	private static JavaScriptObject configPrototype;
-	private Set<Tool> tools = new HashSet<Tool>();
-	private Tool[] toolArray = null;
-	private FooterToolBar toolBar;
-	private List<Component> dockedItems = new ArrayList<Component>();
-	private List<Component> children = new ArrayList<Component>();
-	private final Image iconImage = new Image();
 
 	private native void init()/*-{
 		var c = new $wnd.Ext.panel.Panel();
@@ -1210,9 +1199,14 @@ public class Panel extends Container {
 	 * 
 	 * @return
 	 */
-	public List<Component> getDockesItems() {
-		return this.dockedItems;
+	public List<Component> getDockedItems() {
+		return ComponentFactory.fromJsArray(_getDockedComponents());
 	}
+
+	private native JavaScriptObject _getDockedComponents() /*-{
+		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		panel.dockedComponents;
+	}-*/;
 
 	/**
 	 * An array of {@link Tool} instances to be added to the header tool area. The tools are stored as child components of the header container. The toggle tool is automatically
@@ -1222,35 +1216,7 @@ public class Panel extends Container {
 	 * by adding handlers that implement the necessary behavior.
 	 */
 	public void setTools(Tool... items) {
-		for (Tool t : items) {
-			tools.add(t);
-		}
 		setAttribute("tools", ComponentFactory.fromArray(items), true);
-	}
-
-	/**
-	 * Add a tool to the internal set of tools.
-	 * 
-	 * @param tool
-	 *            , the tool to add
-	 */
-	public void addTool(Tool tool) {
-		this.tools.add(tool);
-	}
-
-	/**
-	 * Update this panel with the internal set of tools
-	 */
-	public void drawTools() {
-		int i = 0;
-		toolArray = new Tool[tools.size()];
-		Iterator<Tool> it = tools.iterator();
-		while (it.hasNext()) {
-			Tool t = it.next();
-			toolArray[i++] = t;
-		}
-		setTools(toolArray);
-
 	}
 
 	/**
@@ -1258,21 +1224,14 @@ public class Panel extends Container {
 	 * 
 	 * @return the tools added to this panel
 	 */
-	public Set<Tool> getTools() {
-		return tools;
+	public List<Tool> getTools() {
+		return Tool.fromJsArray(_getTools());
 	}
 
-	public void addButtons(Button... buttons) {
-		toolBar = new FooterToolBar();
-		for (Button component : buttons) {
-			toolBar.add(component);
-		}
-		addDocked(toolBar);
-	}
-
-	public FooterToolBar getFooterToolBar() {
-		return this.toolBar;
-	}
+	private native JavaScriptObject _getTools() /*-{
+		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		panel.tools;
+	}-*/;
 
 	public void setCloseAction(String constrain) {
 		setAttribute("closeAction", constrain, true);
@@ -1333,7 +1292,6 @@ public class Panel extends Container {
 	}-*/;
 
 	public void setIcon(ImageResource imageResource) {
-		this.iconImage.setResource(imageResource);
 		this.setIcon(imageResource.getSafeUri().asString());
 	}
 
