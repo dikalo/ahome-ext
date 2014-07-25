@@ -29,124 +29,124 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class PanelHeader extends Container {
 
-    private static JavaScriptObject configPrototype;
+	private static JavaScriptObject configPrototype;
 
-    protected JavaScriptObject getConfigPrototype() {
-        return configPrototype;
-    }
+	protected JavaScriptObject getConfigPrototype() {
+		return configPrototype;
+	}
 
-    public String getXType() {
-        return XType.HEADER.getValue();
-    }
+	public String getXType() {
+		return XType.HEADER.getValue();
+	}
 
-    /**
-     * Create a new NotificationContainer.
-     */
-    protected PanelHeader() {
-    }
+	/**
+	 * Create a new NotificationContainer.
+	 */
+	protected PanelHeader() {
+	}
 
-    protected PanelHeader(JavaScriptObject obj) {
-        super(obj);
-    }
+	protected PanelHeader(JavaScriptObject obj) {
+		super(obj);
+	}
 
-    protected native JavaScriptObject create(JavaScriptObject config) /*-{
+	protected native JavaScriptObject create(JavaScriptObject config) /*-{
 		return new $wnd.Ext.panel.Header(config);
-    }-*/;
+	}-*/;
 
-    /**
-     * Add a tool to the header
-     */
-    public native void addTool(Tool value)/*-{
+	/**
+	 * Add a tool to the header
+	 */
+	public native void addTool(Tool value)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.addTool(value.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()());
 
-    }-*/;
+	}-*/;
 
-    /**
-     * Gets the tools for this header.
-     */
-    public native List<Tool> getTools()/*-{
+	/**
+	 * Gets the tools for this header.
+	 */
+	public native List<Tool> getTools()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var obj = component.geTools();
 		return @com.ait.toolkit.sencha.ext.client.ui.Tool::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets glyph that provides the icon image for this header. This method will
-     * replace any existing glyph if one has already been set.
-     */
-    public native void setGlyph(String value)/*-{
+	/**
+	 * Sets glyph that provides the icon image for this header. This method will replace any existing glyph if one has already been set.
+	 */
+	public native void setGlyph(String value)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.setGlyph(value);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets glyph that provides the icon image for this header. This method will
-     * replace any existing glyph if one has already been set.
-     */
-    public native void setGlyph(double value)/*-{
+	/**
+	 * Sets glyph that provides the icon image for this header. This method will replace any existing glyph if one has already been set.
+	 */
+	public native void setGlyph(double value)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.setGlyph(value);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets the image path that provides the icon image for this header. This
-     * method will replace any existing icon if one has already been set.
-     */
-    public native void setIcon(String value)/*-{
+	/**
+	 * Sets the image path that provides the icon image for this header. This method will replace any existing icon if one has already been set.
+	 */
+	public native void setIcon(String value)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.setIcon(value);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets the CSS class that provides the icon image for this header. This
-     * method will replace any existing icon class if one has already been set.
-     */
-    public native void setIconCls(String value)/*-{
+	/**
+	 * Sets the CSS class that provides the icon image for this header. This method will replace any existing icon class if one has already been set.
+	 */
+	public native void setIconCls(String value)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.setIconCls(value);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets the title of the header.
-     * 
-     * @param title
-     *            , the title to be set
-     */
-    public native void setTitle(String title)/*-{
+	/**
+	 * Sets the title of the header.
+	 * 
+	 * @param title
+	 *            , the title to be set
+	 */
+	public native void setTitle(String title)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.seTitle(title);
-    }-*/;
+	}-*/;
 
-    /**
-     * Sets the position of the title in the header's items
-     */
-    public native void setTitlePosition(int index)/*-{
+	/**
+	 * Sets the position of the title in the header's items
+	 */
+	public native void setTitlePosition(int index)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		component.seTitlePosition(index);
-    }-*/;
+		if (component.setTitlePosition) {
+			component.seTitlePosition(index);
+		} else {
+			component.titlePosition = index;
+		}
 
-    /**
-     * Creates a new PanelHeader from the given component
-     * 
-     * @param component
-     *            , the component to cast from
-     * @return, a new PanelHeader from the component
-     * 
-     */
-    public static PanelHeader cast(Component component) {
-        return new PanelHeader(component.getOrCreateJsObj());
-    }
+	}-*/;
 
-    // Events
+	/**
+	 * Creates a new PanelHeader from the given component
+	 * 
+	 * @param component
+	 *            , the component to cast from
+	 * @return, a new PanelHeader from the component
+	 * 
+	 */
+	public static PanelHeader cast(Component component) {
+		return new PanelHeader(component.getOrCreateJsObj());
+	}
 
-    /**
-     * Fires when the header is clicked. This event will not be fired if the
-     * click was on a {@link Tool}
-     * 
-     */
-    public native HandlerRegistration addHeaderClickHandler(HeaderClickHandler handler)/*-{
+	// Events
+
+	/**
+	 * Fires when the header is clicked. This event will not be fired if the click was on a {@link Tool}
+	 * 
+	 */
+	public native HandlerRegistration addHeaderClickHandler(HeaderClickHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.PanelHeader::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -157,14 +157,13 @@ public class PanelHeader extends Container {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-    }-*/;
+	}-*/;
 
-    /**
-     * Fires when the header is double clicked. This event will not be fired if
-     * the click was on a {@link Tool}
-     * 
-     */
-    public native HandlerRegistration addHeaderDoubleClickHandler(HeaderDoubleClickHandler handler)/*-{
+	/**
+	 * Fires when the header is double clicked. This event will not be fired if the click was on a {@link Tool}
+	 * 
+	 */
+	public native HandlerRegistration addHeaderDoubleClickHandler(HeaderDoubleClickHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(p, e) {
 			var panel = @com.ait.toolkit.sencha.ext.client.ui.PanelHeader::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
@@ -175,6 +174,6 @@ public class PanelHeader extends Container {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-    }-*/;
+	}-*/;
 
 }

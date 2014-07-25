@@ -155,7 +155,7 @@ public class Tool extends Component {
 	public native HandlerRegistration addToolClickHandler(ToolClickHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(t, e) {
-			var tool = @com.ait.toolkit.sencha.ext.client.ui.Tool::new(Lcom/google/gwt/core/client/JavaScriptObject;)(p);
+			var tool = @com.ait.toolkit.sencha.ext.client.ui.Tool::new(Lcom/google/gwt/core/client/JavaScriptObject;)(t);
 			var event = @com.ait.toolkit.sencha.ext.client.events.panel.ToolClickEvent::new(Lcom/ait/toolkit/sencha/ext/client/ui/Tool;Lcom/google/gwt/core/client/JavaScriptObject;)(tool,e);
 			handler.@com.ait.toolkit.sencha.ext.client.events.panel.ToolClickHandler::onToolClick(Lcom/ait/toolkit/sencha/ext/client/events/panel/ToolClickEvent;)(event);
 		};
@@ -181,7 +181,7 @@ public class Tool extends Component {
 		List<Tool> toReturn = new ArrayList<Tool>();
 		int size = JsoHelper.getArrayLength(peers);
 		for (int i = 0; i < size; i++) {
-			toReturn.add(new Tool(JsoHelper.getArrayValue(peers, i)));
+			toReturn.add(new Tool(JsoHelper.getValueFromJavaScriptObjectArray(peers, i)));
 		}
 		return toReturn;
 	}

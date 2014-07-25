@@ -138,7 +138,7 @@ public class ComponentFactory {
 		List<Component> toReturn = new ArrayList<Component>();
 		int size = JsoHelper.getJavaScriptObjectArraySize(obj);
 		for (int i = 0; i < size; i++) {
-			SimpleComponent c = SimpleComponent.createComponent(JsoHelper.getElementValueFromJavaScriptObjectArray(obj, i));
+			SimpleComponent c = SimpleComponent.createComponent(JsoHelper.getValueFromJavaScriptObjectArray(obj, i));
 			toReturn.add(c);
 		}
 		return toReturn;

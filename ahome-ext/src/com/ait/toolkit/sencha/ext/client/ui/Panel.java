@@ -1200,12 +1200,12 @@ public class Panel extends Container {
 	 * @return
 	 */
 	public List<Component> getDockedItems() {
-		return ComponentFactory.fromJsArray(_getDockedComponents());
+		return ComponentFactory.fromJsArray(_getDockedItems());
 	}
 
-	private native JavaScriptObject _getDockedComponents() /*-{
+	private native JavaScriptObject _getDockedItems() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		panel.dockedComponents;
+		return panel.dockedItems;
 	}-*/;
 
 	/**
@@ -1230,7 +1230,8 @@ public class Panel extends Container {
 
 	private native JavaScriptObject _getTools() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		panel.tools;
+		var toReturn = panel.tools;
+		return toReturn;
 	}-*/;
 
 	public void setCloseAction(String constrain) {
