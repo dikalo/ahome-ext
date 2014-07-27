@@ -255,34 +255,6 @@ public class Container extends Component implements HasWidgets {
 	}-*/;
 
 	/**
-	 * Find a component under this container at any level by id.
-	 * 
-	 * @param id
-	 *            the component ID
-	 * @return the component
-	 */
-	public native Component findByID(String id) /*-{
-		var container = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		var comp = container.findById(id);
-		return comp == null || comp === undefined ? null
-				: @com.ait.toolkit.sencha.ext.client.ui.ComponentFactory::getComponent(Lcom/google/gwt/core/client/JavaScriptObject;)(comp);
-	}-*/;
-
-	/**
-	 * Find a component under this container at any level by xtype.
-	 * 
-	 * @param xtype
-	 *            the components xtype
-	 * @return an array of components
-	 */
-	public native Component[] findByType(String xtype) /*-{
-		var container = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		var comps = container.findByType(xtype);
-		return comps == null || comps === undefined ? null
-				: @com.ait.toolkit.sencha.ext.client.core.Ext::convertToJavaComponentArray(Lcom/google/gwt/core/client/JavaScriptObject;)(comps);
-	}-*/;
-
-	/**
 	 * Gets a direct child Component by id.
 	 * 
 	 * @param id
