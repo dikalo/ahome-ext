@@ -28,12 +28,12 @@ import com.ait.toolkit.sencha.ext.client.events.editor.EditorBeforeStartEditHand
 import com.ait.toolkit.sencha.ext.client.events.editor.SpecialKeyHandler;
 import com.ait.toolkit.sencha.ext.client.events.editor.StartEditHandler;
 import com.ait.toolkit.sencha.ext.client.field.Field;
+import com.ait.toolkit.sencha.shared.client.dom.ExtElement;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 /**
- * A base editor field that handles displaying/hiding on demand and has some
- * built-in sizing and event handling logic.
+ * A base editor field that handles displaying/hiding on demand and has some built-in sizing and event handling logic.
  */
 public class Editor extends Container {
 
@@ -62,9 +62,7 @@ public class Editor extends Container {
 
 	// todo2 field must be rendered at this point
 	protected native JavaScriptObject create(JavaScriptObject config) /*-{
-		var field = this.@com.ait.toolkit.sencha.ext.client.ui.Editor::field;
-		var fieldJS = field.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		var ed = new $wnd.Ext.Editor(fieldJS, config);
+		var ed = new $wnd.Ext.Editor(config);
 		var id = ed.getId();
 		this.@com.ait.toolkit.sencha.ext.client.core.Component::id = id;
 		return ed;
@@ -77,25 +75,18 @@ public class Editor extends Container {
 	 *            the editor field
 	 */
 	public Editor(Field field) {
-		this.field = field;
+		this.setField(field);
 	}
 
 	public Editor(JavaScriptObject jsObj) {
 		super(jsObj);
 	}
 
-	private native JavaScriptObject create(JavaScriptObject field,
-			JavaScriptObject config) /*-{
-		return new $wnd.Ext.Editor(field, config);
-	}-*/;
-
 	/**
-	 * Cancels the editing process and hides the editor without persisting any
-	 * changes. The field value will be reverted to the original starting value.
+	 * Cancels the editing process and hides the editor without persisting any changes. The field value will be reverted to the original starting value.
 	 * 
 	 * @param remainVisible
-	 *            override the default behavior and keep the editor visible
-	 *            after cancel (defaults to false)
+	 *            override the default behavior and keep the editor visible after cancel (defaults to false)
 	 */
 	public native void cancelEdit(boolean remainVisible) /*-{
 		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -103,12 +94,10 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Ends the editing process, persists the changed value to the underlying
-	 * field, and hides the editor.
+	 * Ends the editing process, persists the changed value to the underlying field, and hides the editor.
 	 * 
 	 * @param remainVisible
-	 *            Override the default behavior and keep the editor visible
-	 *            after edit (defaults to false)
+	 *            Override the default behavior and keep the editor visible after edit (defaults to false)
 	 */
 	public native void completeEdit(boolean remainVisible) /*-{
 		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -140,8 +129,7 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Realigns the editor to the bound field based on the current alignment
-	 * config value.
+	 * Realigns the editor to the bound field based on the current alignment config value.
 	 */
 	public native void realign() /*-{
 		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -224,8 +212,7 @@ public class Editor extends Container {
 	 * @param id
 	 *            the element ID to edit
 	 * @param value
-	 *            A value to initialize the editor with. If a value is not
-	 *            provided, it defaults to the innerHTML of the element.
+	 *            A value to initialize the editor with. If a value is not provided, it defaults to the innerHTML of the element.
 	 */
 	public native void startEdit(String id, String value) /*-{
 		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -249,12 +236,23 @@ public class Editor extends Container {
 	 * @param el
 	 *            the element to edit
 	 * @param value
-	 *            A value to initialize the editor with. If a value is not
-	 *            provided, it defaults to the innerHTML of the element.
+	 *            A value to initialize the editor with. If a value is not provided, it defaults to the innerHTML of the element.
 	 */
 	public native void startEdit(Element el, String value) /*-{
 		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		editor.startEdit(el, value);
+	}-*/;
+
+	public native void startEdit(ExtElement el) /*-{
+		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		editor
+				.startEdit(el.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+	}-*/;
+
+	public native void startEdit(ExtElement el, String value) /*-{
+		var editor = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		editor.startEdit(
+				el.@com.ait.toolkit.core.client.JsObject::getJsObj()(), value);
 	}-*/;
 
 	// --- config properties ---
@@ -270,36 +268,31 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * True for the editor to automatically adopt the size of the underlying
-	 * field.
+	 * True for the editor to automatically adopt the size of the underlying field.
 	 * 
 	 * @param autosize
 	 *            true to autosize
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutosize(boolean autosize) throws IllegalStateException {
 		setAttribute("autosize", autosize, true);
 	}
 
 	/**
-	 * Set to "width" to adopt the width only, or "height" to adopt the height
-	 * only.
+	 * Set to "width" to adopt the width only, or "height" to adopt the height only.
 	 * 
 	 * @param autosize
 	 *            the autosize value
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setAutosize(String autosize) throws IllegalStateException {
 		setAttribute("autosize", autosize, true);
 	}
 
 	/**
-	 * True to cancel the edit when the escape key is pressed (defaults to
-	 * false).
+	 * True to cancel the edit when the escape key is pressed (defaults to false).
 	 * 
 	 * @param cancelOnEsc
 	 *            cancel on escape
@@ -309,8 +302,7 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * True to complete the edit when the enter key is pressed (defaults to
-	 * false).
+	 * True to complete the edit when the enter key is pressed (defaults to false).
 	 * 
 	 * @param completeOnEnter
 	 *            true to complete on enter
@@ -325,21 +317,18 @@ public class Editor extends Container {
 	 * @param constrain
 	 *            true to constrain the editor to the viewport
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setConstrain(boolean constrain) throws IllegalStateException {
 		setAttribute("constrain", constrain, true);
 	}
 
-	// todo2 on rendere pass field to object constructor
 	public void setField(Field field) {
-		this.field = field;
+		setAttribute("field", field.getOrCreateJsObj(), true);
 	}
 
 	/**
-	 * False to keep the bound element visible while the editor is displayed
-	 * (defaults to true).
+	 * False to keep the bound element visible while the editor is displayed (defaults to true).
 	 * 
 	 * @param hideEl
 	 *            true to hide element
@@ -349,10 +338,8 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * True to skip the the edit completion process (no save, no events fired)
-	 * if the user completes an edit and the value has not changed (defaults to
-	 * false). Applies only to string values - edits for other data types will
-	 * never be ignored.
+	 * True to skip the the edit completion process (no save, no events fired) if the user completes an edit and the value has not changed (defaults to false). Applies only to
+	 * string values - edits for other data types will never be ignored.
 	 * 
 	 * @param ignoreNoChange
 	 *            true to ingnore no change
@@ -362,8 +349,7 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * True to automatically revert the field value and cancel the edit when the
-	 * user completes an edit and the field validation fails (defaults to true).
+	 * True to automatically revert the field value and cancel the edit when the user completes an edit and the field validation fails (defaults to true).
 	 * 
 	 * @param revertInvalid
 	 *            true to rever invalid field value
@@ -373,51 +359,43 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * "sides" for sides/bottom only, "frame" for 4-way shadow, and "drop" for
-	 * bottom-right shadow (defaults to "frame")
+	 * "sides" for sides/bottom only, "frame" for 4-way shadow, and "drop" for bottom-right shadow (defaults to "frame")
 	 * 
 	 * @param shadow
 	 *            the shadow setting
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setShadow(boolean shadow) throws IllegalStateException {
 		setAttribute("shadow", shadow, true);
 	}
 
 	/**
-	 * "sides" for sides/bottom only, "frame" for 4-way shadow, and "drop" for
-	 * bottom-right shadow (defaults to "frame")
+	 * "sides" for sides/bottom only, "frame" for 4-way shadow, and "drop" for bottom-right shadow (defaults to "frame")
 	 * 
 	 * @param shadow
 	 *            the shadow setting
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
 	public void setShadow(String shadow) throws IllegalStateException {
 		setAttribute("shadow", shadow, true);
 	}
 
 	/**
-	 * Handle the keydown/keypress events so they don't propagate (defaults to
-	 * true).
+	 * Handle the keydown/keypress events so they don't propagate (defaults to true).
 	 * 
 	 * @param swallowKeys
 	 *            true to swallow keys
 	 * @throws IllegalStateException
-	 *             this property cannot be changed after the Component has been
-	 *             rendered
+	 *             this property cannot be changed after the Component has been rendered
 	 */
-	public void setSwallowKeys(boolean swallowKeys)
-			throws IllegalStateException {
+	public void setSwallowKeys(boolean swallowKeys) throws IllegalStateException {
 		setAttribute("swallowKeys", swallowKeys, true);
 	}
 
 	/**
-	 * True to update the innerHTML of the bound element when the update
-	 * completes (defaults to false).
+	 * True to update the innerHTML of the bound element when the update completes (defaults to false).
 	 * 
 	 * @param updateEl
 	 *            true to update the element
@@ -497,13 +475,10 @@ public class Editor extends Container {
 	}
 
 	/**
-	 * Fires after a change has been made to the field, but before the change is
-	 * reflected in the underlying field. Note that if the value has not changed
-	 * and ignoreNoChange = true, the editing will still end but this event will
-	 * not fire since no edit actually occurred.
+	 * Fires after a change has been made to the field, but before the change is reflected in the underlying field. Note that if the value has not changed and ignoreNoChange =
+	 * true, the editing will still end but this event will not fire since no edit actually occurred.
 	 */
-	public native HandlerRegistration addBeforeCompleteHandler(
-			BeforeCompleteHandler handler)/*-{
+	public native HandlerRegistration addBeforeCompleteHandler(BeforeCompleteHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, value, olValue, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
@@ -517,14 +492,11 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Fires after a change has been made to the field, but before the change is
-	 * reflected in the underlying field. Saving the change to the field can be
-	 * canceled by returning false from the handler of this event.Note that if
-	 * the value has not changed and ignoreNoChange = true, the editing will
-	 * still end but this event will not fire since no edit actually occurred.
+	 * Fires after a change has been made to the field, but before the change is reflected in the underlying field. Saving the change to the field can be canceled by returning
+	 * false from the handler of this event.Note that if the value has not changed and ignoreNoChange = true, the editing will still end but this event will not fire since no edit
+	 * actually occurred.
 	 */
-	public native void addBeforeCompleteHandler(
-			EditorBeforeCompleteHandler handler)/*-{
+	public native void addBeforeCompleteHandler(EditorBeforeCompleteHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		compoenent
 				.addListener(
@@ -539,8 +511,7 @@ public class Editor extends Container {
 	/**
 	 * Fires when editing is initiated, but before the value changes.
 	 */
-	public native HandlerRegistration addBeforeStartEditHandler(
-			BeforeStartEditHandler handler)/*-{
+	public native HandlerRegistration addBeforeStartEditHandler(BeforeStartEditHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, el, value, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
@@ -555,11 +526,9 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Fires when editing is initiated, but before the value changes.Editing can
-	 * be canceled by returning false from the handler of this event.
+	 * Fires when editing is initiated, but before the value changes.Editing can be canceled by returning false from the handler of this event.
 	 */
-	public native void addBeforeStartEditHandler(
-			EditorBeforeStartEditHandler handler)/*-{
+	public native void addBeforeStartEditHandler(EditorBeforeStartEditHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		compoenent
 				.addListener(
@@ -572,11 +541,9 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Fires after editing has been canceled and the editor's value has been
-	 * reset.
+	 * Fires after editing has been canceled and the editor's value has been reset.
 	 */
-	public native HandlerRegistration addCancelEditHandler(
-			CancelEditHandler handler)/*-{
+	public native HandlerRegistration addCancelEditHandler(CancelEditHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, value, startValue, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
@@ -590,11 +557,9 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Fires after editing is complete and any changed value has been written to
-	 * the underlying field.
+	 * Fires after editing is complete and any changed value has been written to the underlying field.
 	 */
-	public native HandlerRegistration addCompleteEditHandler(
-			CompleteHandler handler)/*-{
+	public native HandlerRegistration addCompleteEditHandler(CompleteHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, value, startValue, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
@@ -608,12 +573,9 @@ public class Editor extends Container {
 	}-*/;
 
 	/**
-	 * Fires when any key related to navigation (arrows, tab, enter, esc, etc.)
-	 * is pressed. You can check Ext.EventObject.getKey to determine which key
-	 * was pressed.
+	 * Fires when any key related to navigation (arrows, tab, enter, esc, etc.) is pressed. You can check Ext.EventObject.getKey to determine which key was pressed.
 	 */
-	public native HandlerRegistration addSpecialKeyHandler(
-			SpecialKeyHandler handler)/*-{
+	public native HandlerRegistration addSpecialKeyHandler(SpecialKeyHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, f, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
@@ -630,8 +592,7 @@ public class Editor extends Container {
 	/**
 	 * Fires when this editor is displayed
 	 */
-	public native HandlerRegistration addStartEditHandler(
-			StartEditHandler handler)/*-{
+	public native HandlerRegistration addStartEditHandler(StartEditHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(editor, el, value, e) {
 			var cmp = @com.ait.toolkit.sencha.ext.client.ui.Editor::new(Lcom/google/gwt/core/client/JavaScriptObject;)(editor);
