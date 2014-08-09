@@ -1216,7 +1216,7 @@ public class Panel extends Container {
 	 * by adding handlers that implement the necessary behavior.
 	 */
 	public void setTools(Tool... items) {
-		setAttribute("tools", ComponentFactory.fromArray(items), true);
+		setAttribute("tools", ComponentFactory.fromArray(items), true, true);
 	}
 
 	/**
