@@ -1544,6 +1544,62 @@ public abstract class Component extends AbstractComponent implements Observable,
 		}
 	}
 
+	public native void showBy(ExtElement el) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component
+				.showBy(el.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+	}-*/;
+
+	public native void showBy(ExtElement el, String position) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component.showBy(
+				el.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				position);
+	}-*/;
+
+	public native void showBy(ExtElement el, String position, JsArrayNumber offset) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component.showBy(
+				el.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
+				position, offset);
+	}-*/;
+
+	public void showBy(ExtElement el, String position, int offsetX, int offsetY) {
+		JsArrayNumber offsets = JsArrayNumber.createArray().cast();
+		offsets.push(offsetX);
+		offsets.push(offsetY);
+		showBy(el, position, offsets);
+	}
+
+	public native void showBy(Component el) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component
+				.showBy(el.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()());
+	}-*/;
+
+	public native void showBy(Component el, String position) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component
+				.showBy(
+						el.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()(),
+						position);
+	}-*/;
+
+	public native void showBy(Component el, String position, JsArrayNumber offset) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		component
+				.showBy(
+						el.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()(),
+						position, offset);
+	}-*/;
+
+	public void showBy(Component el, String position, int offsetX, int offsetY) {
+		JsArrayNumber offsets = JsArrayNumber.createArray().cast();
+		offsets.push(offsetX);
+		offsets.push(offsetY);
+		showBy(el, position, offsets);
+	}
+
 	private native void showRendered() /*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component.show();
