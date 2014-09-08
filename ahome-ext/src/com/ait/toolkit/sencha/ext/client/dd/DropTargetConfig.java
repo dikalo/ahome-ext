@@ -21,49 +21,68 @@ import com.ait.toolkit.core.client.JsoHelper;
  * 
  */
 public class DropTargetConfig extends DragDropConfig {
-    /**
-     * A named drag drop group to which this object belongs. If a group is
-     * specified, then this object will only interact with other drag drop
-     * objects in the same group (defaults to undefined).
-     * 
-     * @param ddGroup
-     *            the group name
-     */
-    public void setdDdGroup(String ddGroup) {
-        JsoHelper.setAttribute(jsObj, "ddGroup", ddGroup);
-    }
 
-    /**
-     * The CSS class returned to the drag source when drop is allowed (defaults
-     * to "x-dd-drop-ok").
-     * 
-     * @param dropAllowed
-     *            drop allowed CSS
-     */
-    public void setDropAllowed(String dropAllowed) {
-        JsoHelper.setAttribute(jsObj, "dropAllowed", dropAllowed);
-    }
+	public DropTargetConfig() {
+		setDropAllowed("x-dd-drop-ok");
+		onContainerOver(new DragDropInteractionHandler() {
+			@Override
+			public String onAction() {
+				return "x-dd-drop-ok";
+			}
+		});
+	}
 
-    /**
-     * The CSS class returned to the drag source when drop is not allowed
-     * (defaults to "x-dd-drop-nodrop").
-     * 
-     * @param dropNotAllowed
-     *            drop not allowed CSS
-     */
-    public void setDropNotAllowed(String dropNotAllowed) {
-        JsoHelper.setAttribute(jsObj, "dropNotAllowed", dropNotAllowed);
-    }
+	/**
+	 * A named drag drop group to which this object belongs. If a group is specified, then this object will only interact with other drag drop objects in the same group (defaults
+	 * to undefined).
+	 * 
+	 * @param ddGroup
+	 *            the group name
+	 */
+	public void setdDdGroup(String ddGroup) {
+		JsoHelper.setAttribute(jsObj, "ddGroup", ddGroup);
+	}
 
-    /**
-     * The CSS class applied to the drop target element while the drag source is
-     * over it (defaults to "").
-     * 
-     * @param overClass
-     *            the over class
-     */
-    public void setOverClass(String overClass) {
-        JsoHelper.setAttribute(jsObj, "overClass", overClass);
-    }
+	/**
+	 * The CSS class returned to the drag source when drop is allowed (defaults to "x-dd-drop-ok").
+	 * 
+	 * @param dropAllowed
+	 *            drop allowed CSS
+	 */
+	public void setDropAllowed(String dropAllowed) {
+		JsoHelper.setAttribute(jsObj, "dropAllowed", dropAllowed);
+	}
+
+	/**
+	 * The CSS class returned to the drag source when drop is not allowed (defaults to "x-dd-drop-nodrop").
+	 * 
+	 * @param dropNotAllowed
+	 *            drop not allowed CSS
+	 */
+	public void setDropNotAllowed(String dropNotAllowed) {
+		JsoHelper.setAttribute(jsObj, "dropNotAllowed", dropNotAllowed);
+	}
+
+	/**
+	 * The CSS class applied to the drop target element while the drag source is over it (defaults to "").
+	 * 
+	 * @param overClass
+	 *            the over class
+	 */
+	public void setOverClass(String overClass) {
+		JsoHelper.setAttribute(jsObj, "overClass", overClass);
+	}
+
+	public native void onContainerDrop(DropZoneHandler handler)/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		peer.onContainerDrop = function(source, e, data) {
+			var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			var sourceJ = @com.ait.toolkit.sencha.ext.client.dd.DragSource::dragSourceInstance(Lcom/google/gwt/core/client/JavaScriptObject;)(source);
+			var dataJ = data == null || data == undefined ? null
+					: @com.ait.toolkit.sencha.ext.client.dd.DragData::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(data);
+			return handler.@com.ait.toolkit.sencha.ext.client.dd.DropZoneHandler::onEvent(Lcom/ait/toolkit/sencha/ext/client/dd/DragSource;Lcom/ait/toolkit/sencha/shared/client/core/EventObject;Lcom/ait/toolkit/sencha/ext/client/dd/DragData;)(sourceJ, eJ, dataJ);
+
+		}
+	}-*/;
 
 }

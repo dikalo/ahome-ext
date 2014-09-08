@@ -45,7 +45,7 @@ public class DragDrop extends JsObject {
 			var ddJ = this.ddJ;
 			if (ddJ != null) {
 				var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::endDrag(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(e);
+				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::endDrag(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(eJ);
 			}
 		}
 
@@ -53,7 +53,7 @@ public class DragDrop extends JsObject {
 			var ddJ = this.ddJ;
 			if (ddJ != null) {
 				var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onDrag(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(e);
+				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onDrag(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(eJ);
 			}
 		}
 
@@ -113,7 +113,7 @@ public class DragDrop extends JsObject {
 			var ddJ = this.ddJ;
 			if (ddJ != null) {
 				var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onInvalidDrop(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(e);
+				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onInvalidDrop(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(eJ);
 			}
 		}
 
@@ -121,7 +121,7 @@ public class DragDrop extends JsObject {
 			var ddJ = this.ddJ;
 			if (ddJ != null) {
 				var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onMouseDown(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(e);
+				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onMouseDown(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(eJ);
 			}
 		}
 
@@ -129,7 +129,7 @@ public class DragDrop extends JsObject {
 			var ddJ = this.ddJ;
 			if (ddJ != null) {
 				var eJ = @com.ait.toolkit.sencha.shared.client.core.EventObject::instance(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onMouseUp(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(e);
+				ddJ.@com.ait.toolkit.sencha.ext.client.dd.DragDrop::onMouseUp(Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(eJ);
 			}
 		}
 	}-*/;
@@ -161,24 +161,20 @@ public class DragDrop extends JsObject {
 	}
 
 	public DragDrop(Element element, String sGroup, DragDropConfig config) {
-		jsObj = create(element, sGroup,
-				config == null ? null : config.getJsObj());
+		jsObj = create(element, sGroup, config == null ? null : config.getJsObj());
 		setLocalRef(jsObj, this);
 		onAvailable();
 	}
 
-	public DragDrop(final Component component, final String sGroup,
-			final DragDropConfig config) {
+	public DragDrop(final Component component, final String sGroup, final DragDropConfig config) {
 		if (component.isRendered()) {
-			jsObj = create(component.getId(), sGroup, config == null ? null
-					: config.getJsObj());
+			jsObj = create(component.getId(), sGroup, config == null ? null : config.getJsObj());
 			setLocalRef(jsObj, this);
 			onAvailable();
 		} else {
 			component.addListener("render", new Function() {
 				public void execute() {
-					jsObj = create(component.getId(), sGroup,
-							config == null ? null : config.getJsObj());
+					jsObj = create(component.getId(), sGroup, config == null ? null : config.getJsObj());
 					setLocalRef(jsObj, DragDrop.this);
 					onAvailable();
 				}
@@ -190,13 +186,11 @@ public class DragDrop extends JsObject {
 		dd.ddJ = dragDrop;
 	}-*/;
 
-	protected native JavaScriptObject create(String id, String sGroup,
-			JavaScriptObject config)/*-{
+	protected native JavaScriptObject create(String id, String sGroup, JavaScriptObject config)/*-{
 		return new $wnd.Ext.dd.DragDrop(id, sGroup, config);
 	}-*/;
 
-	protected native JavaScriptObject create(Element element, String sGroup,
-			JavaScriptObject config)/*-{
+	protected native JavaScriptObject create(Element element, String sGroup, JavaScriptObject config)/*-{
 		return new $wnd.Ext.dd.DragDrop(element, sGroup, config);
 	}-*/;
 
@@ -214,12 +208,10 @@ public class DragDrop extends JsObject {
 		String[] rtn = null;
 
 		if (nativeArray != null) {
-			rtn = new String[JsoHelper
-					.getJavaScriptObjectArraySize(nativeArray)];
+			rtn = new String[JsoHelper.getJavaScriptObjectArraySize(nativeArray)];
 
 			for (int i = 0; i < rtn.length; i++) {
-				rtn[i] = JsoHelper.getStringValueFromJavaScriptObjectArray(
-						nativeArray, i);
+				rtn[i] = JsoHelper.getStringValueFromJavaScriptObjectArray(nativeArray, i);
 			}
 		}
 		return rtn;
@@ -247,8 +239,7 @@ public class DragDrop extends JsObject {
 	}-*/;
 
 	public String[] getInvalidHandleClasses() {
-		return JsoHelper.getAttributeAsStringArray(jsObj,
-				"invalidHandleClasses");
+		return JsoHelper.getAttributeAsStringArray(jsObj, "invalidHandleClasses");
 	}
 
 	public native String getInvalidHandleTypes() /*-{
@@ -330,8 +321,7 @@ public class DragDrop extends JsObject {
 		dd.init(id, sGroup, cfg);
 	}-*/;
 
-	public native void initTarget(String id, String sGroup,
-			DragDropConfig config) /*-{
+	public native void initTarget(String id, String sGroup, DragDropConfig config) /*-{
 		var dd = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		var cfg = config.@com.ait.toolkit.core.client.JsObject::getJsObj()();
 		dd.initTarget(id, sGroup, cfg);
@@ -364,8 +354,7 @@ public class DragDrop extends JsObject {
 
 	}
 
-	private static DragDrop[] convertToDragDropArray(
-			JavaScriptObject nativeArray) {
+	private static DragDrop[] convertToDragDropArray(JavaScriptObject nativeArray) {
 		JavaScriptObject[] itemsJ = JsoHelper.toArray(nativeArray);
 		DragDrop[] items = new DragDrop[itemsJ.length];
 		for (int i = 0; i < itemsJ.length; i++) {

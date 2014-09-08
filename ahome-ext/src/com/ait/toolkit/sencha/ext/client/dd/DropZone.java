@@ -17,31 +17,26 @@ package com.ait.toolkit.sencha.ext.client.dd;
 
 import com.ait.toolkit.sencha.ext.client.core.Component;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.dom.client.Element;
 
 /**
  * 
  */
 public class DropZone extends DropTarget {
 
-    public DropZone(JavaScriptObject jsObj) {
-        super(jsObj);
-    }
+	public DropZone(JavaScriptObject jsObj) {
+		super(jsObj);
+	}
 
-    public DropZone(String id, DropTargetConfig config) {
-        super(id, config);
-    }
+	public DropZone(String id, DropTargetConfig config) {
+		super(_create(id, config.getJsObj()));
+	}
 
-    public DropZone(Component component, DropTargetConfig config) {
-        super(component, config);
-    }
+	public DropZone(Component component, DropTargetConfig config) {
+		super(_create(component.getId(), config.getJsObj()));
+	}
 
-    protected native JavaScriptObject create(String id, String sGroup, JavaScriptObject config)/*-{
-		return new $wnd.Ext.dd.DropTarget(id, config);
-    }-*/;
-
-    protected native JavaScriptObject create(Element element, String sGroup, JavaScriptObject config)/*-{
-		return new $wnd.Ext.dd.DropTarget(element, config);
-    }-*/;
+	private static native JavaScriptObject _create(String id, JavaScriptObject config)/*-{
+		return new $wnd.Ext.dd.DropZone(id, config);
+	}-*/;
 
 }

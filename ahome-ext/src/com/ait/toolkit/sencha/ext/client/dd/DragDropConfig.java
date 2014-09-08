@@ -24,20 +24,31 @@ import com.ait.toolkit.sencha.ext.client.core.config.BaseConfig;
  */
 public class DragDropConfig extends BaseConfig {
 
-    public void setTarget(boolean target) {
-        JsoHelper.setAttribute(jsObj, "target", target);
-    }
+	public void setIsTarget(boolean target) {
+		JsoHelper.setAttribute(jsObj, "isTarget", target);
+	}
 
-    public void setPrimaryButtonOnly(boolean primaryButtonOnly) {
-        JsoHelper.setAttribute(jsObj, "primaryButtonOnly", primaryButtonOnly);
-    }
+	public void setIgnoreYourSelf(boolean target) {
+		JsoHelper.setAttribute(jsObj, "ignoreSelf", target);
+	}
 
-    public void setMaintainOffset(boolean maintainOffset) {
-        JsoHelper.setAttribute(jsObj, "maintainOffset", maintainOffset);
-    }
+	public void setPrimaryButtonOnly(boolean primaryButtonOnly) {
+		JsoHelper.setAttribute(jsObj, "primaryButtonOnly", primaryButtonOnly);
+	}
 
-    public void setMoveOnDrag(boolean value) {
-        JsoHelper.setAttribute(jsObj, "moveOnDrag", value);
-    }
+	public void setMaintainOffset(boolean maintainOffset) {
+		JsoHelper.setAttribute(jsObj, "maintainOffset", maintainOffset);
+	}
+
+	public void setMoveOnDrag(boolean value) {
+		JsoHelper.setAttribute(jsObj, "moveOnDrag", value);
+	}
+
+	public native void onContainerOver(DragDropInteractionHandler handler)/*-{
+		var peer = this.@com.ait.toolkit.core.client.JsObject::getJsObj()();
+		peer.onContainerOver = function() {
+			return handler.@com.ait.toolkit.sencha.ext.client.dd.DragDropInteractionHandler::onAction()();
+		}
+	}-*/;
 
 }

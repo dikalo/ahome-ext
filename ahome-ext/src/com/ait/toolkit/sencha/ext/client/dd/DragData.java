@@ -15,57 +15,64 @@
  */
 package com.ait.toolkit.sencha.ext.client.dd;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ait.toolkit.core.client.JsObject;
 import com.ait.toolkit.core.client.JsoHelper;
-import com.ait.toolkit.sencha.ext.client.panel.PanelDragData;
+import com.ait.toolkit.data.client.BaseModel;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.dom.client.Element;
 
 /**
- * Base DragData class that is passed to the drop target when the source is
- * draggable.
+ * Base DragData class that is passed to the drop target when the source is draggable.
  */
 public class DragData extends JsObject {
 
-    protected DragData(JavaScriptObject jsObj) {
-        super(jsObj);
-    }
+	protected DragData(JavaScriptObject jsObj) {
+		super(jsObj);
+	}
 
-    public int getPropertyAsInt(String property) {
-        return JsoHelper.getAttributeAsInt(jsObj, property);
-    }
+	public int getPropertyAsInt(String property) {
+		return JsoHelper.getAttributeAsInt(jsObj, property);
+	}
 
-    public boolean getPropertyAsBoolean(String property) {
-        return JsoHelper.getAttributeAsBoolean(jsObj, property);
-    }
+	public boolean getPropertyAsBoolean(String property) {
+		return JsoHelper.getAttributeAsBoolean(jsObj, property);
+	}
 
-    public String getProperty(String property) {
-        return JsoHelper.getAttribute(jsObj, property);
-    }
+	public String getProperty(String property) {
+		return JsoHelper.getAttribute(jsObj, property);
+	}
 
-    public JavaScriptObject getPropertyAsJavaScriptObject(String property) {
-        return JsoHelper.getAttributeAsJavaScriptObject(jsObj, property);
-    }
+	public JavaScriptObject getPropertyAsJavaScriptObject(String property) {
+		return JsoHelper.getAttributeAsJavaScriptObject(jsObj, property);
+	}
 
-    public Element getPropertyAsElement(String property) {
-        return JsoHelper.getAttributeAsElement(jsObj, property);
-    }
+	public Element getPropertyAsElement(String property) {
+		return JsoHelper.getAttributeAsElement(jsObj, property);
+	}
 
-    /**
-     * Retrun the DragDrop element. ie the Element displayed when the source is
-     * being dragged.
-     * 
-     * @return the element being droppped
-     */
-    public Element getDDEl() {
-        return getPropertyAsElement("ddel");
-    }
+	public List<BaseModel> getRecords() {
+		List<BaseModel> toReturn = new ArrayList<BaseModel>();
+		JavaScriptObject[] records = JsoHelper.getAttributeAsJavaScriptObjectArray(jsObj, "records");
+		for (int i = 0; i < records.length; i++) {
+			toReturn.add(BaseModel.from(JsoHelper.getAttributeAsJavaScriptObject(records[i], "data")));
+		}
+		return toReturn;
+	}
 
-    @SuppressWarnings("unused")
-    private static DragData instance(JavaScriptObject jsObj) {
-        if (JsoHelper.getAttributeAsJavaScriptObject(jsObj, "panel") != null) {
-            return new PanelDragData(jsObj);
-        }
-        return new DragData(jsObj);
-    }
+	/**
+	 * Retrun the DragDrop element. ie the Element displayed when the source is being dragged.
+	 * 
+	 * @return the element being droppped
+	 */
+	public Element getDDEl() {
+		return getPropertyAsElement("ddel");
+	}
+
+	@SuppressWarnings("unused")
+	private static DragData instance(JavaScriptObject jsObj) {
+		return new DragData(jsObj);
+	}
 }
