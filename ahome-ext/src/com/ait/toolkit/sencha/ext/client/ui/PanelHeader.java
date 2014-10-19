@@ -121,11 +121,13 @@ public class PanelHeader extends Container {
 	public native void setTitlePosition(int index)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component.setTitlePosition) {
-			component.seTitlePosition(index);
+			component.setTitlePosition(index);
 		} else {
-			component.titlePosition = index;
+			var me = component;
+			me.titlePosition = index = $wnd.Math
+					.min(index, me.items.length - 1);
+			me.insert(index, me.titleCmp);
 		}
-
 	}-*/;
 
 	/**
