@@ -29,8 +29,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
 
 /**
- * Base class for form fields that provides default event handling, rendering,
- * and other common functionality needed by all form field types
+ * Base class for form fields that provides default event handling, rendering, and other common functionality needed by all form field types
  * 
  */
 public class FieldBase extends Field {
@@ -73,13 +72,9 @@ public class FieldBase extends Field {
 
 	/**
 	 * 
-	 * The base CSS class to apply to this component's element. This will also
-	 * be prepended to elements within this component like
-	 * NotificationContainer's body will get a class x-panel-body. This means
-	 * that if you create a subclass of NotificationContainer, and you want it
-	 * to get all the Panels styling for the element and the body, you leave the
-	 * baseCls x-panel and use componentCls to add specific styling for this
-	 * component.
+	 * The base CSS class to apply to this component's element. This will also be prepended to elements within this component like NotificationContainer's body will get a class
+	 * x-panel-body. This means that if you create a subclass of NotificationContainer, and you want it to get all the Panels styling for the element and the body, you leave the
+	 * baseCls x-panel and use componentCls to add specific styling for this component.
 	 * <p>
 	 * Defaults to: Ext.baseCSSPrefix + 'field'
 	 */
@@ -89,8 +84,7 @@ public class FieldBase extends Field {
 
 	/**
 	 * 
-	 Defines a timeout in milliseconds for buffering checkChangeEvents that
-	 * fire in rapid succession. Defaults to 50 milliseconds.
+	 Defines a timeout in milliseconds for buffering checkChangeEvents that fire in rapid succession. Defaults to 50 milliseconds.
 	 * <p>
 	 * Defaults to: 50
 	 */
@@ -100,8 +94,7 @@ public class FieldBase extends Field {
 
 	/**
 	 * 
-	 Defines a timeout in milliseconds for buffering checkChangeEvents that
-	 * fire in rapid succession. Defaults to 50 milliseconds.
+	 Defines a timeout in milliseconds for buffering checkChangeEvents that fire in rapid succession. Defaults to 50 milliseconds.
 	 * <p>
 	 * Defaults to: 50
 	 */
@@ -120,10 +113,8 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * Optional CSS style(s) to be applied to the field input element. Should be
-	 * a valid argument to Ext.Element.applyStyles. Defaults to undefined. See
-	 * also the setFieldStyle method for changing the style after
-	 * initialization.
+	 * Optional CSS style(s) to be applied to the field input element. Should be a valid argument to Ext.Element.applyStyles. Defaults to undefined. See also the setFieldStyle
+	 * method for changing the style after initialization.
 	 */
 	public void setFieldStyle(String value) {
 		setAttribute("fieldStyle", value, true);
@@ -149,52 +140,43 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * An optional string or XTemplate configuration to insert in the field
-	 * markup inside the input element (as attributes). If an XTemplate is used,
-	 * the component's subTpl data serves as the context.
+	 * An optional string or XTemplate configuration to insert in the field markup inside the input element (as attributes). If an XTemplate is used, the component's subTpl data
+	 * serves as the context.
 	 */
 	public void setInputAttrTpl(String value) {
 		setAttribute("inputAttrTpl", value, true);
 	}
 
 	/**
-	 * An optional string or XTemplate configuration to insert in the field
-	 * markup inside the input element (as attributes). If an XTemplate is used,
-	 * the component's subTpl data serves as the context.
+	 * An optional string or XTemplate configuration to insert in the field markup inside the input element (as attributes). If an XTemplate is used, the component's subTpl data
+	 * serves as the context.
 	 */
 	public void setInputAttrTpl(JsArrayString value) {
 		setAttribute("inputAttrTpl", value, true);
 	}
 
 	/**
-	 * An optional string or XTemplate configuration to insert in the field
-	 * markup inside the input element (as attributes). If an XTemplate is used,
-	 * the component's subTpl data serves as the context.
+	 * An optional string or XTemplate configuration to insert in the field markup inside the input element (as attributes). If an XTemplate is used, the component's subTpl data
+	 * serves as the context.
 	 */
 	public void setInputAttrTpl(Template value) {
 		setAttribute("inputAttrTpl", value.getJsObj(), true);
 	}
 
 	/**
-	 * The id that will be given to the generated input DOM element. Defaults to
-	 * an automatically generated id. If you configure this manually, you must
-	 * make sure it is unique in the document.
+	 * The id that will be given to the generated input DOM element. Defaults to an automatically generated id. If you configure this manually, you must make sure it is unique in
+	 * the document.
 	 */
 	public void setInputId(String value) {
 		setAttribute("inputId", value, true);
 	}
 
 	/**
-	 * The type attribute for input fields -- e.g. radio, text, password, file.
-	 * The extended types supported by HTML5 inputs (url, email, etc.) may also
-	 * be used, though using them will cause older browsers to fall back to
-	 * 'text'.
+	 * The type attribute for input fields -- e.g. radio, text, password, file. The extended types supported by HTML5 inputs (url, email, etc.) may also be used, though using them
+	 * will cause older browsers to fall back to 'text'.
 	 * <p>
-	 * The type 'password' must be used to render that field type currently --
-	 * there is no separate Ext component for that. You can use
-	 * Ext.form.field.File which creates a custom-rendered file upload field,
-	 * but if you want a plain unstyled file input you can use a Base with
-	 * inputType:'file'.
+	 * The type 'password' must be used to render that field type currently -- there is no separate Ext component for that. You can use Ext.form.field.File which creates a
+	 * custom-rendered file upload field, but if you want a plain unstyled file input you can use a Base with inputType:'file'.
 	 * <p>
 	 * Defaults to: 'text'
 	 */
@@ -203,8 +185,7 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * The error text to use when marking a field invalid and no message is
-	 * provided
+	 * The error text to use when marking a field invalid and no message is provided
 	 * <p>
 	 * Defaults to: 'The value in this field is invalid'
 	 */
@@ -215,11 +196,8 @@ public class FieldBase extends Field {
 	/**
 	 * true to mark the field as readOnly in HTML.
 	 * <p>
-	 * <b>Note</b>: this only sets the element's readOnly DOM attribute. Setting
-	 * readOnly=true, for example, will not disable triggering a ComboBox or
-	 * Date; it gives you the option of forcing the user to choose via the
-	 * trigger without typing in the text box. To hide the trigger use
-	 * hideTrigger.
+	 * <b>Note</b>: this only sets the element's readOnly DOM attribute. Setting readOnly=true, for example, will not disable triggering a ComboBox or Date; it gives you the option
+	 * of forcing the user to choose via the trigger without typing in the text box. To hide the trigger use hideTrigger.
 	 * <p>
 	 * Defaults to: false
 	 */
@@ -228,8 +206,7 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * The CSS class applied to the component's main element when it is
-	 * readOnly.
+	 * The CSS class applied to the component's main element when it is readOnly.
 	 * 
 	 * Defaults to: Ext.baseCSSPrefix + 'form-readonly'
 	 */
@@ -238,26 +215,23 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * The tabIndex for this field. Note this only applies to fields that are
-	 * rendered, not those which are built via applyTo
+	 * The tabIndex for this field. Note this only applies to fields that are rendered, not those which are built via applyTo
 	 */
 	public void setTabIndex(int value) {
 		setAttribute("tabIndex", value, true);
 	}
 
 	/**
-	 * The input Element for this Field. Only available after the field has been
-	 * rendered.
+	 * The input Element for this Field. Only available after the field has been rendered.
 	 */
 	public native ExtElement getInputElement()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		var obj = component.inputElement;
+		var obj = component.inputEl;
 		return @com.ait.toolkit.sencha.shared.client.dom.ExtElement::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 	}-*/;
 
 	/**
-	 * The input Element for this Field. Only available after the field has been
-	 * rendered.
+	 * The input Element for this Field. Only available after the field has been rendered.
 	 * <p>
 	 * Available since: Ext 4
 	 */
@@ -266,8 +240,7 @@ public class FieldBase extends Field {
 	}
 
 	/**
-	 * Returns the input id for this field. If none was specified via the
-	 * inputId config, then an id will be automatically generated.
+	 * Returns the input id for this field. If none was specified via the inputId config, then an id will be automatically generated.
 	 */
 	public native String getInputId()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -275,8 +248,7 @@ public class FieldBase extends Field {
 	}-*/;
 
 	/**
-	 * Returns the raw value of the field, without performing any normalization,
-	 * conversion, or validation.
+	 * Returns the raw value of the field, without performing any normalization, conversion, or validation.
 	 */
 	public native String getRawValue()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
@@ -284,16 +256,14 @@ public class FieldBase extends Field {
 	}-*/;
 
 	/**
-	 * Fires when any key related to navigation (arrows, tab, enter, esc, etc.)
-	 * is pressed. To handle other keys see Ext.util.KeyMap. You can check
-	 * Ext.EventObject.getKey to determine which key was pressed.
+	 * Fires when any key related to navigation (arrows, tab, enter, esc, etc.) is pressed. To handle other keys see Ext.util.KeyMap. You can check Ext.EventObject.getKey to
+	 * determine which key was pressed.
 	 * 
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
 
-	public native HandlerRegistration addSpecialKeyHandler(
-			SpecialKeyHandler handler)/*-{
+	public native HandlerRegistration addSpecialKeyHandler(SpecialKeyHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(f, e) {
 			var field = @com.ait.toolkit.sencha.ext.client.field.FieldBase::new(Lcom/google/gwt/core/client/JavaScriptObject;)(f);
@@ -312,8 +282,7 @@ public class FieldBase extends Field {
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addWritableChangeHandler(
-			WritableChangeHandler handler)/*-{
+	public native HandlerRegistration addWritableChangeHandler(WritableChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(f, read, e) {
 			var field = @com.ait.toolkit.sencha.ext.client.field.FieldBase::new(Lcom/google/gwt/core/client/JavaScriptObject;)(f);
@@ -358,8 +327,7 @@ public class FieldBase extends Field {
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addDirtyChangeHandler(
-			DirtyChangeHandler handler)/*-{
+	public native HandlerRegistration addDirtyChangeHandler(DirtyChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(f, isDirty, e) {
 			var field = @com.ait.toolkit.sencha.ext.client.field.FieldBase::new(Lcom/google/gwt/core/client/JavaScriptObject;)(f);
@@ -378,8 +346,7 @@ public class FieldBase extends Field {
 	 * @param handler
 	 *            , the handler that will handle the event
 	 */
-	public native HandlerRegistration addValidityChangeHandler(
-			ValidityChangeHandler handler)/*-{
+	public native HandlerRegistration addValidityChangeHandler(ValidityChangeHandler handler)/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(f, isValid, e) {
 			var field = @com.ait.toolkit.sencha.ext.client.field.FieldBase::new(Lcom/google/gwt/core/client/JavaScriptObject;)(f);

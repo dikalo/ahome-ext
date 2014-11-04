@@ -16,6 +16,9 @@
 package com.ait.toolkit.sencha.ext.client.core;
 
 import com.ait.toolkit.core.client.JsoHelper;
+import com.ait.toolkit.sencha.ext.client.events.component.AfterRenderEvent;
+import com.ait.toolkit.sencha.ext.client.events.component.AfterRenderHandler;
+import com.ait.toolkit.sencha.ext.client.ui.BoxComponent;
 import com.ait.toolkit.sencha.shared.client.core.ExtCore;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -30,8 +33,7 @@ public class Ext extends ExtCore {
 
 	}
 
-	public static Component[] convertToJavaComponentArray(
-			JavaScriptObject nativeArray) {
+	public static Component[] convertToJavaComponentArray(JavaScriptObject nativeArray) {
 		if (nativeArray == null) {
 			return new Component[] {};
 		}
@@ -42,5 +44,28 @@ public class Ext extends ExtCore {
 			components[i] = Component.createComponent(componentJS);
 		}
 		return components;
+	}
+
+	public static BoxComponent createPreview(Component target, int size) {
+		return createPreview(target, size, size);
+	}
+
+	public static BoxComponent createPreview(final Component target, int width, int height) {
+		final BoxComponent toReturn = new BoxComponent();
+		toReturn.setSize(width, height);
+		toReturn.addAfterRenderHandler(new AfterRenderHandler() {
+			@Override
+			public void onAfterRender(AfterRenderEvent event) {
+				ExtCore.createBoxPreview(toReturn.getEl().getJsObj(), target.getEl().getJsObj());
+			}
+		});
+		return toReturn;
+	}
+
+	public static String getScreenContent(Component target, int width, int height) {
+		BoxComponent toReturn = new BoxComponent();
+		toReturn.setSize(width, height);
+		return ExtCore.getScreenContent(toReturn.getEl().getJsObj(), target.getEl().getJsObj());
+
 	}
 }
