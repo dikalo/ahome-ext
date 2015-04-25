@@ -1,17 +1,17 @@
 /*
- Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
@@ -45,280 +45,289 @@ import com.google.gwt.core.client.JsArrayNumber;
  */
 public class MultiSlider extends FieldBase {
 
-	private static JavaScriptObject configPrototype;
+    private static JavaScriptObject configPrototype;
 
-	private native void init()/*-{
+    private native void init()/*-{
 		var c = new $wnd.Ext.slider.Multi();
 		@com.ait.toolkit.sencha.ext.client.ui.MultiSlider::configPrototype = c.initialConfig;
-	}-*/;
+    }-*/;
 
-	public MultiSlider() {
-		// init();
-	}
+    public MultiSlider() {
+        // init();
+    }
 
-	protected MultiSlider(JavaScriptObject obj) {
-		super(obj);
-	}
+    protected MultiSlider( JavaScriptObject obj ) {
+        super( obj );
+    }
 
-	protected JavaScriptObject getConfigPrototype() {
-		return configPrototype;
-	}
+    protected JavaScriptObject getConfigPrototype() {
+        return configPrototype;
+    }
 
-	public String getXType() {
-		return XType.MULTI_SLIDER.getValue();
-	}
+    public String getXType() {
+        return XType.MULTI_SLIDER.getValue();
+    }
 
-	@Override
-	protected native JavaScriptObject create(JavaScriptObject config) /*-{
+    @Override
+    protected native JavaScriptObject create( JavaScriptObject config ) /*-{
 		return new $wnd.Ext.slider.Multi(config);
-	}-*/;
+    }-*/;
 
-	/**
-	 * 
-	 Turn on or off animation.
-	 * <p>
-	 * Defaults to: true
-	 */
-	public void setAnimate(boolean value) {
-		setAttribute("animate", value, true);
-	}
+    /**
+     * 
+     Turn on or off animation.
+     * <p>
+     * Defaults to: true
+     */
+    public void setAnimate( boolean value ) {
+        setAttribute( "animate", value, true );
+    }
 
-	/**
-	 * Determines whether or not clicking on the Slider axis will change the
-	 * slider.
-	 * <p>
-	 * Defaults to: true
-	 */
-	public void setClickToChange(boolean value) {
-		setAttribute("clickToChange", value, true);
-	}
+    /**
+     * Determines whether or not clicking on the Slider axis will change the
+     * slider.
+     * <p>
+     * Defaults to: true
+     */
+    public void setClickToChange( boolean value ) {
+        setAttribute( "clickToChange", value, true );
+    }
 
-	/**
-	 * 
-	 * The CSS class to apply to the selected element
-	 * <p>
-	 * Defaults to: "x-color-picker-selected"
-	 */
-	public void setConstrainThumbs(boolean value) {
-		setAttribute("contstrainThumbs", value, true);
-	}
+    /**
+     * 
+     * The CSS class to apply to the selected element
+     * <p>
+     * Defaults to: "x-color-picker-selected"
+     */
+    public void setConstrainThumbs( boolean value ) {
+        setAttribute( "contstrainThumbs", value, true );
+    }
 
-	/**
-	 * The number of decimal places to which to round the Slider's value.
-	 * <p>
-	 * To disable rounding, configure as false.
-	 * <p>
-	 * Defaults to: 0
-	 */
-	public void setDecimalPrecision(boolean value) {
-		setAttribute("decimalPrecision", value, true);
-	}
+    /**
+     * The number of decimal places to which to round the Slider's value.
+     * <p>
+     * To disable rounding, configure as false.
+     * <p>
+     * Defaults to: 0
+     */
+    public void setDecimalPrecision( boolean value ) {
+        setAttribute( "decimalPrecision", value, true );
+    }
 
-	/**
-	 * The number of decimal places to which to round the Slider's value.
-	 * <p>
-	 * To disable rounding, configure as false.
-	 * <p>
-	 * Defaults to: 0
-	 */
-	public void setDecimalPrecision(int value) {
-		setAttribute("decimalPrecision", value, true);
-	}
+    /**
+     * The number of decimal places to which to round the Slider's value.
+     * <p>
+     * To disable rounding, configure as false.
+     * <p>
+     * Defaults to: 0
+     */
+    public void setDecimalPrecision( int value ) {
+        setAttribute( "decimalPrecision", value, true );
+    }
 
-	/**
-	 * How many units to change the slider when adjusting by drag and drop. Use
-	 * this option to enable 'snapping'.
-	 * <p>
-	 * Defaults to: 0
-	 */
-	public void setIncrement(int value) {
-		setAttribute("increment", value, true);
-	}
+    /**
+     * How many units to change the slider when adjusting by drag and drop. Use
+     * this option to enable 'snapping'.
+     * <p>
+     * Defaults to: 0
+     */
+    public void setIncrement( int value ) {
+        setAttribute( "increment", value, true );
+    }
 
-	/**
-	 * How many units to change the Slider when adjusting with keyboard
-	 * navigation. If the increment config is larger, it will be used instead.
-	 * <p>
-	 * Defaults to: 1
-	 */
-	public void setKeyIncrement(int value) {
-		setAttribute("keyIncrement", value, true);
-	}
+    /**
+     * How many units to change the Slider when adjusting with keyboard
+     * navigation. If the increment config is larger, it will be used instead.
+     * <p>
+     * Defaults to: 1
+     */
+    public void setKeyIncrement( int value ) {
+        setAttribute( "keyIncrement", value, true );
+    }
 
-	/**
-	 * The maximum value for the Slider.
-	 * <p>
-	 * Defaults to: 100
-	 */
-	public void setMaxValue(int value) {
-		setAttribute("maxValue", value, true);
-	}
+    /**
+     * The maximum value for the Slider.
+     * <p>
+     * Defaults to: 100
+     */
+    public void setMaxValue( int value ) {
+        setAttribute( "maxValue", value, true );
+    }
 
-	/**
-	 * The minimum value for the Slider.
-	 * <p>
-	 * Defaults to: 0
-	 */
-	public void setMinValue(int value) {
-		setAttribute("minValue", value, true);
-	}
+    /**
+     * The minimum value for the Slider.
+     * <p>
+     * Defaults to: 0
+     */
+    public void setMinValue( int value ) {
+        setAttribute( "minValue", value, true );
+    }
 
-	/**
-	 * A function used to display custom text for the slider tip.
-	 */
-	public void setTipText(TipTextRenderer renderer) {
-		setAttribute("tipText", _getTipText(renderer), true);
-	}
+    /**
+     * A function used to display custom text for the slider tip.
+     */
+    public void setTipText( TipTextRenderer renderer ) {
+        setAttribute( "tipText", _getTipText( renderer ), true );
+    }
 
-	/**
-	 * True to use an Ext.slider.Tip to display tips for the value. This option
-	 * may also provide a configuration object for an Ext.slider.Tip.
-	 * 
-	 * Defaults to: true
-	 */
-	public void setUseTips(boolean value) {
-		setAttribute("useTips", value, true);
-	}
+    /**
+     * True to use an Ext.slider.Tip to display tips for the value. This option
+     * may also provide a configuration object for an Ext.slider.Tip.
+     * 
+     * Defaults to: true
+     */
+    public void setUseTips( boolean value ) {
+        setAttribute( "useTips", value, true );
+    }
 
-	/**
-	 * True to use an Ext.slider.Tip to display tips for the value. This option
-	 * may also provide a configuration object for an Ext.slider.Tip.
-	 * 
-	 * Defaults to: true
-	 */
-	public void setUseTips(SliderTip value) {
-		setAttribute("useTips", value.getOrCreateJsObj(), true);
-	}
+    /**
+     * True to use an Ext.slider.Tip to display tips for the value. This option
+     * may also provide a configuration object for an Ext.slider.Tip.
+     * 
+     * Defaults to: true
+     */
+    public void setUseTips( SliderTip value ) {
+        setAttribute( "useTips", value.getOrCreateJsObj(), true );
+    }
 
-	/**
-	 * A value with which to initialize the slider. Setting this will only
-	 * result in the creation of a single slider thumb; if you want multiple
-	 * thumbs then use the values config instead.
-	 * <p>
-	 * Defaults to minValue.
-	 */
-	public void setValue(double value) {
-		setAttribute("value", value, true);
-	}
+    /**
+     * A value with which to initialize the slider. Setting this will only
+     * result in the creation of a single slider thumb; if you want multiple
+     * thumbs then use the values config instead.
+     * <p>
+     * Defaults to minValue.
+     */
+    private void setValueConfig( double value ) {
+        setAttribute( "value", value, true );
+    }
 
-	/**
-	 * Array of Number values with which to initalize the slider. A separate
-	 * slider thumb will be created for each value in this array. This will take
-	 * precedence over the single value config.
-	 */
-	public void setValues(JsArrayNumber values) {
-		setAttribute("values", values, true);
-	}
-
-	/**
-	 * Array of Number values with which to initalize the slider. A separate
-	 * slider thumb will be created for each value in this array. This will take
-	 * precedence over the single value config.
-	 */
-	public void setValues(double... values) {
-		JsArrayNumber peers = JsArray.createArray().cast();
-		for (double d : values) {
-			peers.push(d);
+    public native void setValue( double value )/*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		if (component && component.setValue) {
+			components.setValue(value);
+		} else {
+			this.@com.ait.toolkit.sencha.ext.client.ui.MultiSlider::setValueConfig(D)(value);
 		}
-		setAttribute("values", peers, true);
-	}
+    }-*/;
 
-	/**
-	 * Orient the Slider vertically rather than horizontally.
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setVertical(boolean values) {
-		setAttribute("vertical", values, true);
-	}
+    /**
+     * Array of Number values with which to initalize the slider. A separate
+     * slider thumb will be created for each value in this array. This will take
+     * precedence over the single value config.
+     */
+    public void setValues( JsArrayNumber values ) {
+        setAttribute( "values", values, true );
+    }
 
-	/**
-	 * Set to true to calculate snap points based on increments from zero as
-	 * opposed to from this Slider's minValue.
-	 * <p>
-	 * By Default, valid snap points are calculated starting increments from the
-	 * minValue
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setZeroBaseSnapping(boolean values) {
-		setAttribute("zeroBasedSnapping", values, true);
-	}
+    /**
+     * Array of Number values with which to initalize the slider. A separate
+     * slider thumb will be created for each value in this array. This will take
+     * precedence over the single value config.
+     */
+    public void setValues( double... values ) {
+        JsArrayNumber peers = JsArray.createArray().cast();
+        for( double d : values ) {
+            peers.push( d );
+        }
+        setAttribute( "values", peers, true );
+    }
 
-	/**
-	 * True while the thumb is in a drag operation
-	 * <p>
-	 * Defaults to: false
-	 */
-	public native boolean isDragging()/*-{
+    /**
+     * Orient the Slider vertically rather than horizontally.
+     * <p>
+     * Defaults to: false
+     */
+    public void setVertical( boolean values ) {
+        setAttribute( "vertical", values, true );
+    }
+
+    /**
+     * Set to true to calculate snap points based on increments from zero as
+     * opposed to from this Slider's minValue.
+     * <p>
+     * By Default, valid snap points are calculated starting increments from the
+     * minValue
+     * <p>
+     * Defaults to: false
+     */
+    public void setZeroBaseSnapping( boolean values ) {
+        setAttribute( "zeroBasedSnapping", values, true );
+    }
+
+    /**
+     * True while the thumb is in a drag operation
+     * <p>
+     * Defaults to: false
+     */
+    public native boolean isDragging()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		return commponent.draggging;
-	}-*/;
+		return component.draggging;
+    }-*/;
 
-	/**
-	 * Array containing references to each thumb
-	 * <p>
-	 * Defaults to: []
-	 */
-	public List<Thumb> getThumbs() {
-		return Thumb.fromJsArray(_getThumbs());
-	}
+    /**
+     * Array containing references to each thumb
+     * <p>
+     * Defaults to: []
+     */
+    public List<Thumb> getThumbs() {
+        return Thumb.fromJsArray( _getThumbs() );
+    }
 
-	private native JavaScriptObject _getThumbs()/*-{
+    private native JavaScriptObject _getThumbs()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
-		return commponent.thumbs;
-	}-*/;
+		return component.thumbs;
+    }-*/;
 
-	/**
-	 * Creates a new thumb and adds it to the slider
-	 */
-	public native void addThumb()/*-{
+    /**
+     * Creates a new thumb and adds it to the slider
+     */
+    public native void addThumb()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			components.addThumb();
 		}
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns an array of values - one for the location of each thumb
-	 */
-	public native JsArrayNumber getValues()/*-{
+    /**
+     * Returns an array of values - one for the location of each thumb
+     */
+    public native JsArrayNumber getValues()/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			components.getValues();
 		}
-	}-*/;
+    }-*/;
 
-	/**
-	 * Programmatically sets the value of the Slider. Ensures that the value is
-	 * constrained within the minValue and maxValue.
-	 */
-	public native void setValue(int index, double value)/*-{
+    /**
+     * Programmatically sets the value of the Slider. Ensures that the value is
+     * constrained within the minValue and maxValue.
+     */
+    public native void setValue( int index, double value )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			components.setValue(index, value);
 		}
-	}-*/;
+    }-*/;
 
-	/**
-	 * Programmatically sets the value of the Slider. Ensures that the value is
-	 * constrained within the minValue and maxValue.
-	 */
-	public native void setValue(int index, double value, boolean animate)/*-{
+    /**
+     * Programmatically sets the value of the Slider. Ensures that the value is
+     * constrained within the minValue and maxValue.
+     */
+    public native void setValue( int index, double value, boolean animate )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			components.setValue(index, value, animate);
 		}
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires after a drag operation has started.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addDragStartHandler(
-			DragStartHandler handler)/*-{
+    /**
+     * Fires after a drag operation has started.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addDragStartHandler(
+            DragStartHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -329,15 +338,15 @@ public class MultiSlider extends FieldBase {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires after a drag operation has ended.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addDragEndHandler(DragEndHandler handler)/*-{
+    /**
+     * Fires after a drag operation has ended.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addDragEndHandler( DragEndHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -348,17 +357,17 @@ public class MultiSlider extends FieldBase {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires continuously during the drag operation while the mouse is moving.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires continuously during the drag operation while the mouse is moving.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addDragHandler(
-			com.ait.toolkit.sencha.ext.client.events.slider.DragHandler handler)/*-{
+    public native HandlerRegistration addDragHandler(
+            com.ait.toolkit.sencha.ext.client.events.slider.DragHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -369,15 +378,15 @@ public class MultiSlider extends FieldBase {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when the slider value is changed.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addChangeHandler(ChangeHandler handler)/*-{
+    /**
+     * Fires when the slider value is changed.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addChangeHandler( ChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, newValue, t, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -389,17 +398,17 @@ public class MultiSlider extends FieldBase {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when the slider value is changed by the user and any drag
-	 * operations have completed.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addChangeHandler(
-			ChangeCompleteHandler handler)/*-{
+    /**
+     * Fires when the slider value is changed by the user and any drag
+     * operations have completed.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addChangeHandler(
+            ChangeCompleteHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, newValue, t, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -411,17 +420,17 @@ public class MultiSlider extends FieldBase {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the slider value is changed. By returning false from an
-	 * event handler, you can cancel the event and prevent the slider from
-	 * changing.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeChangeHandler(SliderBeforeChangeHandler handler)/*-{
+    /**
+     * Fires before the slider value is changed. By returning false from an
+     * event handler, you can cancel the event and prevent the slider from
+     * changing.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeChangeHandler( SliderBeforeChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -433,16 +442,16 @@ public class MultiSlider extends FieldBase {
 							}));
 		}
 
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the slider value is changed.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addBeforeChangeHandler(
-			BeforeChangeHandler handler)/*-{
+    /**
+     * Fires before the slider value is changed.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addBeforeChangeHandler(
+            BeforeChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(slider, oldValue, newValue, e) {
 			var component = @com.ait.toolkit.sencha.ext.client.ui.MultiSlider::new(Lcom/google/gwt/core/client/JavaScriptObject;)(slider);
@@ -454,30 +463,30 @@ public class MultiSlider extends FieldBase {
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
 
-	}-*/;
+    }-*/;
 
-	/**
-	 * Creates a new MultiSlider from the given component
-	 * 
-	 * @param component
-	 *            , the component to cast from
-	 * @return, a new MultiSlider from the component
-	 * 
-	 */
-	public static MultiSlider cast(Component component) {
-		return new MultiSlider(component.getOrCreateJsObj());
-	}
+    /**
+     * Creates a new MultiSlider from the given component
+     * 
+     * @param component
+     *            , the component to cast from
+     * @return, a new MultiSlider from the component
+     * 
+     */
+    public static MultiSlider cast( Component component ) {
+        return new MultiSlider( component.getOrCreateJsObj() );
+    }
 
-	/**
-	 * Selects the specified color in the picker
-	 * 
-	 * @param value
-	 */
-	private native JavaScriptObject _getTipText(TipTextRenderer renderer)/*-{
+    /**
+     * Selects the specified color in the picker
+     * 
+     * @param value
+     */
+    private native JavaScriptObject _getTipText( TipTextRenderer renderer )/*-{
 		return function(t) {
 			var thumb = @com.ait.toolkit.sencha.ext.client.slider.Thumb::new(Lcom/google/gwt/core/client/JavaScriptObject;)(t);
 			return renderer.@com.ait.toolkit.sencha.ext.client.slider.TipTextRenderer::getValue(Lcom/ait/toolkit/sencha/ext/client/slider/Thumb;)(thumb);
 		};
-	}-*/;
+    }-*/;
 
 }
