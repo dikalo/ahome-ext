@@ -1,17 +1,17 @@
 /*
- Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
@@ -57,236 +57,236 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class TreePanel extends TablePanel {
 
-	private static JavaScriptObject configPrototype;
+    private static JavaScriptObject configPrototype;
 
-	private native void init()/*-{
+    private native void init()/*-{
 		var c = new $wnd.Ext.tree.Panel();
 		@com.ait.toolkit.sencha.ext.client.ui.TreePanel::configPrototype = c.initialConfig;
-	}-*/;
+    }-*/;
 
-	protected JavaScriptObject getConfigPrototype() {
-		return configPrototype;
-	}
+    protected JavaScriptObject getConfigPrototype() {
+        return configPrototype;
+    }
 
-	public String getXType() {
-		return XType.TREE_PANEL.getValue();
-	}
+    public String getXType() {
+        return XType.TREE_PANEL.getValue();
+    }
 
-	public TreePanel() {
-		// init();
-	}
+    public TreePanel() {
+        // init();
+    }
 
-	protected TreePanel(JavaScriptObject obj) {
-		super(obj);
-	}
+    protected TreePanel( JavaScriptObject obj ) {
+        super( obj );
+    }
 
-	/**
-	 * Create a new Tree NotificationContainer.
-	 */
-	public TreePanel(Store store) {
-		setStore(store);
-	}
+    /**
+     * Create a new Tree NotificationContainer.
+     */
+    public TreePanel( Store store ) {
+        setStore( store );
+    }
 
-	public TreePanel(String title, Store store) {
-		setTitle(title);
-		setStore(store);
-	}
+    public TreePanel( String title, Store store ) {
+        setTitle( title );
+        setStore( store );
+    }
 
-	protected native JavaScriptObject create(JavaScriptObject config) /*-{
+    protected native JavaScriptObject create( JavaScriptObject config ) /*-{
 		return $wnd.Ext.tree.Panel(config);
-	}-*/;
+    }-*/;
 
-	/**
-	 * True to enable animated expand/collapse.
-	 * 
-	 * @param value
-	 */
-	public void setAnimate(boolean value) {
-		setAttribute("animate", value, true);
-	}
+    /**
+     * True to enable animated expand/collapse.
+     * 
+     * @param value
+     */
+    public void setAnimate( boolean value ) {
+        setAttribute( "animate", value, true );
+    }
 
-	/**
-	 * The field inside the model that will be used as the node's text.
-	 * <p>
-	 * Defaults to: "text"
-	 */
-	public void setDisplayField(String value) {
-		setAttribute("displayField", value, true);
-	}
+    /**
+     * The field inside the model that will be used as the node's text.
+     * <p>
+     * Defaults to: "text"
+     */
+    public void setDisplayField( String value ) {
+        setAttribute( "displayField", value, true );
+    }
 
-	/**
-	 * True to automatically prepend a leaf sorter to the store.
-	 * 
-	 * @param value
-	 */
-	public void setFolderSort(boolean value) {
-		setAttribute("folderSort", value, true);
-	}
+    /**
+     * True to automatically prepend a leaf sorter to the store.
+     * 
+     * @param value
+     */
+    public void setFolderSort( boolean value ) {
+        setAttribute( "folderSort", value, true );
+    }
 
-	/**
-	 * True to hide the headers.
-	 */
-	public void setHideHeaders(boolean value) {
-		setAttribute("hideHeaders", value, true);
-	}
+    /**
+     * True to hide the headers.
+     */
+    public void setHideHeaders( boolean value ) {
+        setAttribute( "hideHeaders", value, true );
+    }
 
-	/**
-	 * False to disable tree lines.
-	 * <p>
-	 * Defaults to: true
-	 */
-	public void setLines(boolean value) {
-		setAttribute("lines", value, true);
-	}
+    /**
+     * False to disable tree lines.
+     * <p>
+     * Defaults to: true
+     */
+    public void setLines( boolean value ) {
+        setAttribute( "lines", value, true );
+    }
 
-	/**
-	 * False to hide the root node.
-	 * <p>
-	 * Defaults to: true
-	 * 
-	 * @param value
-	 */
-	public void setRootVisible(boolean value) {
-		setAttribute("rootVisible", value, true);
-	}
+    /**
+     * False to hide the root node.
+     * <p>
+     * Defaults to: true
+     * 
+     * @param value
+     */
+    public void setRootVisible( boolean value ) {
+        setAttribute( "rootVisible", value, true );
+    }
 
-	/**
-	 * False so that rows are not separated by lines.
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setRowLines(boolean value) {
-		setAttribute("rowLines", value, true);
-	}
+    /**
+     * False so that rows are not separated by lines.
+     * <p>
+     * Defaults to: false
+     */
+    public void setRowLines( boolean value ) {
+        setAttribute( "rowLines", value, true );
+    }
 
-	/**
-	 * True if only 1 node per branch may be expanded.
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setSingleExpand(boolean value) {
-		setAttribute("singleExpand", value, true);
-	}
+    /**
+     * True if only 1 node per branch may be expanded.
+     * <p>
+     * Defaults to: false
+     */
+    public void setSingleExpand( boolean value ) {
+        setAttribute( "singleExpand", value, true );
+    }
 
-	/**
-	 * True to use Vista-style arrows in the tree.
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setUseArrows(boolean value) {
-		setAttribute("useArrows", value, true);
-	}
+    /**
+     * True to use Vista-style arrows in the tree.
+     * <p>
+     * Defaults to: false
+     */
+    public void setUseArrows( boolean value ) {
+        setAttribute( "useArrows", value, true );
+    }
 
-	/**
-	 * Collapse all nodes
-	 */
-	public native void collapseAll() /*-{
+    /**
+     * Collapse all nodes
+     */
+    public native void collapseAll() /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.collapseAll();
-	}-*/;
+    }-*/;
 
-	/**
-	 * Filter the tree by the given value using the given dataIndex as key
-	 * 
-	 * @param value
-	 * @param key
-	 */
-	public native void filterBy(String value, String dataIndex) /*-{
+    /**
+     * Filter the tree by the given value using the given dataIndex as key
+     * 
+     * @param value
+     * @param key
+     */
+    public native void filterBy( String value, String dataIndex ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.filterBy(value, dataIndex);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Filter the tree by the given value using 'text' as dataIndex
-	 * 
-	 * @param value
-	 * @param key
-	 */
-	public native void filterBy(String value) /*-{
+    /**
+     * Filter the tree by the given value using 'text' as dataIndex
+     * 
+     * @param value
+     * @param key
+     */
+    public native void filterBy( String value ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.filterBy(value, 'text');
-	}-*/;
+    }-*/;
 
-	/**
-	 * Clears filtering on this tree
-	 */
-	public native void clearFilter() /*-{
+    /**
+     * Clears filtering on this tree
+     */
+    public native void clearFilter() /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.clearFilter();
-	}-*/;
+    }-*/;
 
-	/**
-	 * Collapse all nodes
-	 * 
-	 * @param callBack
-	 *            , A function to execute when the collapse finishes.
-	 */
-	public native void collapseAll(Function callBack) /*-{
+    /**
+     * Collapse all nodes
+     * 
+     * @param callBack
+     *            , A function to execute when the collapse finishes.
+     */
+    public native void collapseAll( Function callBack ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.collapseAll($entry(function() {
 			callBack.@com.ait.toolkit.core.client.Function::execute()();
 		}));
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand all nodes
-	 */
-	public native void expandAll() /*-{
+    /**
+     * Expand all nodes
+     */
+    public native void expandAll() /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandAll();
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand all nodes
-	 * 
-	 * @param callBack
-	 *            ,A function to execute when the expand finishes.
-	 */
-	public native void expandAll(Function callBack) /*-{
+    /**
+     * Expand all nodes
+     * 
+     * @param callBack
+     *            ,A function to execute when the expand finishes.
+     */
+    public native void expandAll( Function callBack ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandAll($entry(function() {
 			callBack.@com.ait.toolkit.core.client.Function::execute()();
 		}));
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expands a record that is loaded in the tree.
-	 * 
-	 * @param record
-	 *            , The record to expand
-	 */
-	public native void expandNode(BaseModel record) /*-{
+    /**
+     * Expands a record that is loaded in the tree.
+     * 
+     * @param record
+     *            , The record to expand
+     */
+    public native void expandNode( BaseModel record ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel
 				.expandNode(record.@com.ait.toolkit.core.client.JsObject::getJsObj()());
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expands a record that is loaded in the tree.
-	 * 
-	 * @param record
-	 *            , The record to expand
-	 * @param deep
-	 *            , True to expand nodes all the way down the tree hierarchy.
-	 */
-	public native void expandNode(BaseModel record, boolean deep) /*-{
+    /**
+     * Expands a record that is loaded in the tree.
+     * 
+     * @param record
+     *            , The record to expand
+     * @param deep
+     *            , True to expand nodes all the way down the tree hierarchy.
+     */
+    public native void expandNode( BaseModel record, boolean deep ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandNode(
 				record.@com.ait.toolkit.core.client.JsObject::getJsObj()(),
 				deep);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expands a record that is loaded in the tree.
-	 * 
-	 * @param record
-	 *            , The record to expand
-	 * @param deep
-	 *            , True to expand nodes all the way down the tree hierarchy.
-	 * @param callBack
-	 *            , The function to run after the expand is completed
-	 */
-	public native void expandNode(BaseModel record, boolean deep, Function callBack) /*-{
+    /**
+     * Expands a record that is loaded in the tree.
+     * 
+     * @param record
+     *            , The record to expand
+     * @param deep
+     *            , True to expand nodes all the way down the tree hierarchy.
+     * @param callBack
+     *            , The function to run after the expand is completed
+     */
+    public native void expandNode( BaseModel record, boolean deep, Function callBack ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel
 				.expandNode(
@@ -295,144 +295,144 @@ public class TreePanel extends TablePanel {
 						$entry(function() {
 							callBack.@com.ait.toolkit.core.client.Function::execute()();
 						}));
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node.
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 */
-	public native void expandPath(String path) /*-{
+    /**
+     * Expand the tree to the path of a particular node.
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     */
+    public native void expandPath( String path ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandPath(path);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node.
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 * @param field
-	 *            ,The field to get the data from. Defaults to the model idProperty.
-	 */
-	public native void expandPath(String path, String field) /*-{
+    /**
+     * Expand the tree to the path of a particular node.
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     * @param field
+     *            ,The field to get the data from. Defaults to the model idProperty.
+     */
+    public native void expandPath( String path, String field ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandPath(path, field);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node.
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 * @param field
-	 *            ,The field to get the data from. Defaults to the model idProperty.
-	 * @param callBack
-	 *            , A function to execute when the expand finishes. The callback will be called with (success, lastNode) where success is if the expand was successful and lastNode
-	 *            is the last node that was expanded.
-	 */
-	public native void expandPath(String path, String field, Function callBack) /*-{
+    /**
+     * Expand the tree to the path of a particular node.
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     * @param field
+     *            ,The field to get the data from. Defaults to the model idProperty.
+     * @param callBack
+     *            , A function to execute when the expand finishes. The callback will be called with (success, lastNode) where success is if the expand was successful and lastNode
+     *            is the last node that was expanded.
+     */
+    public native void expandPath( String path, String field, Function callBack ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.expandPath(path, field, $entry(function() {
 			callBack.@com.ait.toolkit.core.client.Function::execute()();
 		}));
-	}-*/;
+    }-*/;
 
-	/**
-	 * Retrieve an array of checked records.
-	 */
+    /**
+     * Retrieve an array of checked records.
+     */
 
-	public native List<NodeInterface> getChecked() /*-{
+    public native List<NodeInterface> getChecked() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var obj = panel.getChecked();
 		return @com.ait.toolkit.sencha.shared.client.data.NodeInterface::fromJavaScriptArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns the root node for this tree.
-	 */
-	public native NodeInterface getRootNode() /*-{
+    /**
+     * Returns the root node for this tree.
+     */
+    public native NodeInterface getRootNode() /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var obj = panel.getRootNode();
 		return @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node, then select it
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 */
-	public native void selectPath(String path) /*-{
+    /**
+     * Expand the tree to the path of a particular node, then select it
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     */
+    public native void selectPath( String path ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.selectPath(path);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node ,then select it
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 * @param field
-	 *            ,The field to get the data from. Defaults to the model idProperty.
-	 */
-	public native void selectPath(String path, String field) /*-{
+    /**
+     * Expand the tree to the path of a particular node ,then select it
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     * @param field
+     *            ,The field to get the data from. Defaults to the model idProperty.
+     */
+    public native void selectPath( String path, String field ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.selectPath(path, field);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Expand the tree to the path of a particular node,then select it
-	 * 
-	 * @param path
-	 *            ,The path to expand. The path should include a leading separator.
-	 * @param field
-	 *            ,The field to get the data from. Defaults to the model idProperty.
-	 * @param callBack
-	 *            , A function to execute when the expand finishes. The callback will be called with (success, lastNode) where success is if the expand was successful and lastNode
-	 *            is the last node that was expanded.
-	 */
-	public native void selectPath(String path, String field, Function callBack) /*-{
+    /**
+     * Expand the tree to the path of a particular node,then select it
+     * 
+     * @param path
+     *            ,The path to expand. The path should include a leading separator.
+     * @param field
+     *            ,The field to get the data from. Defaults to the model idProperty.
+     * @param callBack
+     *            , A function to execute when the expand finishes. The callback will be called with (success, lastNode) where success is if the expand was successful and lastNode
+     *            is the last node that was expanded.
+     */
+    public native void selectPath( String path, String field, Function callBack ) /*-{
 		var treePanel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		treePanel.selectPath(path, field, $entry(function() {
 			callBack.@com.ait.toolkit.core.client.Function::execute()();
 		}));
-	}-*/;
+    }-*/;
 
-	/**
-	 * Sets root node of this tree.
-	 * 
-	 * @param node
-	 * @return
-	 */
-	public native NodeInterface setRootNode(BaseModel node) /*-{
+    /**
+     * Sets root node of this tree.
+     * 
+     * @param node
+     * @return
+     */
+    public native NodeInterface setRootNode( BaseModel node ) /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var obj = panel
 				.setRootNode(node.@com.ait.toolkit.core.client.JsObject::getJsObj()());
 		return @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Sets root node of this tree.
-	 * 
-	 * @param node
-	 * @return
-	 */
-	public native NodeInterface setRootNode(JavaScriptObject node) /*-{
+    /**
+     * Sets root node of this tree.
+     * 
+     * @param node
+     * @return
+     */
+    public native NodeInterface setRootNode( JavaScriptObject node ) /*-{
 		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var obj = panel.setRootNode(node);
 		return @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires after an item has been visually collapsed and is no longer visible in the tree.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires after an item has been visually collapsed and is no longer visible in the tree.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addAfterItemCollpaseHandler(AfterItemCollapseHandler handler)/*-{
+    public native HandlerRegistration addAfterItemCollpaseHandler( AfterItemCollapseHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, index, item, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -443,16 +443,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires after an item has been visually expanded and is visible in the tree.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires after an item has been visually expanded and is visible in the tree.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addAfterItemExpandHandler(AfterItemExpandHandler handler)/*-{
+    public native HandlerRegistration addAfterItemExpandHandler( AfterItemExpandHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, index, item, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -463,16 +463,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before a new child is appended, return false to cancel the append.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires before a new child is appended, return false to cancel the append.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native void addBeforeItemAppendHandler(BeforeTreeItemAppendHandler handler)/*-{
+    public native void addBeforeItemAppendHandler( BeforeTreeItemAppendHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -485,9 +485,9 @@ public class TreePanel extends TablePanel {
 							}));
 		}
 
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeItemAppendHandler(BeforeItemAppendHandler handler)/*-{
+    public native HandlerRegistration addBeforeItemAppendHandler( BeforeItemAppendHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(node1, node2, e) {
 			var target = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(node1);
@@ -499,15 +499,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before a new child is appended, return false to cancel the append.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeItemExpandHandler(BeforeTreeItemExpandHandler handler)/*-{
+    /**
+     * Fires before a new child is appended, return false to cancel the append.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeItemExpandHandler( BeforeTreeItemExpandHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -519,9 +519,9 @@ public class TreePanel extends TablePanel {
 							}));
 		}
 
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeItemExpandHandler(BeforeItemExpandHandler handler)/*-{
+    public native HandlerRegistration addBeforeItemExpandHandler( BeforeItemExpandHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(node1, e) {
 			var target = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(node1);
@@ -532,15 +532,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before this node is collapsed.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeItemCollapseHandler(BeforeTreeItemCollapseHandler handler)/*-{
+    /**
+     * Fires before this node is collapsed.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeItemCollapseHandler( BeforeTreeItemCollapseHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -552,9 +552,9 @@ public class TreePanel extends TablePanel {
 							}));
 		}
 
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeItemCollapseHandler(BeforeItemCollapseHandler handler)/*-{
+    public native HandlerRegistration addBeforeItemCollapseHandler( BeforeItemCollapseHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(node1, e) {
 			var target = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(node1);
@@ -565,15 +565,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before a new child is inserted, return false to cancel the insert.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeItemInsertHandler(BeforeTreeItemInsertHandler handler)/*-{
+    /**
+     * Fires before a new child is inserted, return false to cancel the insert.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeItemInsertHandler( BeforeTreeItemInsertHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -586,9 +586,9 @@ public class TreePanel extends TablePanel {
 								return handler.@com.ait.toolkit.sencha.ext.client.events.view.BeforeTreeItemInsertHandler::onEvent(Lcom/ait/toolkit/sencha/shared/client/data/NodeInterface;Lcom/ait/toolkit/sencha/shared/client/data/NodeInterface;Lcom/ait/toolkit/sencha/shared/client/data/NodeInterface;)(node,oldParent,refNode);
 							}));
 		}
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeItemInsertHandler(BeforeItemInsertHandler handler)/*-{
+    public native HandlerRegistration addBeforeItemInsertHandler( BeforeItemInsertHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, o, r, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -601,15 +601,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before this node is moved to a new location in the tree. Return false to cancel the move.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeItemMoveHandler(BeforeTreeItemMoveHandler handler)/*-{
+    /**
+     * Fires before this node is moved to a new location in the tree. Return false to cancel the move.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeItemMoveHandler( BeforeTreeItemMoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -623,15 +623,15 @@ public class TreePanel extends TablePanel {
 							}));
 		}
 
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before this node is moved to a new location in the tree.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addBeforeItemMoveHandler(BeforeItemMoveHandler handler)/*-{
+    /**
+     * Fires before this node is moved to a new location in the tree.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addBeforeItemMoveHandler( BeforeItemMoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, o, np, index, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -644,15 +644,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before a child is removed, return false to cancel the remove.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeItemRemoveHandler(BeforeTreeItemRemoveHandler handler)/*-{
+    /**
+     * Fires before a child is removed, return false to cancel the remove.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeItemRemoveHandler( BeforeTreeItemRemoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -664,9 +664,9 @@ public class TreePanel extends TablePanel {
 								return handler.@com.ait.toolkit.sencha.ext.client.events.view.BeforeTreeItemRemoveHandler::onEvent(Lcom/ait/toolkit/sencha/shared/client/data/NodeInterface;Lcom/ait/toolkit/sencha/shared/client/data/NodeInterface;Z)(node,toRemove,isMove);
 							}));
 		}
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeItemRemoveHandler(BeforeItemRemoveHandler handler)/*-{
+    public native HandlerRegistration addBeforeItemRemoveHandler( BeforeItemRemoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, tr, isMove, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -678,15 +678,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before a request is made for a new data object. If the beforeload handler returns false the load action will be canceled.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native void addBeforeLoadHandler(BeforeTreeLoadHandler handler)/*-{
+    /**
+     * Fires before a request is made for a new data object. If the beforeload handler returns false the load action will be canceled.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native void addBeforeLoadHandler( BeforeTreeLoadHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		if (component) {
 			component
@@ -698,9 +698,9 @@ public class TreePanel extends TablePanel {
 								return handler.@com.ait.toolkit.sencha.ext.client.events.view.BeforeTreeLoadHandler::onEvent(Lcom/ait/toolkit/sencha/shared/client/data/Store;Lcom/ait/toolkit/sencha/shared/client/data/Operation;)(store,operation);
 							}));
 		}
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addBeforeLoadHandler(BeforeLoadHandler handler)/*-{
+    public native HandlerRegistration addBeforeLoadHandler( BeforeLoadHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(s, o, e) {
 			var store = @com.ait.toolkit.sencha.shared.client.data.Store::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
@@ -712,16 +712,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when a node with a checkbox's checked property changes
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires when a node with a checkbox's checked property changes
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addCheckChangeHandler(CheckChangeHandler handler)/*-{
+    public native HandlerRegistration addCheckChangeHandler( CheckChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, checked, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -732,16 +732,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when a new child node is appended
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires when a new child node is appended
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addItemAppendHandler(ItemAppendHandler handler)/*-{
+    public native HandlerRegistration addItemAppendHandler( ItemAppendHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, nn, index, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -753,16 +753,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when this node is collapsed.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires when this node is collapsed.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addItemCollapseHandler(ItemCollapseHandler handler)/*-{
+    public native HandlerRegistration addItemCollapseHandler( ItemCollapseHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -773,15 +773,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when this node is expanded.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addItemExpandHandler(ItemExpandHandler handler)/*-{
+    /**
+     * Fires when this node is expanded.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addItemExpandHandler( ItemExpandHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -792,15 +792,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when a new child node is inserted.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addItemInsertHandler(ItemInsertHandler handler)/*-{
+    /**
+     * Fires when a new child node is inserted.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addItemInsertHandler( ItemInsertHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, o, r, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -813,15 +813,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when this node is moved to a new location in the tree
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addItemMoveHandler(ItemMoveHandler handler)/*-{
+    /**
+     * Fires when this node is moved to a new location in the tree
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addItemMoveHandler( ItemMoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, o, np, index, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -834,15 +834,15 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when a child node is removed
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
-	public native HandlerRegistration addItemRemoveHandler(ItemRemoveHandler handler)/*-{
+    /**
+     * Fires when a child node is removed
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
+    public native HandlerRegistration addItemRemoveHandler( ItemRemoveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(n, tr, isMove, e) {
 			var node = @com.ait.toolkit.sencha.shared.client.data.NodeInterface::new(Lcom/google/gwt/core/client/JavaScriptObject;)(n);
@@ -854,16 +854,16 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires whenever the store reads data from a remote data source.
-	 * 
-	 * @param handler
-	 *            , the handler that will handle the event
-	 */
+    /**
+     * Fires whenever the store reads data from a remote data source.
+     * 
+     * @param handler
+     *            , the handler that will handle the event
+     */
 
-	public native HandlerRegistration addLoadHandler(LoadHandler handler)/*-{
+    public native HandlerRegistration addLoadHandler( LoadHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(s, n, r, successful, e) {
 			var store = @com.ait.toolkit.sencha.shared.client.data.TreeStore::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
@@ -876,18 +876,50 @@ public class TreePanel extends TablePanel {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Creates a new TreePanel from the given component
-	 * 
-	 * @param component
-	 *            , the component to cast from
-	 * @return, a new TreePanel from the component
-	 * 
-	 */
-	public static TreePanel cast(Component component) {
-		return new TreePanel(component.getOrCreateJsObj());
-	}
+    /**
+    * The component width. (defaults to auto)
+    * 
+    * @param width
+    *            the width, -1 for auto
+    */
+    public void setWidth( double width ) {
+
+        if( width == -1 ) {
+            setAttribute( "width", "auto", true, true );
+        } else {
+            setAttribute( "width", width, true );
+        }
+
+        setWidthRendered( width );
+
+    }
+
+    private native void setTitleRendered( String title ) /*-{
+		var panel = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		if (panel && panel.setTitle) {
+			panel.setTitle(title);
+		}
+    }-*/;
+
+    private native void setWidthRendered( double width ) /*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		if (component && component.setWidth) {
+			component.setWidth(width);
+		}
+    }-*/;
+
+    /**
+     * Creates a new TreePanel from the given component
+     * 
+     * @param component
+     *            , the component to cast from
+     * @return, a new TreePanel from the component
+     * 
+     */
+    public static TreePanel cast( Component component ) {
+        return new TreePanel( component.getOrCreateJsObj() );
+    }
 
 }
