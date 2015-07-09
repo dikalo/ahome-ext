@@ -1,17 +1,17 @@
 /*
- Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
@@ -60,14 +60,13 @@ public class FieldContainer extends Container {
     /**
      * Create a new FieldContainer.
      */
-    public FieldContainer() {
+    public FieldContainer() {}
+
+    public FieldContainer( JavaScriptObject jsObj ) {
+        super( jsObj );
     }
 
-    public FieldContainer(JavaScriptObject jsObj) {
-        super(jsObj);
-    }
-
-    protected native JavaScriptObject create(JavaScriptObject config) /*-{
+    protected native JavaScriptObject create( JavaScriptObject config ) /*-{
 		return new $wnd.Ext.form.FieldContainer(config);
     }-*/;
 
@@ -79,8 +78,8 @@ public class FieldContainer extends Container {
      * <p>
      * Defaults to: false
      */
-    public void setCombineErrors(boolean value) {
-        setAttribute("combineErrors", value, true);
+    public void setCombineErrors( boolean value ) {
+        setAttribute( "combineErrors", value, true );
     }
 
     /**
@@ -90,8 +89,8 @@ public class FieldContainer extends Container {
      * <p>
      * Defaults to: false
      */
-    public void setCombineLabels(boolean value) {
-        setAttribute("combineLabels", value, true);
+    public void setCombineLabels( boolean value ) {
+        setAttribute( "combineLabels", value, true );
     }
 
     /**
@@ -100,8 +99,8 @@ public class FieldContainer extends Container {
      * <p>
      * Defaults to: ', '
      */
-    public void setLabelConnector(String value) {
-        setAttribute("labelConnector", value, true);
+    public void setLabelConnector( String value ) {
+        setAttribute( "labelConnector", value, true );
     }
 
     /**
@@ -123,8 +122,8 @@ public class FieldContainer extends Container {
      * @param fieldLabel
      *            the field label
      */
-    public void setLabel(String fieldLabel) {
-        setFieldLabel(fieldLabel);
+    public void setLabel( String fieldLabel ) {
+        setFieldLabel( fieldLabel );
     }
 
     // TODO
@@ -132,15 +131,23 @@ public class FieldContainer extends Container {
     /**
      * Controls the position and alignment of the fieldLabel
      */
-    public void setLabelAlign(LabelAlign labelAlign) {
-        setAttribute("labelAlign", labelAlign.getValue(), true, true);
+    public void setLabelAlign( LabelAlign labelAlign ) {
+        setAttribute( "labelAlign", labelAlign.getValue(), true, true );
     }
 
     /**
      * Controls the position and alignment of the fieldLabel
      */
-    public void setLabelAlign(String labelAlign) {
-        setAttribute("labelAlign", labelAlign, true, true);
+    public void setLabelAlign( String labelAlign ) {
+        setAttribute( "labelAlign", labelAlign, true, true );
+    }
+
+    public void setLabelWidth( double value ) {
+        setAttribute( "labelWidth", value, true );
+    }
+
+    public void setLabelWidth( String value ) {
+        setAttribute( "labelWidth", value, true );
     }
 
     /**
@@ -149,10 +156,10 @@ public class FieldContainer extends Container {
      * @param fieldLabel
      *            the field label
      */
-    public void setFieldLabel(String fieldLabel) {
-        setAttribute("fieldLabel", fieldLabel, true, true);
-        if (isRendered()) {
-            setFieldLabelRendered(fieldLabel, getId());
+    public void setFieldLabel( String fieldLabel ) {
+        setAttribute( "fieldLabel", fieldLabel, true, true );
+        if( isRendered() ) {
+            setFieldLabelRendered( fieldLabel, getId() );
         }
     }
 
@@ -162,14 +169,14 @@ public class FieldContainer extends Container {
      * @return the field label
      */
     public String getFieldLabel() {
-        return getAttribute("fieldLabel");
+        return getAttribute( "fieldLabel" );
     }
 
-    public static FieldContainer cast(Component component) {
-        return new FieldContainer(component.getOrCreateJsObj());
+    public static FieldContainer cast( Component component ) {
+        return new FieldContainer( component.getOrCreateJsObj() );
     }
 
-    private native void setFieldLabelRendered(String fieldLabel, String fieldId) /*-{
+    private native void setFieldLabelRendered( String fieldLabel, String fieldId ) /*-{
 		var field = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var label = $wnd.Ext.DomQuery.select($wnd.String.format(
 				'label[for="{0}"]', fieldId));
