@@ -1,17 +1,17 @@
 /*
- Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ * Copyright (c) 2014 Ahomé Innovation Technologies. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.ait.toolkit.sencha.ext.client.ui;
 
@@ -70,6 +70,7 @@ import com.ait.toolkit.sencha.shared.client.core.Template;
 import com.ait.toolkit.sencha.shared.client.data.Store;
 import com.ait.toolkit.sencha.shared.client.dom.ExtElement;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.dom.client.Element;
 
@@ -82,437 +83,502 @@ import com.google.gwt.dom.client.Element;
  */
 public class DataView extends Component {
 
-	private static JavaScriptObject configPrototype;
-	private Store store;
+    private static JavaScriptObject configPrototype;
+    private Store store;
 
-	private native void init()/*-{
+    private native void init()/*-{
 		var c = new $wnd.Ext.view.View();
 		@com.ait.toolkit.sencha.ext.client.ui.DataView::configPrototype = c.initialConfig;
-	}-*/;
+    }-*/;
 
-	protected JavaScriptObject getConfigPrototype() {
-		return configPrototype;
-	}
+    protected JavaScriptObject getConfigPrototype() {
+        return configPrototype;
+    }
 
-	public String getXType() {
-		return XType.DATAVIEW.getValue();
-	}
+    public String getXType() {
+        return XType.DATAVIEW.getValue();
+    }
 
-	protected DataView() {
+    protected DataView() {
 
-	}
+    }
 
-	/**
-	 * Create a new View.
-	 */
-	public DataView(Store store, String itemSelector, String template) {
-		setStore(store);
-		setItemSelector(itemSelector);
-		setTpl(template);
-	}
+    /**
+     * Create a new View.
+     */
+    public DataView( Store store, String itemSelector, String template ) {
+        setStore( store );
+        setItemSelector( itemSelector );
+        setTpl( template );
+    }
 
-	/**
-	 * Create a new View.
-	 */
-	public DataView(Store store, String itemSelector, Template template) {
-		setStore(store);
-		setItemSelector(itemSelector);
-		setTpl(template);
-	}
+    /**
+     * Create a new View.
+     */
+    public DataView( Store store, String itemSelector, Template template ) {
+        setStore( store );
+        setItemSelector( itemSelector );
+        setTpl( template );
+    }
 
-	/**
-	 * Create a new View.
-	 */
-	public DataView(Store store, String itemSelector, JsArrayString template) {
-		setStore(store);
-		setItemSelector(itemSelector);
-		setTpl(template);
-	}
+    /**
+     * Create a new View.
+     */
+    public DataView( Store store, String itemSelector, JsArrayString template ) {
+        setStore( store );
+        setItemSelector( itemSelector );
+        setTpl( template );
+    }
 
-	protected DataView(JavaScriptObject jsObj) {
-		super(jsObj);
-	}
+    protected DataView( JavaScriptObject jsObj ) {
+        super( jsObj );
+    }
 
-	protected native JavaScriptObject create(JavaScriptObject config) /*-{
+    protected native JavaScriptObject create( JavaScriptObject config ) /*-{
 		return new $wnd.Ext.view.View(config);
-	}-*/;
+    }-*/;
 
-	/**
-	 * <b>This is a required setting</b>. A simple CSS selector (e.g. div.some-class or span:first-child) that will be used to determine what nodes this DataView will be working
-	 * with. The itemSelector is used to map DOM nodes to records. As such, there should only be one root level element that matches the selector for each record.
-	 * 
-	 * @param value
-	 */
-	public void setItemSelector(String value) {
-		setAttribute("itemSelector", value, true);
-	}
+    /**
+     * <b>This is a required setting</b>. A simple CSS selector (e.g. div.some-class or span:first-child) that will be used to determine what nodes this DataView will be working
+     * with. The itemSelector is used to map DOM nodes to records. As such, there should only be one root level element that matches the selector for each record.
+     * 
+     * @param value
+     */
+    public void setItemSelector( String value ) {
+        setAttribute( "itemSelector", value, true );
+    }
 
-	public void setMultiSelect(boolean value) {
-		setAttribute("multiSelect", value, true);
-	}
+    public void setMultiSelect( boolean value ) {
+        setAttribute( "multiSelect", value, true );
+    }
 
-	public void setSingleSelect(boolean value) {
-		setAttribute("singleSelect", value, true);
-	}
+    public void setSingleSelect( boolean value ) {
+        setAttribute( "singleSelect", value, true );
+    }
 
-	/**
-	 * The {@link Store} to bind this DataView to.
-	 * 
-	 * @param store
-	 */
-	public void setStore(Store store) {
-		this.store = store;
-		setAttribute("store", store.getJsObj(), true);
-	}
+    /**
+     * The {@link Store} to bind this DataView to.
+     * 
+     * @param store
+     */
+    public void setStore( Store store ) {
+        this.store = store;
+        setAttribute( "store", store.getJsObj(), true );
+    }
 
-	/**
-	 * Set this to true to ignore refresh events on the bound store. This is useful if you wish to provide custom transition animations via a plugin
-	 * <p>
-	 * Defaults to: false
-	 */
-	public void setBlockRefresh(boolean value) {
-		setAttribute("blockRefresh", value, true);
-	}
+    /**
+     * Set this to true to ignore refresh events on the bound store. This is useful if you wish to provide custom transition animations via a plugin
+     * <p>
+     * Defaults to: false
+     */
+    public void setBlockRefresh( boolean value ) {
+        setAttribute( "blockRefresh", value, true );
+    }
 
-	/**
-	 * True to defer emptyText being applied until the store's first load.
-	 * <p>
-	 * Defaults to: true
-	 */
-	public void setDeferEmptyText(boolean value) {
-		setAttribute("deferEmptyText", value, true);
-	}
+    /**
+     * True to defer emptyText being applied until the store's first load.
+     * <p>
+     * Defaults to: true
+     */
+    public void setDeferEmptyText( boolean value ) {
+        setAttribute( "deferEmptyText", value, true );
+    }
 
-	/**
-	 * Defaults to true to defer the initial refresh of the view.
-	 * <p>
-	 * This allows the View to execute its render and initial layout more quickly because the process will not be encumbered by the expensive update of the view structure.
-	 * <p>
-	 * <b>Important</b>: Be aware that this will mean that the View's item elements will not be available immediately upon render, so selection may not take place at render time.
-	 * To access a View's item elements as soon as possible, use the viewready event. Or set deferInitialrefresh to false, but this will be at the cost of slower rendering.
-	 * <p>
-	 * Defaults to: true
-	 */
-	public void setDeferInitialRefresh(boolean value) {
-		setAttribute("deferInitialRefresh", value, true);
-	}
+    /**
+     * Defaults to true to defer the initial refresh of the view.
+     * <p>
+     * This allows the View to execute its render and initial layout more quickly because the process will not be encumbered by the expensive update of the view structure.
+     * <p>
+     * <b>Important</b>: Be aware that this will mean that the View's item elements will not be available immediately upon render, so selection may not take place at render time.
+     * To access a View's item elements as soon as possible, use the viewready event. Or set deferInitialrefresh to false, but this will be at the cost of slower rendering.
+     * <p>
+     * Defaults to: true
+     */
+    public void setDeferInitialRefresh( boolean value ) {
+        setAttribute( "deferInitialRefresh", value, true );
+    }
 
-	/**
-	 * True to disable selection within the DataView. This configuration will lock the selection model that the DataView uses.
-	 */
-	public void setDisableSelection(boolean value) {
-		setAttribute("disableSelection", value, true);
-	}
+    /**
+     * True to disable selection within the DataView. This configuration will lock the selection model that the DataView uses.
+     */
+    public void setDisableSelection( boolean value ) {
+        setAttribute( "disableSelection", value, true );
+    }
 
-	/**
-	 * The text to display in the view when there is no data to display. Note that when using local data the emptyText will not be displayed unless you set the deferEmptyText
-	 * option to false.
-	 * <p>
-	 * Defaults to: ""
-	 */
-	public void setEmptyText(String value) {
-		setAttribute("emptyText", value, true);
-	}
+    /**
+     * The text to display in the view when there is no data to display. Note that when using local data the emptyText will not be displayed unless you set the deferEmptyText
+     * option to false.
+     * <p>
+     * Defaults to: ""
+     */
+    public void setEmptyText( String value ) {
+        setAttribute( "emptyText", value, true );
+    }
 
-	/**
-	 * Specifies the class to be assigned to each element in the view when used in conjunction with the itemTpl configuration.
-	 * <p>
-	 * Defaults to: "x-dataview-item"
-	 */
-	public void setItemCls(String value) {
-		setAttribute("itemCls", value, true);
-	}
+    /**
+     * Specifies the class to be assigned to each element in the view when used in conjunction with the itemTpl configuration.
+     * <p>
+     * Defaults to: "x-dataview-item"
+     */
+    public void setItemCls( String value ) {
+        setAttribute( "itemCls", value, true );
+    }
 
-	/**
-	 * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
-	 * 
-	 */
-	public void setItemTpl(String value) {
-		setAttribute("itemTpl", value, true);
-	}
+    /**
+     * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
+     * 
+     */
+    public void setItemTpl( String value ) {
+        setAttribute( "itemTpl", value, true );
+    }
 
-	/**
-	 * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
-	 * 
-	 */
-	public void setItemTpl(Template tpl) {
-		setAttribute("itemTpl", tpl.getJsObj(), true);
-	}
+    /**
+     * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
+     * 
+     */
+    public void setItemTpl( Template tpl ) {
+        setAttribute( "itemTpl", tpl.getJsObj(), true );
+    }
 
-	/**
-	 * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
-	 * 
-	 */
-	public void setItemTpl(JsArrayString tpl) {
-		setAttribute("itemTpl", tpl, true);
-	}
+    /**
+     * The inner portion of the item template to be rendered. Follows an XTemplate structure and will be placed inside of a tpl.
+     * 
+     */
+    public void setItemTpl( JsArrayString tpl ) {
+        setAttribute( "itemTpl", tpl, true );
+    }
 
-	/**
-	 * False to disable a load mask from displaying while the view is loading. This can also be a Ext.LoadMask configuration object.
-	 * <p>
-	 * Defaults to: true
-	 * 
-	 */
-	public void setLoadMask(boolean value) {
-		setAttribute("loadMask", value, true);
-	}
+    /**
+     * False to disable a load mask from displaying while the view is loading. This can also be a Ext.LoadMask configuration object.
+     * <p>
+     * Defaults to: true
+     * 
+     */
+    public void setLoadMask( boolean value ) {
+        setAttribute( "loadMask", value, true );
+    }
 
-	/**
-	 * False to disable a load mask from displaying while the view is loading. This can also be a Ext.LoadMask configuration object.
-	 * <p>
-	 * Defaults to: true
-	 * 
-	 */
-	public void setLoadMask(LoadMask value) {
-		setAttribute("loadMask", value.getOrCreateJsObj(), true);
-	}
+    /**
+     * False to disable a load mask from displaying while the view is loading. This can also be a Ext.LoadMask configuration object.
+     * <p>
+     * Defaults to: true
+     * 
+     */
+    public void setLoadMask( LoadMask value ) {
+        setAttribute( "loadMask", value.getOrCreateJsObj(), true );
+    }
 
-	/**
-	 * The CSS class to apply to the loading message element. Defaults to Ext.LoadMask.prototype.msgCls "x-mask-loading".
-	 * 
-	 */
-	public void setLoadingCls(String value) {
-		setAttribute("loadingCls", value, true);
-	}
+    /**
+     * The CSS class to apply to the loading message element. Defaults to Ext.LoadMask.prototype.msgCls "x-mask-loading".
+     * 
+     */
+    public void setLoadingCls( String value ) {
+        setAttribute( "loadingCls", value, true );
+    }
 
-	/**
-	 * If specified, gives an explicit height for the data view when it is showing the loadingText, if that is specified. This is useful to prevent the view's height from
-	 * collapsing to zero when the loading mask is applied and there are no other contents in the data view.
-	 * 
-	 */
-	public void setLoadingHeight(double value) {
-		setAttribute("loadingHeight", value, true);
-	}
+    /**
+     * If specified, gives an explicit height for the data view when it is showing the loadingText, if that is specified. This is useful to prevent the view's height from
+     * collapsing to zero when the loading mask is applied and there are no other contents in the data view.
+     * 
+     */
+    public void setLoadingHeight( double value ) {
+        setAttribute( "loadingHeight", value, true );
+    }
 
-	/**
-	 * A string to display during data load operations. If specified, this text will be displayed in a loading div and the view's contents will be cleared while loading, otherwise
-	 * the view's contents will continue to display normally until the new data is loaded and the contents are replaced.
-	 * <p>
-	 * Defaults to: "Loading..."
-	 * 
-	 */
-	public void setLoadingText(String value) {
-		setAttribute("loadingText", value, true);
-	}
+    /**
+     * A string to display during data load operations. If specified, this text will be displayed in a loading div and the view's contents will be cleared while loading, otherwise
+     * the view's contents will continue to display normally until the new data is loaded and the contents are replaced.
+     * <p>
+     * Defaults to: "Loading..."
+     * 
+     */
+    public void setLoadingText( String value ) {
+        setAttribute( "loadingText", value, true );
+    }
 
-	/**
-	 * A CSS class to apply to each item in the view on mouseover. Setting this will automatically set trackOver to true.
-	 * 
-	 */
-	public void setOverItemCls(String value) {
-		setAttribute("overItemCls", value, true);
-	}
+    /**
+     * A CSS class to apply to each item in the view on mouseover. Setting this will automatically set trackOver to true.
+     * 
+     */
+    public void setOverItemCls( String value ) {
+        setAttribute( "overItemCls", value, true );
+    }
 
-	/**
-	 * True to preserve scroll position across refresh operations.
-	 * <p>
-	 * Defaults to: false
-	 * 
-	 */
-	public void setPreserveScrollOnRefresh(boolean value) {
-		setAttribute("preserveScrollOnRefresh", value, true);
-	}
+    /**
+     * True to preserve scroll position across refresh operations.
+     * <p>
+     * Defaults to: false
+     * 
+     */
+    public void setPreserveScrollOnRefresh( boolean value ) {
+        setAttribute( "preserveScrollOnRefresh", value, true );
+    }
 
-	/**
-	 * A CSS class to apply to each selected item in the view.
-	 * <p>
-	 * Defaults to: "x-item-selected"
-	 * 
-	 */
-	public void setSelectedItemCls(String value) {
-		setAttribute("selectedItemCls", value, true);
-	}
+    /**
+     * A CSS class to apply to each selected item in the view.
+     * <p>
+     * Defaults to: "x-item-selected"
+     * 
+     */
+    public void setSelectedItemCls( String value ) {
+        setAttribute( "selectedItemCls", value, true );
+    }
 
-	/**
-	 * When true the overItemCls will be applied to rows when hovered over. This in return will also cause highlightitem and unhighlightitem events to be fired.
-	 * <p>
-	 * Enabled automatically when the overItemCls config is set.
-	 * <p>
-	 * Defaults to: false
-	 * 
-	 */
-	public void setTrackOver(boolean value) {
-		setAttribute("trackOver", value, true);
-	}
+    /**
+     * When true the overItemCls will be applied to rows when hovered over. This in return will also cause highlightitem and unhighlightitem events to be fired.
+     * <p>
+     * Enabled automatically when the overItemCls config is set.
+     * <p>
+     * Defaults to: false
+     * 
+     */
+    public void setTrackOver( boolean value ) {
+        setAttribute( "trackOver", value, true );
+    }
 
-	/**
-	 * Changes the data store bound to this view and refreshes it.
-	 * 
-	 * @param store
-	 *            ,The store to bind to this view
-	 */
-	public native void bindStore(Store store) /*-{
+    /**
+     * Changes the data store bound to this view and refreshes it.
+     * 
+     * @param store
+     *            ,The store to bind to this view
+     */
+    public native void bindStore( Store store ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view
 				.bindStore(store.@com.ait.toolkit.core.client.JsObject::getJsObj()());
-	}-*/;
+    }-*/;
 
-	/**
-	 * Deselects a record instance by record instance or index.
-	 */
-	public native void deselect(int records) /*-{
+    /**
+     * Deselects a record instance by record instance or index.
+     */
+    public native void deselect( int records ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.deselect(records);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Deselects a record instance by record instance or index.
-	 */
-	public native void deselect(int records, boolean supressEvent) /*-{
+    /**
+     * Deselects a record instance by record instance or index.
+     */
+    public native void deselect( int records, boolean supressEvent ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.deselect(records, supressEvent);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Deselects a record instance by record instance or index.
-	 */
-	public native void deselect(List<BaseModel> records) /*-{
+    /**
+     * Deselects a record instance by record instance or index.
+     */
+    public native void deselect( List<BaseModel> records ) /*-{
 		var peers = @com.ait.toolkit.data.client.BaseModel::fromList(Ljava/util/List;)(peers);
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.deselect(peers);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Deselects a record instance by record instance or index.
-	 */
-	public native void deselect(List<BaseModel> records, boolean supressEvent) /*-{
+    /**
+     * Deselects a record instance by record instance or index.
+     */
+    public native void deselect( List<BaseModel> records, boolean supressEvent ) /*-{
 		var peers = @com.ait.toolkit.data.client.BaseModel::fromList(Ljava/util/List;)(peers);
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.deselect(peers, supressEvent);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Gets a record from a node
-	 */
-	public native BaseModel getRecord(ExtElement node) /*-{
+    /**
+     * Gets a record from a node
+     */
+    public native BaseModel getRecord( ExtElement node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		var obj = view
 				.getRecord(node.@com.ait.toolkit.core.client.JsObject::getJsObj()());
 		return @com.ait.toolkit.data.client.BaseModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Gets a record from a node
-	 */
-	public native BaseModel getRecord(JavaScriptObject node) /*-{
+    /**
+     * Gets a record from a node
+     */
+    public native BaseModel getRecord( JavaScriptObject node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		var obj = view
 				.getRecord(node.@com.ait.toolkit.core.client.JsObject::getJsObj()());
 		return @com.ait.toolkit.data.client.BaseModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Gets the selection model for this view.
-	 */
-	public native SelectionModel getSelectionModel() /*-{
+    /**
+     * Gets the selection model for this view.
+     */
+    public native SelectionModel getSelectionModel() /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		var obj = view.getSelectionModel();
 		return @com.ait.toolkit.sencha.ext.client.selection.SelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns the store associated with this View.
-	 * 
-	 * @return
-	 */
-	public Store getStore() {
-		return this.store;
-	}
+    /**
+     * Returns the store associated with this View.
+     * 
+     * @return
+     */
+    public Store getStore() {
+        return this.store;
+    }
 
-	/**
-	 * Finds the index of the passed node.
-	 */
-	public native int indexOf(JavaScriptObject node) /*-{
+    /**
+     * Finds the index of the passed node.
+     */
+    public native int indexOf( JavaScriptObject node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view.indexOf(node);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Finds the index of the passed node.
-	 */
-	public native int indexOf(String node) /*-{
+    /**
+     * Finds the index of the passed node.
+     */
+    public native int indexOf( String node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view.indexOf(node);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Finds the index of the passed node.
-	 */
-	public native int indexOf(int node) /*-{
+    /**
+     * Finds the index of the passed node.
+     */
+    public native int indexOf( int node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view.indexOf(node);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Finds the index of the passed node.
-	 */
-	public native int indexOf(BaseModel node) /*-{
+    /**
+     * Finds the index of the passed node.
+     */
+    public native int indexOf( BaseModel node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view
 				.indexOf(node.@com.ait.toolkit.core.client.JsObject::getJsObj()());
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns true if the passed node is selected, else false.
-	 */
-	public native boolean isSelected(JavaScriptObject node) /*-{
+    /**
+     * Returns true if the passed node is selected, else false.
+     */
+    public native boolean isSelected( JavaScriptObject node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view.isSelected(node);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns true if the passed node is selected, else false.
-	 */
-	public native boolean isSelected(int node) /*-{
+    /**
+     * Returns true if the passed node is selected, else false.
+     */
+    public native boolean isSelected( int node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view.isSelected(node);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Returns true if the passed node is selected, else false.
-	 */
-	public native boolean isSelected(BaseModel node) /*-{
+    /**
+    * Gets a template node.
+    */
+    public native Element getNode( BaseModel model ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view
+				.getNode(model.@com.ait.toolkit.core.client.JsObject::getJsObj()());
+    }-*/;
+
+    /**
+     * Gets a template node.
+     */
+    public native Element getNode( int node ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNode(node);
+    }-*/;
+
+    /**
+     * Gets a range nodes.
+     */
+    public native JsArray<Element> getNodes( int start, int end ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNodes(start, end);
+    }-*/;
+
+    /**
+     * Gets a range nodes.
+     */
+    public native JsArray<Element> getNodes( int start ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNodes(start);
+    }-*/;
+
+    /**
+     * Gets the currently selected nodes.
+     */
+    public native JsArray<Element> getNodes() /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNodes();
+    }-*/;
+
+    /**
+     * Gets a range nodes.
+     */
+    public native JsArray<Element> getSelectedNodes() /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getSelectedNodes();
+    }-*/;
+
+    /**
+     * Gets a template node.
+     */
+    public native Element getNode( String node ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNode(node);
+    }-*/;
+
+    /**
+     * Gets a template node.
+     */
+    public native Element getNode( Element node ) /*-{
+		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
+		return view.getNode(node);
+    }-*/;
+
+    /**
+     * Returns true if the passed node is selected, else false.
+     */
+    public native boolean isSelected( BaseModel node ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		return view
 				.isSelected(node.@com.ait.toolkit.core.client.JsObject::getJsObj()());
-	}-*/;
+    }-*/;
 
-	/**
-	 * Refreshes the view by reloading the data from the store and re-rendering the template.
-	 */
-	public native void refresh() /*-{
+    /**
+     * Refreshes the view by reloading the data from the store and re-rendering the template.
+     */
+    public native void refresh() /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.refresh();
-	}-*/;
+    }-*/;
 
-	/**
-	 * Refreshes an individual node's data from the store.
-	 */
-	public native void refreshNode(int index) /*-{
+    /**
+     * Refreshes an individual node's data from the store.
+     */
+    public native void refreshNode( int index ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.refreshNode(index);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Un-highlights the currently highlighted item, if any.
-	 */
-	public native void clearHighlight() /*-{
+    /**
+     * Un-highlights the currently highlighted item, if any.
+     */
+    public native void clearHighlight() /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.clearHighlight();
-	}-*/;
+    }-*/;
 
-	/**
-	 * Un-highlights the currently highlighted item, if any.
-	 */
-	public native void highlightItem(Element element) /*-{
+    /**
+     * Un-highlights the currently highlighted item, if any.
+     */
+    public native void highlightItem( Element element ) /*-{
 		var view = this.@com.ait.toolkit.sencha.ext.client.core.Component::getJsObj()();
 		view.highlightItem(element);
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the click event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerClickHandler(BeforeContainerClickHandler handler)/*-{
+    /**
+     * Fires before the click event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerClickHandler( BeforeContainerClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -523,19 +589,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the click event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerClickHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_CLICK, handler);
-	}
+    /**
+     * Fires before the click event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerClickHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_CLICK, handler );
+    }
 
-	/**
-	 * Fires before the contextmenu event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerContextMenuHandler(BeforeContainerContextMenuHandler handler)/*-{
+    /**
+     * Fires before the contextmenu event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerContextMenuHandler( BeforeContainerContextMenuHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -546,19 +612,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the contextmenu event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerContextMenuHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_CONTEXT_MENU, handler);
-	}
+    /**
+     * Fires before the contextmenu event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerContextMenuHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_CONTEXT_MENU, handler );
+    }
 
-	/**
-	 * Fires before the double click event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerDoubleClickHandler(BeforeContainerDoubleClickHandler handler)/*-{
+    /**
+     * Fires before the double click event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerDoubleClickHandler( BeforeContainerDoubleClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -569,19 +635,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the double click event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerDoubleClickHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_DOUBLE_CLICK, handler);
-	}
+    /**
+     * Fires before the double click event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerDoubleClickHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_DOUBLE_CLICK, handler );
+    }
 
-	/**
-	 * Fires before the key down event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerKeyDownHandler(BeforeContainerKeyDownHandler handler)/*-{
+    /**
+     * Fires before the key down event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerKeyDownHandler( BeforeContainerKeyDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -592,19 +658,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the key down event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerKeyDownHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_KEY_DOWN, handler);
-	}
+    /**
+     * Fires before the key down event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerKeyDownHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_KEY_DOWN, handler );
+    }
 
-	/**
-	 * Fires before the mouse down event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerMouseDownHandler(BeforeContainerMouseDownHandler handler)/*-{
+    /**
+     * Fires before the mouse down event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerMouseDownHandler( BeforeContainerMouseDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -615,19 +681,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse down event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerMouseDownHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_MOUSE_DOWN, handler);
-	}
+    /**
+     * Fires before the mouse down event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerMouseDownHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_MOUSE_DOWN, handler );
+    }
 
-	/**
-	 * Fires before the mouse out event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerMouseOutHandler(BeforeContainerMouseOutHandler handler)/*-{
+    /**
+     * Fires before the mouse out event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerMouseOutHandler( BeforeContainerMouseOutHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -638,19 +704,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse out event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerMouseOutHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_MOUSE_OUT, handler);
-	}
+    /**
+     * Fires before the mouse out event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerMouseOutHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_MOUSE_OUT, handler );
+    }
 
-	/**
-	 * Fires before the mouse over event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerMouseOverHandler(BeforeContainerMouseOverHandler handler)/*-{
+    /**
+     * Fires before the mouse over event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerMouseOverHandler( BeforeContainerMouseOverHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -661,19 +727,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse over event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerMouseOverHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_MOUSE_OVER, handler);
-	}
+    /**
+     * Fires before the mouse over event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerMouseOverHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_MOUSE_OVER, handler );
+    }
 
-	/**
-	 * Fires before the mouse up event on the container is processed.
-	 */
-	public native HandlerRegistration addBeforeContainerMouseUpHandler(BeforeContainerMouseUpHandler handler)/*-{
+    /**
+     * Fires before the mouse up event on the container is processed.
+     */
+    public native HandlerRegistration addBeforeContainerMouseUpHandler( BeforeContainerMouseUpHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -684,19 +750,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse up event on the container is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeContainerMouseUpHandler(BeforeContainerActionHandler handler) {
-		_addBeforeContainerActionHandlerHandler(Event.BEFORE_CONTAINER_MOUSE_UP, handler);
-	}
+    /**
+     * Fires before the mouse up event on the container is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeContainerMouseUpHandler( BeforeContainerActionHandler handler ) {
+        _addBeforeContainerActionHandlerHandler( Event.BEFORE_CONTAINER_MOUSE_UP, handler );
+    }
 
-	/**
-	 * Fired before a record is deselected.
-	 */
-	public native HandlerRegistration addBeforeDeselectHandler(BeforeDeselectHandler handler)/*-{
+    /**
+     * Fired before a record is deselected.
+     */
+    public native HandlerRegistration addBeforeDeselectHandler( BeforeDeselectHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, rec, index, e) {
 			var rowModel = @com.ait.toolkit.sencha.ext.client.selection.RowSelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -708,19 +774,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fired before a record is deselected. If any listener returns false, the deselection is cancelled.
-	 */
-	public void addBeforeDeselectHandler(BeforeSelectionHandler handler) {
-		_addBeforeSelectionHandler(Event.BEFORE_DESELECT, handler);
-	}
+    /**
+     * Fired before a record is deselected. If any listener returns false, the deselection is cancelled.
+     */
+    public void addBeforeDeselectHandler( BeforeSelectionHandler handler ) {
+        _addBeforeSelectionHandler( Event.BEFORE_DESELECT, handler );
+    }
 
-	/**
-	 * Fires before the click event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemClickHandler(BeforeItemClickHandler handler)/*-{
+    /**
+     * Fires before the click event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemClickHandler( BeforeItemClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -732,19 +798,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the click event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemClickHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_CLICK, handler);
-	}
+    /**
+     * Fires before the click event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemClickHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_CLICK, handler );
+    }
 
-	/**
-	 * Fires before the contextmenu event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemContextMenuHandler(BeforeItemContextMenuHandler handler)/*-{
+    /**
+     * Fires before the contextmenu event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemContextMenuHandler( BeforeItemContextMenuHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -756,19 +822,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the contextmenu event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemContextMenuHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_CONTEXT_MENU, handler);
-	}
+    /**
+     * Fires before the contextmenu event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemContextMenuHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_CONTEXT_MENU, handler );
+    }
 
-	/**
-	 * Fires before the double click event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemDoubleClickHandler(BeforeItemDoubleClickHandler handler)/*-{
+    /**
+     * Fires before the double click event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemDoubleClickHandler( BeforeItemDoubleClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -780,19 +846,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the double click event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemDoubleClickHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_DOUBLE_CLICK, handler);
-	}
+    /**
+     * Fires before the double click event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemDoubleClickHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_DOUBLE_CLICK, handler );
+    }
 
-	/**
-	 * Fires before the key down event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemKeyDownHandler(BeforeItemKeyDownHandler handler)/*-{
+    /**
+     * Fires before the key down event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemKeyDownHandler( BeforeItemKeyDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -804,19 +870,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the key down event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemKeyDownHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_KEY_DOWN, handler);
-	}
+    /**
+     * Fires before the key down event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemKeyDownHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_KEY_DOWN, handler );
+    }
 
-	/**
-	 * Fires before the mouse down event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemMouseDownHandler(BeforeItemMouseDownHandler handler)/*-{
+    /**
+     * Fires before the mouse down event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemMouseDownHandler( BeforeItemMouseDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -828,19 +894,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse down event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemMouseDownHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_MOUSE_DOWN, handler);
-	}
+    /**
+     * Fires before the mouse down event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemMouseDownHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_MOUSE_DOWN, handler );
+    }
 
-	/**
-	 * Fires before the mouse enter event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemMouseEnterHandler(BeforeItemMouseEnterHandler handler)/*-{
+    /**
+     * Fires before the mouse enter event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemMouseEnterHandler( BeforeItemMouseEnterHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -852,19 +918,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse enter event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemMouseEnterHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_MOUSE_ENTER, handler);
-	}
+    /**
+     * Fires before the mouse enter event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemMouseEnterHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_MOUSE_ENTER, handler );
+    }
 
-	/**
-	 * Fires before the mouse leave event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemMouseLeaveHandler(BeforeItemMouseLeaveHandler handler)/*-{
+    /**
+     * Fires before the mouse leave event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemMouseLeaveHandler( BeforeItemMouseLeaveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -876,19 +942,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse leave event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemMouseLeaveHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_MOUSE_LEAVE, handler);
-	}
+    /**
+     * Fires before the mouse leave event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemMouseLeaveHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_MOUSE_LEAVE, handler );
+    }
 
-	/**
-	 * Fires before the mouse up event on an item is processed.
-	 */
-	public native HandlerRegistration addBeforeItemMouseUpHandler(BeforeItemMouseUpHandler handler)/*-{
+    /**
+     * Fires before the mouse up event on an item is processed.
+     */
+    public native HandlerRegistration addBeforeItemMouseUpHandler( BeforeItemMouseUpHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -900,19 +966,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires before the mouse up event on an item is processed. Returns false to cancel the default action.
-	 */
-	public void addBeforeItemMouseUpHandler(BeforeItemActionHandler handler) {
-		_addBeforeItemActionHandler(Event.BEFORE_ITEM_MOUSE_UP, handler);
-	}
+    /**
+     * Fires before the mouse up event on an item is processed. Returns false to cancel the default action.
+     */
+    public void addBeforeItemMouseUpHandler( BeforeItemActionHandler handler ) {
+        _addBeforeItemActionHandler( Event.BEFORE_ITEM_MOUSE_UP, handler );
+    }
 
-	/**
-	 * Fired before a record is selected.
-	 */
-	public native HandlerRegistration addBeforeSelectHandler(BeforeSelectHandler handler)/*-{
+    /**
+     * Fired before a record is selected.
+     */
+    public native HandlerRegistration addBeforeSelectHandler( BeforeSelectHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, rec, index, e) {
 			var rowModel = @com.ait.toolkit.sencha.ext.client.selection.RowSelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -924,19 +990,19 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fired before a record is selected. If any listener returns false, the selection is cancelled.
-	 */
-	public void addBeforeSelectHandler(BeforeSelectionHandler handler) {
-		_addBeforeSelectionHandler(Event.BEFORE_SELECT, handler);
-	}
+    /**
+     * Fired before a record is selected. If any listener returns false, the selection is cancelled.
+     */
+    public void addBeforeSelectHandler( BeforeSelectionHandler handler ) {
+        _addBeforeSelectionHandler( Event.BEFORE_SELECT, handler );
+    }
 
-	/**
-	 * Fires when the container is clicked.
-	 */
-	public native HandlerRegistration addContainerClickHandler(ContainerClickHandler handler)/*-{
+    /**
+     * Fires when the container is clicked.
+     */
+    public native HandlerRegistration addContainerClickHandler( ContainerClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -948,12 +1014,12 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when the container is right clicked.
-	 */
-	public native HandlerRegistration addContainerContextMenuHandler(ContainerContextMenuHandler handler)/*-{
+    /**
+     * Fires when the container is right clicked.
+     */
+    public native HandlerRegistration addContainerContextMenuHandler( ContainerContextMenuHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -964,12 +1030,12 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when the container is double clicked.
-	 */
-	public native HandlerRegistration addContainerDoubleClickHandler(ContainerDoubleClickHandler handler)/*-{
+    /**
+     * Fires when the container is double clicked.
+     */
+    public native HandlerRegistration addContainerDoubleClickHandler( ContainerDoubleClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -980,12 +1046,12 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fires when a key is pressed while the container is focused, and no item is currently selected.
-	 */
-	public native HandlerRegistration addContainerKeyDownHandler(ContainerKeyDownHandler handler)/*-{
+    /**
+     * Fires when a key is pressed while the container is focused, and no item is currently selected.
+     */
+    public native HandlerRegistration addContainerKeyDownHandler( ContainerKeyDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -996,9 +1062,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addContainerMouseDownHandler(ContainerMouseDownHandler handler)/*-{
+    public native HandlerRegistration addContainerMouseDownHandler( ContainerMouseDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1009,9 +1075,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addContainerMouseOutHandler(ContainerMouseOutHandler handler)/*-{
+    public native HandlerRegistration addContainerMouseOutHandler( ContainerMouseOutHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1022,9 +1088,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addContainerMouseOverHandler(ContainerMouseOverHandler handler)/*-{
+    public native HandlerRegistration addContainerMouseOverHandler( ContainerMouseOverHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1035,9 +1101,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addContainerMouseUpHandler(ContainerMouseUpHandler handler)/*-{
+    public native HandlerRegistration addContainerMouseUpHandler( ContainerMouseUpHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1048,12 +1114,12 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fired when a record is deselected.
-	 */
-	public native HandlerRegistration addDeselectHandler(DeselectHandler handler)/*-{
+    /**
+     * Fired when a record is deselected.
+     */
+    public native HandlerRegistration addDeselectHandler( DeselectHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, rec, index, e) {
 			var rowModel = @com.ait.toolkit.sencha.ext.client.selection.RowSelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -1065,9 +1131,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemClickHandler(ItemClickHandler handler)/*-{
+    public native HandlerRegistration addItemClickHandler( ItemClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1079,9 +1145,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemContextMenuHandler(ItemContextMenuHandler handler)/*-{
+    public native HandlerRegistration addItemContextMenuHandler( ItemContextMenuHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1093,9 +1159,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemDoubleClickHandler(ItemDoubleClickHandler handler)/*-{
+    public native HandlerRegistration addItemDoubleClickHandler( ItemDoubleClickHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1107,9 +1173,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemKeyDownHandler(ItemKeyDownHandler handler)/*-{
+    public native HandlerRegistration addItemKeyDownHandler( ItemKeyDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1121,9 +1187,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemMouseDownHandler(ItemMouseDownHandler handler)/*-{
+    public native HandlerRegistration addItemMouseDownHandler( ItemMouseDownHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1135,9 +1201,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemMouseEnterHandler(ItemMouseEnterHandler handler)/*-{
+    public native HandlerRegistration addItemMouseEnterHandler( ItemMouseEnterHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1149,9 +1215,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemMouseLeaveHandler(ItemMouseLeaveHandler handler)/*-{
+    public native HandlerRegistration addItemMouseLeaveHandler( ItemMouseLeaveHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1163,9 +1229,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addItemMouseUpHandler(ItemMouseUpHandler handler)/*-{
+    public native HandlerRegistration addItemMouseUpHandler( ItemMouseUpHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, rec, item, index, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.TableView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1177,12 +1243,12 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Fired when a record is selected.
-	 */
-	public native HandlerRegistration addSelectHandler(SelectHandler handler)/*-{
+    /**
+     * Fired when a record is selected.
+     */
+    public native HandlerRegistration addSelectHandler( SelectHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, rec, index, e) {
 			var rowModel = @com.ait.toolkit.sencha.ext.client.selection.RowSelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -1194,9 +1260,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addSelectionChangeHandler(SelectionChangeHandler handler)/*-{
+    public native HandlerRegistration addSelectionChangeHandler( SelectionChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, rec, e) {
 			var rowModel = @com.ait.toolkit.sencha.ext.client.selection.RowSelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -1208,9 +1274,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addFocusChangeHandler(FocusChangeHandler handler)/*-{
+    public native HandlerRegistration addFocusChangeHandler( FocusChangeHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(sm, o, n, e) {
 			var sm = @com.ait.toolkit.sencha.ext.client.selection.SelectionModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(sm);
@@ -1223,9 +1289,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addHighlightItemHandler(HighlightItemHandler handler)/*-{
+    public native HandlerRegistration addHighlightItemHandler( HighlightItemHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, el, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1237,9 +1303,9 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	public native HandlerRegistration addUnHighlightItemHandler(UnHighlightItemHandler handler)/*-{
+    public native HandlerRegistration addUnHighlightItemHandler( UnHighlightItemHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		var fn = function(v, el, e) {
 			var view = @com.ait.toolkit.sencha.ext.client.ui.DataView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(v);
@@ -1251,21 +1317,21 @@ public class DataView extends Component {
 		component.addListener(eventName, fn);
 		var toReturn = @com.ait.toolkit.sencha.ext.client.events.HandlerRegistration::new(Lcom/ait/toolkit/sencha/ext/client/core/Component;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,eventName,fn);
 		return toReturn;
-	}-*/;
+    }-*/;
 
-	/**
-	 * Creates a new DataView from the given component
-	 * 
-	 * @param component
-	 *            , the component to cast from
-	 * @return, a new DataView from the component
-	 * 
-	 */
-	public static DataView cast(Component component) {
-		return new DataView(component.getOrCreateJsObj());
-	}
+    /**
+     * Creates a new DataView from the given component
+     * 
+     * @param component
+     *            , the component to cast from
+     * @return, a new DataView from the component
+     * 
+     */
+    public static DataView cast( Component component ) {
+        return new DataView( component.getOrCreateJsObj() );
+    }
 
-	private native void _addBeforeContainerActionHandlerHandler(String event, BeforeContainerActionHandler handler)/*-{
+    private native void _addBeforeContainerActionHandlerHandler( String event, BeforeContainerActionHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.addListener(
@@ -1275,9 +1341,9 @@ public class DataView extends Component {
 							var event = @com.ait.toolkit.sencha.shared.client.core.EventObject::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							return handler.@com.ait.toolkit.sencha.ext.client.events.grid.BeforeContainerActionHandler::onAction(Lcom/ait/toolkit/sencha/ext/client/ui/DataView;Lcom/ait/toolkit/sencha/shared/client/core/EventObject;)(cmp,event);
 						}));
-	}-*/;
+    }-*/;
 
-	private native void _addBeforeSelectionHandler(String event, BeforeSelectionHandler handler)/*-{
+    private native void _addBeforeSelectionHandler( String event, BeforeSelectionHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.addListener(
@@ -1287,9 +1353,9 @@ public class DataView extends Component {
 							var model = @com.ait.toolkit.data.client.BaseModel::new(Lcom/google/gwt/core/client/JavaScriptObject;)(rec);
 							return handler.@com.ait.toolkit.sencha.ext.client.events.grid.BeforeSelectionHandler::onAction(Lcom/ait/toolkit/sencha/ext/client/selection/RowSelectionModel;Lcom/ait/toolkit/data/client/BaseModel;I)(rowModel,record,index);
 						}));
-	}-*/;
+    }-*/;
 
-	private native void _addBeforeItemActionHandler(String event, BeforeItemActionHandler handler)/*-{
+    private native void _addBeforeItemActionHandler( String event, BeforeItemActionHandler handler )/*-{
 		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
 		component
 				.addListener(
@@ -1300,5 +1366,5 @@ public class DataView extends Component {
 							var event = @com.ait.toolkit.sencha.shared.client.core.EventObject::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							return handler.@com.ait.toolkit.sencha.ext.client.events.grid.BeforeItemActionHandler::onAction(Lcom/ait/toolkit/sencha/ext/client/ui/DataView;Lcom/ait/toolkit/data/client/BaseModel;Lcom/google/gwt/dom/client/Element;ILcom/ait/toolkit/sencha/shared/client/core/EventObject;)(cmp,model,item,index, event);
 						}));
-	}-*/;
+    }-*/;
 }
