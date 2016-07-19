@@ -22,6 +22,7 @@ import com.ait.toolkit.sencha.ext.client.events.form.KeyPressHandler;
 import com.ait.toolkit.sencha.ext.client.events.form.KeyUpHandler;
 import com.ait.toolkit.sencha.ext.client.field.FieldBase;
 import com.ait.toolkit.sencha.shared.client.core.RegExp;
+import com.ait.toolkit.sencha.shared.client.dom.ExtElement;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.editor.client.IsEditor;
 import com.google.gwt.editor.client.LeafValueEditor;
@@ -604,6 +605,15 @@ public class TextField extends FieldBase implements HasValue<String>,
 		} else {
 			el.value += text;
 		}
+    }-*/;
+
+    public native ExtElement getInputElement()/*-{
+		var component = this.@com.ait.toolkit.sencha.ext.client.core.Component::getOrCreateJsObj()();
+		var obj = component.inputEl;
+		if (!obj) {
+			return null;
+		}
+		return @com.ait.toolkit.sencha.shared.client.dom.ExtElement::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     /**
